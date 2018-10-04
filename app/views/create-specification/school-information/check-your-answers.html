@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      {% if data['multiple-schools'] == 'Yes' %}
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Multiple schools
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['multiple-schools'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="number-of-schools">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Number of schools
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['number-of-schools'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="number-of-schools">
+              Change
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <h2 class="govuk-heading-m">
+        School 1 details
+      </h2>
+      {% endif %}
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        {% if data['multiple-schools'] == 'No' %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Multiple schools
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['multiple-schools'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="number-of-schools">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            School name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['school-name'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="name">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['school-address-line-1'] }} {{ data['school-address-line-2'] }} {{ data['school-address-town'] }} {{ data['school-address-county'] }} {{ data['school-address-postcode'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="address">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Number of pupils
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['school-pupils'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="pupils">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action='../task-list' method='post' class='form' autocomplete='off'>
+
+        <input type="hidden" name="school-information-complete" value="true">
+
+        {{ govukButton({
+          text: "Save school information",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

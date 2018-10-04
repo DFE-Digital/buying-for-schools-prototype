@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class='govuk-heading-xl'>
+        Contract specifics
+      </h1>
+
+      <form class="form" action="details" method="post" autocomplete="off">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="budget">
+            What is your budget?
+          </label>
+          <span id="budget-hint" class="govuk-hint">
+            Excluding VAT
+          </span>
+          <div class="govuk-currency-input">
+            <div class="govuk-currency-input__inner">
+              <span class="govuk-currency-input__inner__unit">£</span>
+              <input class="govuk-input govuk-input--width-10 / govuk-currency-input__inner__input" name="budget" data-non-numeric type="text" id="budget" pattern="[0-9]\d*(\.\d+)?" value="{{ data['budget'] }}">
+            </div>
+          </div>
+        </div>
+
+        {{ govukDateInput({
+          id: "contract-end-date",
+          namePrefix: "contract-end-date",
+          fieldset: {
+            legend: {
+              text: "What is the contract end date?"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 2022"
+          },
+          "items": [
+            {
+              "name": "day",
+              "classes": "govuk-input--width-2",
+              "value": data['contract-end-date-day']
+            },
+            {
+              "name": "month",
+              "classes": "govuk-input--width-2",
+              "value": data['contract-end-date-month']
+            },
+            {
+              "name": "year",
+              "classes": "govuk-input--width-4",
+              "value": data['contract-end-date-year']
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

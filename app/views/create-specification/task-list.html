@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Contact details
+          </h2>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              {% if data['main-contact-complete'] %}
+              <a class="app-task-list__task-name" href="contact-details/check-your-answers">
+                Main contact details
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="contact-details/name">
+                Main contact details
+              </a>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Prepare specification
+          </h2>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              {% if data['school-information-complete'] %}
+              <a class="app-task-list__task-name" href="school-information/check-your-answers">
+                School information
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="school-information/name">
+                School information
+              </a>
+              {% endif %}
+            </li>
+
+            <li class="app-task-list__item">
+              {% if data['requirements-complete'] %}
+              <a class="app-task-list__task-name" href="requirements/check-your-answers">
+                Give specific requirements
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="requirements/specifics">
+                Give specific requirements
+              </a>
+              {% endif %}
+            </li>
+
+            <li class="app-task-list__item">
+              {% if data['policies-complete'] %}
+              <a class="app-task-list__task-name" href="policies/check-your-answers">
+                Provide policies
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="policies/name">
+                Provide policies
+              </a>
+              {% endif %}
+            </li>
+
+            <li class="app-task-list__item">
+              {% if data['response-complete'] %}
+              <a class="app-task-list__task-name" href="response/check-your-answers">
+                List response type
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="response/name">
+                List response type
+              </a>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+
+
+
+
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> View and download
+          </h2>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <a class="app-task-list__task-name" href="preview/">
+                Finish and download your specification
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ol>
+
+    </div>
+  </div>
+
+{% endblock %}

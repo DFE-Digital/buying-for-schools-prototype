@@ -10,3 +10,29 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/docs/examples/blank-unbranded
+
+
+// Add some basic DL styles
+dl {
+  @include govuk-font($size: 19);
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+    margin: 0;
+    padding: 0 0 0.5em 0;
+  }
+
+
+
+
+
+
+// Default UL to bullet list for rendered markdown
+ul {
+  @extend .govuk-list;
+  @extend .govuk-list--bullet;
+}

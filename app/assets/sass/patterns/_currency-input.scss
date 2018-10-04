@@ -1,0 +1,19 @@
+.govuk-currency-input {
+
+  &__inner {
+    position: relative;
+
+    &__unit {
+      @include govuk-font($size: 19);
+      position: absolute;
+      bottom: 7px;
+      left: 10px;
+      font-weight: bold;
+      color: $govuk-secondary-text-colour;
+    }
+
+    &__input {
+      padding-left: 25px;
+    }
+  }
+}

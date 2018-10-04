@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Budget
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            £{{ data['budget'] }} (excluding VAT)
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="specifics">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Contract end date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% set contractEnd = data['contract-end-date-year'] + "-" + data['contract-end-date-month'] + "-" + data['contract-end-date-day'] %}
+
+            {{ contractEnd | date("D MMMM YYYY") }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="specifics">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Description
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['contract-description'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="details">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Requirements
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['contract-requirements-rendered'] | safe }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="details">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <form action='../task-list' method='post' class='form' autocomplete='off'>
+
+        <input type="hidden" name="requirements-complete" value="true">
+
+        {{ govukButton({
+          text: "Save main contact details",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

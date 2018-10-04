@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="name">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-your-answers" method="post" autocomplete="off">
+
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "contact-email",
+          name: "contact-email",
+          type: "email",
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Email address"
+          },
+          value: data['school-name']
+        }) }}
+        {% endset -%}
+
+        {% set phoneHtml %}
+        {{ govukInput({
+          id: "contact-phone",
+          name: "contact-phone",
+          type: "tel",
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Phone number"
+          },
+          value: data['school-name']
+        }) }}
+        {% endset -%}
+
+        {{ govukCheckboxes({
+          idPrefix: "contact-options",
+          name: "contact-options",
+          fieldset: {
+            legend: {
+              text: "What contact details do you  want to list?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Select all options that are relevant to you."
+          },
+          items: [
+            {
+              value: "Email",
+              text: "Email",
+              checked: checked('contact-options', 'Email'),
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "Phone",
+              text: "Phone",
+              checked: checked('contact-options', 'Phone'),
+              conditional: {
+                html: phoneHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

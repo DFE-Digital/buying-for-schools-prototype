@@ -1,9 +1,8 @@
 
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block content %}
 
@@ -14,7 +13,7 @@
       </h1>
       {{ govukButton({
         text: 'View current version',
-        href: "#0",
+        href: "create-specification/start",
         classes: "govuk-button--start "
       }) }}
 

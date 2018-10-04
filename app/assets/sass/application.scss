@@ -13,3 +13,55 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+@import 'patterns/currency-input';
+
+
+
+
+// Add some basic DL styles
+dl {
+  @include govuk-font($size: 19);
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+    margin: 0;
+    padding: 0 0 0.5em 0;
+  }
+
+
+
+
+
+
+// Default UL to bullet list for rendered markdown
+ul {
+  @extend .govuk-list;
+  @extend .govuk-list--bullet;
+}
+
+
+
+
+
+.doc-icon {
+  margin-bottom: 1.8em;
+  cursor: pointer;
+}
+
+.doc-icon:before {
+  content: '';
+  width: 2em;
+  height: 3em;
+  margin-right: 1em;
+  position: relative;
+  top: 1.3em;
+  display: inline-block;
+  background: govuk-colour("grey-2");
+  box-shadow: 3px  -3px 0 #fff,
+              6px -6px 0 govuk-colour("grey-2");
+}

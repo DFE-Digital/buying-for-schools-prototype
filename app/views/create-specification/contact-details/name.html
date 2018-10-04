@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="contact" method="post" autocomplete="off">
+
+        {{ govukInput({
+          label: {
+            text: 'What is the full name of the main contact?',
+            isPageHeading: true,
+            classes: "govuk-label--xl"
+          },
+          hint: {
+            text: ''
+          },
+          id: 'contact-name',
+          name: 'contact-name',
+          classes: 'govuk-input--width-30',
+          value: data['contact-name']
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

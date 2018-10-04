@@ -1,0 +1,74 @@
+{% extends "layout_unbranded.html" %}
+
+{% block content %}
+<style>
+  .govuk-width-container {
+    max-width: 700px;
+  }
+  .govuk-section-break--l {
+    margin-top: 0
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <span class="govuk-caption-xl">{{ data['school-name'] }}</span>
+    <h1 class="govuk-heading-xl">
+      {{ data['contract-description'] }}
+    </h1>
+
+    <h2 class='govuk-heading-l'>
+      Requirements
+    </h2>
+    {{ data['contract-requirements-rendered'] | safe }}
+
+    <h2 class='govuk-heading-l'>
+      Contract summary
+    </h2>
+    <dl class="govuk-body">
+      {% if data['multiple-schools'] == 'Yes' %}
+      <dt>Number of schools</dt>
+      <dd>{{ data['number-of-schools'] }}</dd>
+      {% endif %}
+
+      <dt>School name</dt>
+      <dd>{{ data['school-name'] }}</dd>
+
+      <dt>Number of pupils</dt>
+      <dd>{{ data['school-pupils'] }}</dd>
+
+      <dt>School address</dt>
+      <dd>{{ data['school-address-line-1'] }} {{ data['school-address-line-2'] }} {{ data['school-address-town'] }} {{ data['school-address-county'] }} {{ data['school-address-postcode'] }}</dd>
+
+      <dt>Budget</dt>
+      <dd>{{ data['budget'] }}</dd>
+
+      {% set contractEnd = data['contract-end-date-year'] + "-" + data['contract-end-date-month'] + "-" + data['contract-end-date-day'] %}
+      <dt>End date</dt>
+      <dd>{{ contractEnd | date("D MMMM YYYY") }}</dd>
+    </dl>
+
+    <h2 class='govuk-heading-l'>
+      Main contact
+    </h2>
+    <dl>
+      <dt>Name</dt>
+      <dd>{{ data['contact-name'] }}</dd>
+
+      {% if data['contact-phone'] %}
+      <dt>Phone number</dt>
+      <dd>{{ data['contact-phone'] }}</dd>
+      {% endif %}
+
+      {% if data['contact-email'] %}
+      <dt>Email</dt>
+      <dd>{{ data['contact-email'] }}</dd>
+      {% endif %}
+    </dl>
+  </div>
+</div>
+
+<script>
+  window.print();
+</script>
+{% endblock %}

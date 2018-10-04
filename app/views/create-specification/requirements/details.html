@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="specifics">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class='govuk-heading-xl'>
+        Contract details
+      </h1>
+
+      <form class="form" action="check-your-answers" method="post" autocomplete="off">
+
+        {{ govukTextarea({
+          classes: '',
+          name: 'contract-description',
+          id: 'contract-description',
+          rows: '2',
+          label: {
+            text: 'Description of the procurement'
+          },
+          hint: {
+            text: 'A brief overview of what you need'
+          },
+          value: data['contract-description']
+        }) }}
+
+        {{ govukTextarea({
+          classes: '',
+          name: 'contract-requirements',
+          id: 'contract-requirements',
+          rows: '10',
+          label: {
+            text: 'List of required outcomes'
+          },
+          hint: {
+            html: 'Use asterisks for each one, for example:<br>* Breakfast served daily from 8-10<br>* Lunch served daily from 12-2'
+          },
+          value: data['contract-requirements']
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Before you write this
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+            <li>
+              talk to people who will use the thing you plan to buy – to make sure you get what they need
+            </li>
+            <li>
+              talk to people who will approve the purchase
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
