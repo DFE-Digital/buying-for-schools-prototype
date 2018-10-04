@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="assessment-criteria" method="post" autocomplete="off">
+
+        {{ govukTextarea({
+          classes: '',
+          name: 'response-type',
+          id: 'response-type',
+          rows: '5',
+          label: {
+            text: 'How do you want the supplier to respond?',
+            isPageHeading: true,
+            classes: "govuk-label--xl"
+          },
+          hint: {
+            text: 'For example, do you want the suuplier to respond to an address or via email, do you want them to provide a specific format'
+          },
+          value: data['response-type']
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

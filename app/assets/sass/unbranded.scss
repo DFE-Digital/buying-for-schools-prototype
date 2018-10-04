@@ -1,5 +1,8 @@
 @import "node_modules/govuk-frontend/settings/all";
 
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
 // Override the govuk-frontend font stack
 $govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
