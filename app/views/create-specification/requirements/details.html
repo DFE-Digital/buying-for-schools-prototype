@@ -14,16 +14,28 @@
 
       <form class="form" action="check-your-answers" method="post" autocomplete="off">
 
+        {{ govukInput({
+          label: {
+            text: 'Title'
+          },
+          hint: {
+            text: ''
+          },
+          id: 'contract-title',
+          name: 'contract-title',
+          classes: ''
+        }) }}
+
         {{ govukTextarea({
           classes: '',
           name: 'contract-description',
           id: 'contract-description',
-          rows: '2',
+          rows: '3',
           label: {
-            text: 'Description of the procurement'
+            text: 'Brief overview of what is needed'
           },
           hint: {
-            text: 'A brief overview of what you need'
+            text: 'Focus on outputs, detail what is required without being prescriptive on the method that should be used, this can encourage competition and innovation'
           },
           value: data['contract-description']
         }) }}
