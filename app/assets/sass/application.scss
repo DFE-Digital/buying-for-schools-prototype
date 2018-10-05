@@ -36,12 +36,26 @@ dd {
 
 
 
+.letter {
+  padding: 60px;
+  margin: 0 0 30px 0;
+  position: relative;
+  border: 1px #dee0e2 solid;
+}
+
+
+
+
 
 
 // Default UL to bullet list for rendered markdown
 ul {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
+}
+
+.letter ul {
+  @include govuk-font($size: 16);
 }
 
 

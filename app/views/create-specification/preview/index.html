@@ -1,33 +1,105 @@
 {% extends "layout.html" %}
 
-<!-- Adds a class to increase vertical spacing for pages without a back button -->
-{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../task-list">Back</a>
+{% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Specification complete</h1>
-        {# <div class="govuk-panel__body">
-          Your reference number<br><strong>HDJ2123F</strong>
-        </div> #}
-      </div>
+      <h1 class='govuk-heading-xl'>
+        {{ data['school-name'] }}&rsquo;s specification
+      </h1>
 
-      <h2 class="doc-icon">
-        <a href="print">View and print your specification</a>
-      </h2>
-
-      <p>
-        We have sent you a copy to your email address.
-      </p>
-
-
-      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
-
-
+      {# {% if data['contact-email'] %}
+        <p>A copy has been sent to {{ data['contact-email'] }}</p>
+      {% endif %} #}
     </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <div class="letter">
+        <span class="govuk-caption-l">{{ data['school-name'] }}</span>
+        <h1 class="govuk-heading-l">
+          {{ data['contract-title'] }}
+        </h1>
+        <p class="govuk-body">{{ data['contract-description'] }}</p>
+
+        <h2 class='govuk-heading-s'>
+          Contract summary
+        </h2>
+        <dl class="govuk-body-s">
+          {% if data['multiple-schools'] == 'Yes' %}
+          <dt>Number of schools</dt>
+          <dd>{{ data['number-of-schools'] }}</dd>
+          {% endif %}
+
+          <dt>School name</dt>
+          <dd>{{ data['school-name'] }}</dd>
+
+          <dt>Number of pupils</dt>
+          <dd>{{ data['school-pupils'] }}</dd>
+
+          <dt>School address</dt>
+          <dd>{{ data['school-address-line-1'] }} {{ data['school-address-line-2'] }} {{ data['school-address-town'] }} {{ data['school-address-county'] }} {{ data['school-address-postcode'] }}</dd>
+
+          <dt>Budget</dt>
+          <dd>{{ data['budget'] }}</dd>
+
+          {% set contractEnd = data['contract-end-date-year'] + "-" + data['contract-end-date-month'] + "-" + data['contract-end-date-day'] %}
+          <dt>End date</dt>
+          <dd>{{ contractEnd | date("D MMMM YYYY") }}</dd>
+        </dl>
+
+        <h2 class='govuk-heading-s'>
+          Requirements
+        </h2>
+        <span class="govuk-body-s">
+        {{ data['contract-requirements-rendered'] | safe }}
+        </span>
+
+        <h2 class='govuk-heading-s'>
+          Response criteria
+        </h2>
+
+        <p class="govuk-body-s">{{ data['response-type'] }}</p>
+        <p class="govuk-body-s">{{ data['response-assessment'] }}</p>
+
+        <h2 class='govuk-heading-s'>
+          Main contact
+        </h2>
+        <dl class="govuk-body-s">
+          <dt>Name</dt>
+          <dd>{{ data['contact-name'] }}</dd>
+
+          {% if data['contact-phone'] %}
+          <dt>Phone number</dt>
+          <dd>{{ data['contact-phone'] }}</dd>
+          {% endif %}
+
+          {% if data['contact-email'] %}
+          <dt>Email</dt>
+          <dd>{{ data['contact-email'] }}</dd>
+          {% endif %}
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-quarter">
+      <ul class="govuk-list">
+        <li><a href="../task-list">Edit specification</a></li>
+        <li><a href="print">Print specificiation</a></li>
+        <li><a href="#0">Download as a Word document (.docx)</a></li>
+        <li><a href="#0">Download as a PDF document (.pdf)</a></li>
+      </ul>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+    </div>
+
   </div>
 
 {% endblock %}

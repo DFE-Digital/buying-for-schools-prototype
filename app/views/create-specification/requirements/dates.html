@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class='govuk-heading-xl'>
+        Contract dates
+      </h1>
+
+      <form class="form" action="details" method="post" autocomplete="off">
+
+        {{ govukDateInput({
+          id: "contract-start-date",
+          namePrefix: "contract-start-date",
+          fieldset: {
+            legend: {
+              text: "What is the contract start date?"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 2018"
+          },
+          "items": [
+            {
+              "name": "day",
+              "classes": "govuk-input--width-2",
+              "value": data['contract-start-date-day']
+            },
+            {
+              "name": "month",
+              "classes": "govuk-input--width-2",
+              "value": data['contract-start-date-month']
+            },
+            {
+              "name": "year",
+              "classes": "govuk-input--width-4",
+              "value": data['contract-start-date-year']
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "contract-end-date",
+          namePrefix: "contract-end-date",
+          fieldset: {
+            legend: {
+              text: "What is the contract end date?"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 2022"
+          },
+          "items": [
+            {
+              "name": "day",
+              "classes": "govuk-input--width-2",
+              "value": data['contract-end-date-day']
+            },
+            {
+              "name": "month",
+              "classes": "govuk-input--width-2",
+              "value": data['contract-end-date-month']
+            },
+            {
+              "name": "year",
+              "classes": "govuk-input--width-4",
+              "value": data['contract-end-date-year']
+            }
+          ]
+        }) }}
+
+        {% set reviewDateHtml %}
+          {{ govukDateInput({
+            id: "contract-review-date",
+            namePrefix: "contract-review-date",
+            fieldset: {
+              legend: {
+                text: "What is the contract review date?"
+              }
+            },
+            hint: {
+              text: "For example, 31 3 2022"
+            },
+            "items": [
+              {
+                "name": "day",
+                "classes": "govuk-input--width-2",
+                "value": data['contract-review-date-day']
+              },
+              {
+                "name": "month",
+                "classes": "govuk-input--width-2",
+                "value": data['contract-review-date-month']
+              },
+              {
+                "name": "year",
+                "classes": "govuk-input--width-4",
+                "value": data['contract-review-date-year']
+              }
+            ]
+          }) }}
+        {% endset -%}
+
+        {{ govukCheckboxes({
+          idPrefix: 'review-date-option',
+          name: 'review-date-option',
+          items: [
+            {
+              value: 'review-date',
+              text: 'Contract has a review date',
+              hint: {
+                text: "Used to check that suppliers are meeting goals"
+              },
+              conditional: {
+                html: reviewDateHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

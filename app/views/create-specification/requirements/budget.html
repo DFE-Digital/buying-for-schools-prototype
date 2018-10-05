@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="../task-list">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="dates" method="post" autocomplete="off">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--xl" for="budget">
+              What is your budget?
+            </label>
+          </h1>
+          <span id="budget-hint" class="govuk-hint">
+            Excluding VAT
+          </span>
+          <div class="govuk-currency-input">
+            <div class="govuk-currency-input__inner">
+              <span class="govuk-currency-input__inner__unit">£</span>
+              <input class="govuk-input govuk-input--width-10 / govuk-currency-input__inner__input" name="budget" data-non-numeric type="text" id="budget" aria-describedby="budget-hint" pattern="[0-9]\d*(\.\d+)?" value="{{ data['budget'] }}">
+            </div>
+          </div>
+        </div>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

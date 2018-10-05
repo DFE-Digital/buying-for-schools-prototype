@@ -14,21 +14,15 @@
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Contact details
+            <span class="app-task-list__section-number">1. </span> Before you start
           </h2>
 
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              {% if data['main-contact-complete'] %}
-              <a class="app-task-list__task-name" href="contact-details/check-your-answers">
-                Main contact details
+              <a class="app-task-list__task-name" href="before">
+                Gather information and confirm authorisation
               </a>
               <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-              {% else %}
-              <a class="app-task-list__task-name" href="contact-details/name">
-                Main contact details
-              </a>
-              {% endif %}
             </li>
           </ul>
         </li>
@@ -44,14 +38,26 @@
 
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
+              {% if data['main-contact-complete'] %}
+              <a class="app-task-list__task-name" href="contact-details/check-your-answers">
+                Enter main contact&rsquo;s details
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="contact-details/name">
+                Enter main contact&rsquo;s details
+              </a>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
               {% if data['school-information-complete'] %}
               <a class="app-task-list__task-name" href="school-information/check-your-answers">
-                School information
+                Provide school information
               </a>
               <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
               {% else %}
               <a class="app-task-list__task-name" href="school-information/number-of-schools">
-                School information
+                Provide school information
               </a>
               {% endif %}
             </li>
@@ -59,17 +65,17 @@
             <li class="app-task-list__item">
               {% if data['requirements-complete'] %}
               <a class="app-task-list__task-name" href="requirements/check-your-answers">
-                Give specific requirements
+                List requirements
               </a>
               <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
               {% else %}
-              <a class="app-task-list__task-name" href="requirements/specifics">
-                Give specific requirements
+              <a class="app-task-list__task-name" href="requirements/budget">
+                List requirements
               </a>
               {% endif %}
             </li>
 
-            <li class="app-task-list__item">
+            {# <li class="app-task-list__item">
               {% if data['policies-complete'] %}
               <a class="app-task-list__task-name" href="policies/check-your-answers">
                 Provide policies
@@ -80,7 +86,7 @@
                 Provide policies
               </a>
               {% endif %}
-            </li>
+            </li> #}
 
             <li class="app-task-list__item">
               {% if data['response-complete'] %}
