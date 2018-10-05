@@ -14,6 +14,52 @@
       <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['contact-name'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="name">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        {% if data['contact-email'] %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Email
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['contact-email'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        {% if data['contact-phone'] %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Phone
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['contact-phone'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
             Response type
           </dt>
           <dd class="app-check-your-answers__answer">

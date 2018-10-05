@@ -15,6 +15,11 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 // See localhost:3000/docs/examples/blank-unbranded
 
 
+@page { size: auto;  margin: 0mm; }
+.govuk-grid-column-full {
+  padding: 3em 5em;
+}
+
 // Add some basic DL styles
 dl {
   @include govuk-font($size: 19);
@@ -28,10 +33,6 @@ dd {
     margin: 0;
     padding: 0 0 0.5em 0;
   }
-
-
-
-
 
 
 // Default UL to bullet list for rendered markdown

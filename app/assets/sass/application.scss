@@ -37,10 +37,13 @@ dd {
 
 
 .letter {
-  padding: 60px;
+  padding: 4em 5em;
   margin: 0 0 30px 0;
-  position: relative;
   border: 1px #dee0e2 solid;
+
+  * {
+    font-family: "Arial", sans-serif;
+  }
 }
 
 

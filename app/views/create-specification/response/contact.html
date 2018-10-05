@@ -8,7 +8,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="check-your-answers" method="post" autocomplete="off">
+      <form class="form" action="type" method="post" autocomplete="off">
 
         {% set emailHtml %}
         {{ govukInput({
@@ -19,7 +19,7 @@
           label: {
             text: "Email address"
           },
-          value: data['school-name']
+          value: data['contact-email']
         }) }}
         {% endset -%}
 
@@ -32,7 +32,7 @@
           label: {
             text: "Phone number"
           },
-          value: data['school-name']
+          value: data['contact-phone']
         }) }}
         {% endset -%}
 

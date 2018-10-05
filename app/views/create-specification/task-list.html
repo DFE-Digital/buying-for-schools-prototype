@@ -38,18 +38,6 @@
 
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              {% if data['main-contact-complete'] %}
-              <a class="app-task-list__task-name" href="contact-details/check-your-answers">
-                Enter main contact&rsquo;s details
-              </a>
-              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-              {% else %}
-              <a class="app-task-list__task-name" href="contact-details/name">
-                Enter main contact&rsquo;s details
-              </a>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item">
               {% if data['school-information-complete'] %}
               <a class="app-task-list__task-name" href="school-information/check-your-answers">
                 Provide school information
@@ -95,7 +83,7 @@
               </a>
               <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
               {% else %}
-              <a class="app-task-list__task-name" href="response/type">
+              <a class="app-task-list__task-name" href="response/name">
                 List supplier response criteria
               </a>
               {% endif %}
@@ -109,14 +97,18 @@
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> View and download
+            <span class="app-task-list__section-number">3. </span> Finish
           </h2>
 
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
+              {% if data['school-information-complete'] and data['requirements-complete'] and data['response-complete'] %}
               <a class="app-task-list__task-name" href="preview/">
-                Finish and download your specification
+                View and download specification
               </a>
+              {% else %}
+                View and download specification
+              {% endif %}
             </li>
           </ul>
         </li>
