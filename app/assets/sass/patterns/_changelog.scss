@@ -1,0 +1,38 @@
+.most-recent {
+  border: 1px solid $govuk-border-colour;
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  padding: 15px 10px;
+
+  .govuk-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.version {
+  display: block;
+  color: $govuk-secondary-text-colour;
+  font-weight: normal;
+  font-size: 80%;
+}
+
+@media (min-width: 641px) {
+  .most-recent {
+    padding: 55px 30px 32px;
+  }
+}
+
+details .prototype-write-up {
+  padding: 0 0 45px 0;
+  margin: 0 0 45px 0;
+  border-bottom: 1px solid $govuk-border-colour;
+
+  &:last-of-type {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
 {% block beforeContent %}
   <div class="govuk-breadcrumbs">
     <ol class="govuk-breadcrumbs__list">

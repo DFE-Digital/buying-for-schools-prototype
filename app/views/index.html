@@ -1,6 +1,11 @@
 
 {% extends "layout.html" %}
 
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
@@ -8,19 +13,109 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Prototypes</span>
       <h1 class="govuk-heading-xl">
-        Buying for schools prototype
+        {{ serviceName }}
       </h1>
-      {{ govukButton({
-        text: 'View current version',
-        href: "create-specification/start",
-        classes: "govuk-button--start "
-      }) }}
+
+      <h2 class='govuk-heading-l govuk-visually-hidden'>
+        Latest version
+      </h2>
+
+      {# Start of most recent box #}
+        <div class="most-recent">
+
+  				{# Start of prototype write up #}
+  				<div class="prototype-write-up">
+            {{ govukTag({
+              text: 'Sprint 1',
+              classes: ''
+            }) }}
+
+            <h3 class='govuk-heading-m'>
+              Create a school purchase specification
+              <span class="version">Version 1</span>
+            </h3>
+
+            <h4 class="govuk-heading-s">Feature hypothesis</h4>
+  					<p><a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses#Hypotheses-Hypothesis2–Standardiseprocurementprocess">Hypothesis two &ndash; Standardise procurement process</a></p>
+
+            <h4 class="govuk-heading-s">User need</h4>
+            <p>I want to simplify my procurement specification process, so that I can get best value quickly.</p>
+
+  					<h4 class="govuk-heading-s">Method</h4>
+  					<p>The design will simplify how buyers communicate their requirements to suppliers through a simple &lsquo;specification&rsquo; which asks the questions suppliers need answering.</p>
+
+  					<h4 class="govuk-heading-s">Research notes</h4>
+  					<p>
+  						Findings will go here.
+  					</p>
+
+            {{ govukButton({
+              text: 'View prototype',
+              href: "create-specification/start",
+              classes: "govuk-button--start govuk-!-margin-bottom-0"
+            }) }}
+  				</div>
+  				{# End of prototype write up #}
+
+  			</div>
+  			{# End of most recent box #}
+
+
+
+
+
+
+
+
 
       <h2 class='govuk-heading-l'>
         Version history
       </h2>
-      <p>This is where the version history will go.</p>
+      {# Start of hidden panel #}
+
+			<details class="govuk-details">
+				<summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">Show all sprints</span>
+        </summary>
+				<div class="govuk-details__text">
+
+          <p>No other versions yet, check back soon.</p>
+
+				</div>
+			</details>
+			{# End of hidden panel #}
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://github.com/DFE-Digital/buying-for-schools-prototype">
+                Prototype repository on GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/overview">
+                Buying for schools confluence
+              </a>
+            </li>
+            <li>
+              <a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses">
+                Service and feature level hypotheses
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
 </div>
 
 {% endblock %}
