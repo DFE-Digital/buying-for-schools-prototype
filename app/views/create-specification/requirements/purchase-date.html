@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="type">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="budget" method="post" autocomplete="off">
+
+        {{ govukDateInput({
+          id: "contract-start-date",
+          namePrefix: "purchase-date",
+          fieldset: {
+            legend: {
+              text: "When do you want to complete the purchase?",
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: "For example, 31 3 2018"
+          },
+          "items": [
+            {
+              "name": "day",
+              "classes": "govuk-input--width-2",
+              "value": data['purchase-date-day']
+            },
+            {
+              "name": "month",
+              "classes": "govuk-input--width-2",
+              "value": data['purchase-date-month']
+            },
+            {
+              "name": "year",
+              "classes": "govuk-input--width-4",
+              "value": data['purchase-date-year']
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

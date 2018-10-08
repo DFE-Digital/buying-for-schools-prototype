@@ -13,23 +13,38 @@ router.get('/create-specification*', function(req, res, next){
 
 
 
-// Render markdown for contract requirements on CYA page
-router.post('/create-specification/requirements/check-your-answers', function (req, res){
 
-  req.session.data['contract-requirements-rendered'] = marked(req.session.data['contract-requirements'])
+router.post('/create-specification/requirements/dates', function (req, res){
 
-  res.redirect('/create-specification/requirements/check-your-answers')
+  const type = req.session.data['contract-type']
+
+  if (type == "One-off purchase") {
+    res.render('create-specification/requirements/purchase-date')
+  } else {
+    res.render('create-specification/requirements/service-dates')
+  }
 
 })
+
+
+
+// Render markdown for contract requirements on CYA page
+// router.post('/create-specification/requirements/check-your-answers', function (req, res){
+//
+//   req.session.data['contract-requirements-rendered'] = marked(req.session.data['contract-requirements'])
+//
+//   res.redirect('/create-specification/requirements/check-your-answers')
+//
+// })
 
 // Render markdown for contract requirements on preview page
-router.post('/create-specification/preview/index', function (req, res){
-
-  req.session.data['contract-requirements-rendered'] = marked(req.session.data['contract-requirements'])
-
-  res.redirect('/create-specification/preview/index')
-
-})
+// router.post('/create-specification/preview/index', function (req, res){
+//
+//   req.session.data['contract-requirements-rendered'] = marked(req.session.data['contract-requirements'])
+//
+//   res.redirect('/create-specification/preview/index')
+//
+// })
 
 
 

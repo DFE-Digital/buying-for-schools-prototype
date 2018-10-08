@@ -8,7 +8,6 @@
     <h1 class="govuk-heading-xl">
       {{ data['contract-title'] }}
     </h1>
-    <p class="govuk-body-l">{{ data['contract-description'] }}</p>
 
     <h2 class='govuk-heading-l'>
       Contract summary
@@ -29,7 +28,7 @@
       <dd>{{ data['school-pupils'] }}</dd>
 
       <dt>Budget</dt>
-      <dd>{{ data['budget'] }}</dd>
+      <dd>£{{ data['budget'] }} (excluding VAT)</dd>
 
       {% set contractStart = data['contract-start-date-year'] + "-" + data['contract-start-date-month'] + "-" + data['contract-start-date-day'] %}
       <dt>Start date</dt>
@@ -50,9 +49,10 @@
     <h2 class='govuk-heading-l'>
       Requirements
     </h2>
-    <span>
+    <p>{{ data['contract-description'] }}</p>
+    {# <span>
     {{ data['contract-requirements-rendered'] | safe }}
-    </span>
+    </span> #}
 
     <h2 class='govuk-heading-l'>
       Supplier response

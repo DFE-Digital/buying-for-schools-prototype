@@ -25,7 +25,6 @@
         <h1 class="govuk-heading-l">
           {{ data['contract-title'] }}
         </h1>
-        <p class="govuk-body">{{ data['contract-description'] }}</p>
 
         <h2 class='govuk-heading-m'>
           Contract summary
@@ -46,30 +45,56 @@
           <dd>{{ data['school-pupils'] }}</dd>
 
           <dt>Budget</dt>
-          <dd>{{ data['budget'] }}</dd>
+          <dd>£{{ data['budget'] }} (excluding VAT)</dd>
 
-          {% set contractStart = data['contract-start-date-year'] + "-" + data['contract-start-date-month'] + "-" + data['contract-start-date-day'] %}
-          <dt>Start date</dt>
-          <dd>{{ contractStart | date("D MMMM YYYY") }}</dd>
+          {% if data['contract-type'] == 'One-off purchase' %}
+            <dt>
+              Purchase date
+            </dt>
+            <dd>
+              {% set purchaseDate = data['purchase-date-year'] + "-" + data['purchase-date-month'] + "-" + data['purchase-date-day'] %}
 
-          {% set contractEnd = data['contract-end-date-year'] + "-" + data['contract-end-date-month'] + "-" + data['contract-end-date-day'] %}
-          <dt>End date</dt>
-          <dd>{{ contractEnd | date("D MMMM YYYY") }}</dd>
+              {{ purcasheDate | date("D MMMM YYYY") }}
+            </dd>
+          {% elif data['contract-type'] == 'Ongoing service' %}
+            <dt>
+              Start date
+            </dt>
+            <dd>
+              {% set contractStart = data['contract-start-date-year'] + "-" + data['contract-start-date-month'] + "-" + data['contract-start-date-day'] %}
 
-          {% if data['review-date'] %}
-            {% set contractReview = data['contract-review-date-year'] + "-" + data['contract-review-date-month'] + "-" + data['contract-review-date-day'] %}
+              {{ contractStart | date("D MMMM YYYY") }}
+            </dd>
 
-            <dt>Review date</dt>
-            <dd>{{ contractReview | date("D MMMM YYYY") }}</dd>
-          {% endif %}
+            <dt>
+              End date
+            </dt>
+            <dd>
+              {% set contractEnd = data['contract-end-date-year'] + "-" + data['contract-end-date-month'] + "-" + data['contract-end-date-day'] %}
+
+              {{ contractEnd | date("D MMMM YYYY") }}
+            </dd>
+
+            {% if data['review-date-option'] == 'yes' %}
+              <dt>
+                Review date
+              </dt>
+              <dd>
+                {% set contractReview = data['contract-review-date-year'] + "-" + data['contract-review-date-month'] + "-" + data['contract-review-date-day'] %}
+
+                {{ contractReview | date("D MMMM YYYY") }}
+              </dd>
+            {% endif %}
+          {% else %}{% endif %}
         </dl>
 
         <h2 class='govuk-heading-m'>
           Requirements
         </h2>
-        <span class="govuk-body-s">
+        <p class="govuk-body-s">{{ data['contract-description'] | escape | nl2br }}</p>
+        {# <span class="govuk-body-s">
         {{ data['contract-requirements-rendered'] | safe }}
-        </span>
+        </span> #}
 
         <h2 class='govuk-heading-m'>
           Supplier response

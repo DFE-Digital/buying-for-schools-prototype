@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="../task-list">Back</a>
+  <a class="govuk-back-link" href="type">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -9,17 +9,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class='govuk-heading-xl'>
-        Contract dates
+        Service dates
       </h1>
 
-      <form class="form" action="details" method="post" autocomplete="off">
+      <form class="form" action="budget" method="post" autocomplete="off">
 
         {{ govukDateInput({
           id: "contract-start-date",
           namePrefix: "contract-start-date",
           fieldset: {
             legend: {
-              text: "What is the contract start date?"
+              text: "When do you want the service to start?"
             }
           },
           hint: {
@@ -49,7 +49,7 @@
           namePrefix: "contract-end-date",
           fieldset: {
             legend: {
-              text: "What is the contract end date?"
+              text: "When do you want the service to end?"
             }
           },
           hint: {
@@ -80,7 +80,7 @@
             namePrefix: "contract-review-date",
             fieldset: {
               legend: {
-                text: "What is the contract review date?"
+                text: "When do you want to review the service?"
               }
             },
             hint: {
@@ -106,19 +106,31 @@
           }) }}
         {% endset -%}
 
-        {{ govukCheckboxes({
+        {{ govukRadios({
+          classes: 'govuk-radios--inline',
           idPrefix: 'review-date-option',
           name: 'review-date-option',
+          fieldset: {
+            legend: {
+              text: 'Do you want to add a review date?'
+            }
+          },
+          hint: {
+            text: 'For example, to check that suppliers are meeting goals'
+          },
           items: [
             {
-              value: 'review-date',
-              text: 'Contract has a review date',
-              hint: {
-                text: "Used to check that suppliers are meeting goals"
-              },
+              value: 'yes',
+              text: 'Yes',
+              checked: checked('review-date-option', 'yes'),
               conditional: {
                 html: reviewDateHtml
               }
+            },
+            {
+              value: 'no',
+              text: 'No',
+              checked: checked('review-date-option', 'no')
             }
           ]
         }) }}
