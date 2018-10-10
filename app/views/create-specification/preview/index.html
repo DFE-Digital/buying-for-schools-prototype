@@ -116,12 +116,12 @@
         <h3 class='govuk-heading-s'>
           How to respond
         </h3>
-        <p class="govuk-body-s">{{ data['response-type'] }}</p>
+        <p class="govuk-body-s">{{ data['response-type'] | escape | nl2br }}</p>
 
         <h3 class='govuk-heading-s'>
           Assessment criteria
         </h3>
-        <p class="govuk-body-s">{{ data['response-assessment'] }}</p>
+        <p class="govuk-body-s">{{ data['response-assessment'] | escape | nl2br }}</p>
 
       </div>
     </div>

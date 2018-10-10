@@ -63,7 +63,7 @@
             Response type
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data['response-type'] }}
+            {{ data['response-type'] | escape | nl2br }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="type">
@@ -77,7 +77,7 @@
             Assessment criteria
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data['response-assessment'] }}
+            {{ data['response-assessment'] | escape | nl2br }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="type">
