@@ -51,11 +51,36 @@
   						Findings will go here.
   					</p>
 
-            {{ govukButton({
-              text: 'View prototype',
-              href: "create-specification/start",
-              classes: "govuk-button--start govuk-!-margin-bottom-0"
-            }) }}
+            <form action='create-specification/start' method='post' class='form' autocomplete='off'>
+
+              {{ govukCheckboxes({
+                idPrefix: 'prototype-options',
+                name: 'prototype-options',
+                fieldset: {
+                  legend: {
+                    text: 'Prototype options',
+                    classes: 'govuk-fieldset__legend--s'
+                  }
+                },
+                hint: {
+                  text: ''
+                },
+                items: [
+                  {
+                    value: 'add-data',
+                    text: 'Add sample data',
+                    checked: checked('prototype-options', 'add-data')
+                  }
+                ]
+              }) }}
+
+              {{ govukButton({
+                text: "View prototype",
+                classes: "govuk-button--start govuk-!-margin-bottom-0"
+              }) }}
+
+            </form>
+
   				</div>
   				{# End of prototype write up #}
 
