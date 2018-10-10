@@ -8,7 +8,8 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
-
+  // Disable Chrome autofill
+  $('.govuk-input').attr('autocomplete', 'new-password');
 })
 
 
