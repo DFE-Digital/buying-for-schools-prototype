@@ -54,7 +54,7 @@
             <dd>
               {% set purchaseDate = data['purchase-date-year'] + "-" + data['purchase-date-month'] + "-" + data['purchase-date-day'] %}
 
-              {{ purcasheDate | date("D MMMM YYYY") }}
+              {{ purchaseDate | date("D MMMM YYYY") }}
             </dd>
           {% elif data['contract-type'] == 'Ongoing service' %}
             <dt>
