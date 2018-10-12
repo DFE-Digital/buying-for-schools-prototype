@@ -10,6 +10,11 @@ router.get('/create-specification*', function(req, res, next){
 
   next()
 })
+router.get('/find-supplier*', function(req, res, next){
+  res.locals['serviceName'] = 'Find a supplier for a school'
+
+  next()
+})
 
 
 

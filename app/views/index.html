@@ -28,23 +28,27 @@
   				{# Start of prototype write up #}
   				<div class="prototype-write-up">
             {{ govukTag({
-              text: 'Sprint 1',
+              text: 'Sprint 2',
               classes: ''
             }) }}
 
             <h3 class='govuk-heading-m'>
-              Create a school purchase specification
+              Find a supplier for a school
               <span class="version">Version 1</span>
             </h3>
 
             <h4 class="govuk-heading-s">Feature hypothesis</h4>
-  					<p><a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses#Hypotheses-Hypothesis2–Supportedprocurementprocess">Hypothesis 2 &ndash; Supported procurement process</a></p>
+  					<p>
+              <a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses#Hypotheses-Hypothesis1–Findasupplierwhoiscompliantandgivesagooddeal">Hypothesis 1 &ndash; Find a supplier who is compliant and gives a good deal</a>
+              <br>
+              <a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses#Hypotheses-Hypothesis2–Supportedprocurementprocess">Hypothesis 2 &ndash; Supported/managed procurement process</a>
+            </p>
 
             <h4 class="govuk-heading-s">User need</h4>
-            <p>I want to simplify my procurement specification process, so that I can get best value quickly.</p>
+            <p>I want help finding the best supplier who fits my needs, so that I procure at best value.</p>
 
   					<h4 class="govuk-heading-s">Method</h4>
-  					<p>The design will simplify how buyers communicate their requirements to suppliers through a simple &lsquo;specification&rsquo; which asks the questions suppliers need answering.</p>
+  					<p>The design will simplify how buyers find suppliers by pointing them to the correct procurement method and assisting them, by pointing them to a framework or helping them post a specificiation for tender.</p>
 
   					<h4 class="govuk-heading-s">Research notes</h4>
   					<p>
@@ -106,7 +110,64 @@
         </summary>
 				<div class="govuk-details__text">
 
-          <p>No other versions yet, check back soon.</p>
+          {# Start of prototype write up #}
+  				<div class="prototype-write-up">
+            {{ govukTag({
+              text: 'Sprint 1',
+              classes: ''
+            }) }}
+
+            <h3 class='govuk-heading-m'>
+              Create a school purchase specification
+              <span class="version">Version 1</span>
+            </h3>
+
+            <h4 class="govuk-heading-s">Feature hypothesis</h4>
+  					<p><a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses#Hypotheses-Hypothesis2–Supportedprocurementprocess">Hypothesis 2 &ndash; Supported procurement process</a></p>
+
+            <h4 class="govuk-heading-s">User need</h4>
+            <p>I want to simplify my procurement specification process, so that I can get best value quickly.</p>
+
+  					<h4 class="govuk-heading-s">Method</h4>
+  					<p>The design will simplify how buyers communicate their requirements to suppliers through a simple &lsquo;specification&rsquo; which asks the questions suppliers need answering.</p>
+
+  					<h4 class="govuk-heading-s">Research notes</h4>
+  					<p>
+  						Findings will go here.
+  					</p>
+
+            <form action='create-specification/start' method='post' class='form' autocomplete='off'>
+
+              {{ govukCheckboxes({
+                idPrefix: 'prototype-options',
+                name: 'prototype-options',
+                fieldset: {
+                  legend: {
+                    text: 'Prototype options',
+                    classes: 'govuk-fieldset__legend--s'
+                  }
+                },
+                hint: {
+                  text: ''
+                },
+                items: [
+                  {
+                    value: 'add-data',
+                    text: 'Add sample data',
+                    checked: checked('prototype-options', 'add-data')
+                  }
+                ]
+              }) }}
+
+              {{ govukButton({
+                text: "View prototype",
+                classes: "govuk-button--start govuk-!-margin-bottom-0"
+              }) }}
+
+            </form>
+
+  				</div>
+  				{# End of prototype write up #}
 
 				</div>
 			</details>
