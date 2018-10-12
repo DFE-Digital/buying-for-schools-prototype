@@ -20,6 +20,12 @@ router.get('/find-supplier*', function(req, res, next){
 
 
 
+
+
+
+
+// SPRINT ONE
+
 // On start check prototype options
 router.get('/create-specification/start', function(req, res, next){
   const options = req.session.data['prototype-options']
@@ -84,6 +90,28 @@ router.post('/create-specification/requirements/dates', function (req, res){
 //   res.redirect('/create-specification/preview/index')
 //
 // })
+
+
+
+
+
+
+
+
+
+// SPRINT TWO
+
+// Method routing
+router.post('/find-supplier/method', function (req, res){
+  const budget = req.session.data['budget']
+
+  if (budget < 10000) {
+    res.render('find-supplier/method-low-spend')
+  } else {
+    res.render('find-supplier/method-framework')
+  }
+
+})
 
 
 

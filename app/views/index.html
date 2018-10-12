@@ -55,9 +55,9 @@
   						Findings will go here.
   					</p>
 
-            <form action='create-specification/start' method='post' class='form' autocomplete='off'>
+            <form action='find-supplier/start' method='post' class='form' autocomplete='off'>
 
-              {{ govukCheckboxes({
+              {# {{ govukCheckboxes({
                 idPrefix: 'prototype-options',
                 name: 'prototype-options',
                 fieldset: {
@@ -76,7 +76,7 @@
                     checked: checked('prototype-options', 'add-data')
                   }
                 ]
-              }) }}
+              }) }} #}
 
               {{ govukButton({
                 text: "View prototype",
