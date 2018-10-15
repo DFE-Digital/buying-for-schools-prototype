@@ -34,11 +34,13 @@ router.post('/v1/find-supplier/method', function (req, res){
 // Set service name based on sub folders for different prototypes
 router.get('/v2/find-framework*', function(req, res, next){
   res.locals['serviceName'] = 'Find a framework for a school'
+  res.locals['serviceUrl'] = '/v2/find-framework/start'
 
   next()
 })
 router.get('/v2/find-supplier*', function(req, res, next){
   res.locals['serviceName'] = 'Schools contract finder'
+  res.locals['serviceUrl'] = '/v2/find-supplier/start'
 
   next()
 })
