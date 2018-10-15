@@ -12,31 +12,53 @@
         You should use a framework
       </h1>
 
-      <form class="form" action="details" method="post" autocomplete="off">
+      <p>Frameworks are a type of contract with agreed terms and conditions for buying goods, works or services for your school. You can use them without having to run a full buying process.</p>
 
-        {# <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--xl" for="budget">
-              What&rsquo;s your budget?
-            </label>
-          </h1>
-          <span id="budget-hint" class="govuk-hint">
-            Excluding VAT.
-          </span>
-          <div class="govuk-currency-input">
-            <div class="govuk-currency-input__inner">
-              <span class="govuk-currency-input__inner__unit">£</span>
-              <input class="govuk-input govuk-input--width-10 / govuk-currency-input__inner__input" name="budget" data-non-numeric type="text" id="budget" aria-describedby="budget-hint" pattern="[0-9]\d*(\.\d+)?" value="{{ data['budget'] }}">
-            </div>
-          </div>
-        </div> #}
+      <p>Each framework agreement will have:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>details of the products and services available</li>
+        <li>an agreed pricing structure</li>
+        <li>details of the suppliers</li>
+        <li>instructions on how to buy</li>
+        <li>an agreed set of terms and conditions</li>
+      </ul>
 
-        {# {{ govukButton({
-          text: "Continue",
-          classes: ""
-        }) }} #}
+      <p>Buying from a framework will usually be quicker and easier than getting bids or quotes because the agreements:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have already been through a full competitive tender process</li>
+        <li>have been quality checked</li>
+        <li>are checked to make sure they comply with the law</li>
+        <li>may have draft specifications and help available</li>
+      </ul>
 
-      </form>
+      {{ govukButton({
+        text: 'Find a framework',
+        href: 'framework/category',
+        classes: ''
+      }) }}
+
+      <h2 class='govuk-heading-l'>
+        Running your own buying process
+      </h2>
+
+      <p>If you cannot get what you need through a framework agreement you&rsquo;ll have to run your own buying process. Your school&rsquo;s procurement rules will set the method you need to follow.</p>
+
+      {% if data['budget'] >= 180000 %}
+        {{ govukWarningText({
+          classes: '',
+          text: 'We recommend that you get legal advice if what you are buying is over, or near to, the EU procurement thresholds.',
+          iconFallbackText: 'Warning'
+        }) }}
+
+        <p>EU procurement thresholds are:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>goods &ndash; £181,302</li>
+          <li>works &ndash; £4,551,413</li>
+          <li>most services &ndash; £181,302</li>
+        </ul>
+      {% endif %}
+
+      <p>You can <a href="tender/name">find a supplier by posting your specification</a> to the <a href="#0">Schools Marketplace</a>.</p>
 
     </div>
   </div>

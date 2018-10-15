@@ -114,7 +114,7 @@
   				<div class="prototype-write-up">
             {{ govukTag({
               text: 'Sprint 1',
-              classes: ''
+              classes: 'govuk-!-margin-bottom-4'
             }) }}
 
             <h3 class='govuk-heading-m'>
@@ -138,30 +138,14 @@
 
             <form action='create-specification/start' method='post' class='form' autocomplete='off'>
 
-              {{ govukCheckboxes({
-                idPrefix: 'prototype-options',
-                name: 'prototype-options',
-                fieldset: {
-                  legend: {
-                    text: 'Prototype options',
-                    classes: 'govuk-fieldset__legend--s'
-                  }
-                },
-                hint: {
-                  text: ''
-                },
-                items: [
-                  {
-                    value: 'add-data',
-                    text: 'Add sample data',
-                    checked: checked('prototype-options', 'add-data')
-                  }
-                ]
+              {{ govukInsetText({
+                text: 'You will be asked for the username and password again, they are the same.',
+                classes: ''
               }) }}
 
               {{ govukButton({
-                text: "View prototype",
-                classes: "govuk-button--start govuk-!-margin-bottom-0"
+                text: 'View prototype',
+                href: 'https://buying-for-schools-prototype-1.herokuapp.com/'
               }) }}
 
             </form>

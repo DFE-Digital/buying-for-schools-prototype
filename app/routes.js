@@ -106,9 +106,9 @@ router.post('/find-supplier/method', function (req, res){
   const budget = req.session.data['budget']
 
   if (budget < 10000) {
-    res.render('find-supplier/method-low-spend')
+    res.redirect('/find-supplier/method-low-spend')
   } else {
-    res.render('find-supplier/method-framework')
+    res.redirect('/find-supplier/method-framework')
   }
 
 })
