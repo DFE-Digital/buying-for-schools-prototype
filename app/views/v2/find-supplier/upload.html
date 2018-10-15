@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="type">Back</a>
+  <a class="govuk-back-link" href="date">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -10,20 +10,17 @@
 
       <form class="form" action="check-your-answers" method="post" autocomplete="off">
 
-        {{ govukTextarea({
-          classes: '',
-          name: 'response-assessment',
-          id: 'response-assessment',
-          rows: '5',
+        {{ govukFileUpload({
+          id: 'spec-upload',
+          name: 'spec-upload',
           label: {
-            text: 'How will you assess the suppliers?',
+            html: 'Upload your specification',
             isPageHeading: true,
             classes: "govuk-label--xl"
           },
           hint: {
-            text: 'For example, will there be criteria other than cost?'
-          },
-          value: data['response-assessment']
+            text: 'Your file can be a PDF, DOC, DOCX, RTF or ODT.'
+          }
         }) }}
 
         {{ govukButton({

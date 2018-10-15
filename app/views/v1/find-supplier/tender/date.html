@@ -1,21 +1,21 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="type">Back</a>
+  <a class="govuk-back-link" href="name">Back</a>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="budget" method="post" autocomplete="off">
+      <form class="form" action="upload" method="post" autocomplete="off">
 
         {{ govukDateInput({
-          id: "purchase-date",
-          namePrefix: "purchase-date",
+          id: "specification-date",
+          namePrefix: "specification-date",
           fieldset: {
             legend: {
-              text: "When do you want to complete the purchase?",
+              text: "When do you want to list your specification until?",
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
@@ -27,17 +27,17 @@
             {
               "name": "day",
               "classes": "govuk-input--width-2",
-              "value": data['purchase-date-day']
+              "value": data['specification-date-day']
             },
             {
               "name": "month",
               "classes": "govuk-input--width-2",
-              "value": data['purchase-date-month']
+              "value": data['specification-date-month']
             },
             {
               "name": "year",
               "classes": "govuk-input--width-4",
-              "value": data['purchase-date-year']
+              "value": data['specification-date-year']
             }
           ]
         }) }}

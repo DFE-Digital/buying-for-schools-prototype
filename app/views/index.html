@@ -19,7 +19,7 @@
       </h1>
 
       <h2 class='govuk-heading-l govuk-visually-hidden'>
-        Latest version
+        Latest sprint
       </h2>
 
       {# Start of most recent box #}
@@ -34,7 +34,7 @@
 
             <h3 class='govuk-heading-m'>
               Find a supplier for a school
-              <span class="version">Version 1</span>
+              <span class="version">Version 2</span>
             </h3>
 
             <h4 class="govuk-heading-s">Feature hypothesis</h4>
@@ -50,40 +50,39 @@
   					<h4 class="govuk-heading-s">Method</h4>
   					<p>The design will simplify how buyers find suppliers by pointing them to the correct procurement method and assisting them, by pointing them to a framework or helping them post a specificiation for tender.</p>
 
+            <h4 class="govuk-heading-s">Changes</h4>
+            <p>Different buying methods are covered on a GOV.UK landing page, rather than having to ask the user about budget. The 'Find a framework' and 'Post a specification' flows are then treated as two seperate tools.</p>
+
   					<h4 class="govuk-heading-s">Research notes</h4>
   					<p>
   						Findings will go here.
   					</p>
 
-            <form action='find-supplier/start' method='post' class='form' autocomplete='off'>
+            {{ govukButton({
+              text: "View prototype",
+              href: "v2/landing"
+            }) }}
 
-              {# {{ govukCheckboxes({
-                idPrefix: 'prototype-options',
-                name: 'prototype-options',
-                fieldset: {
-                  legend: {
-                    text: 'Prototype options',
-                    classes: 'govuk-fieldset__legend--s'
-                  }
-                },
-                hint: {
-                  text: ''
-                },
-                items: [
-                  {
-                    value: 'add-data',
-                    text: 'Add sample data',
-                    checked: checked('prototype-options', 'add-data')
-                  }
-                ]
-              }) }} #}
+            <details class="govuk-details govuk-!-margin-bottom-0">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show all versions
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <h3 class='govuk-heading-m'>
+                  Version 1
+                </h3>
 
-              {{ govukButton({
-                text: "View prototype",
-                classes: "govuk-button--start govuk-!-margin-bottom-0"
-              }) }}
+                <h4 class="govuk-heading-s">Research notes</h4>
+                <p>This version wasn&rsquo;t researched with users, after an interanl review it was felt that there were two seperate method journeys and the first section to find method was unnecessary and could be covered on a content page.</p>
 
-            </form>
+                {{ govukButton({
+                  text: 'View prototype',
+                  href: 'v1/find-supplier/start'
+                }) }}
+              </div>
+            </details>
 
   				</div>
   				{# End of prototype write up #}
@@ -100,7 +99,7 @@
 
 
       <h2 class='govuk-heading-l'>
-        Version history
+        Sprint history
       </h2>
       {# Start of hidden panel #}
 

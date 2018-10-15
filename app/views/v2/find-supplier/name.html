@@ -1,28 +1,25 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="../task-list">Back</a>
+  <a class="govuk-back-link" href="start">Back</a>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="contact" method="post" autocomplete="off">
+      <form class="form" action="date" method="post" autocomplete="off">
 
         {{ govukInput({
           label: {
-            text: 'Contact name for the suppliers',
+            html: 'What is the school&rsquo;s name?',
             isPageHeading: true,
             classes: "govuk-label--xl"
           },
-          hint: {
-            text: ''
-          },
-          id: 'contact-name',
-          name: 'contact-name',
+          id: 'school-name',
+          name: 'school-name',
           classes: 'govuk-input--width-30',
-          value: data['contact-name']
+          value: data['school-name']
         }) }}
 
         {{ govukButton({

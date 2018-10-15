@@ -1,22 +1,22 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="../task-list">Back</a>
+  <a class="govuk-back-link" href="category">Back</a>
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="dates" method="post" autocomplete="off">
+      <form class="form" action="confirmation" method="post" autocomplete="off">
 
         {{ govukRadios({
           classes: '',
-          idPrefix: 'contract-type',
-          name: 'contract-type',
+          idPrefix: 'framework-type',
+          name: 'framework-type',
           fieldset: {
             legend: {
-              text: 'Will this be a one-off purchase or ongoing service?',
+              text: 'Are you buying goods or services?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
@@ -26,14 +26,16 @@
           },
           items: [
             {
-              value: 'One-off purchase',
-              text: 'One-off purcahse',
-              checked: checked('contract-type', 'One-off purchase')
+              value: 'Goods',
+              text: 'Goods'
             },
             {
-              value: 'Ongoing service',
-              text: 'Ongoing service',
-              checked: checked('contract-type', 'Ongoing service')
+              value: 'Services',
+              text: 'Services'
+            },
+            {
+              value: 'Both',
+              text: 'Both'
             }
           ]
         }) }}
