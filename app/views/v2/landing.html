@@ -29,56 +29,17 @@
         {{ serviceName }}
       </h1>
 
-      {# <aside class="part-navigation-container" role="complementary">
-        <nav role="navigation" class="gem-c-contents-list  " data-module="track-click" aria-label="Pages in this guide">
-
-          <h2 class="gem-c-contents-list__title govuk-body-s govuk-!-margin-bottom-0">Contents</h2>
-
-          <ol class="gem-c-contents-list__list">
-            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a href="#0">Before you start</a>
-            </li>
-            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed gem-c-contents-list__list-item--active">
-              <a href="#0">Ways to procure goods and services</a>
-            </li>
-            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a href="#0">Work with other schools</a>
-            </li>
-            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a href="#0">Fraud</a>
-            </li>
-            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a href="#0">How to manage your fixed assets</a>
-            </li>
-            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a href="#0">Get help with buying for schools</a>
-            </li>
-          </ol>
-        </nav>
-
-      </aside> #}
-
-    </div>
-  </div>
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
       <h2 class='govuk-heading-l'>
         Ways to procure goods and services
       </h2>
 
-      {# <p class="govuk-body-l">When to buy from a framework and when to get bids or quotes.</p> #}
-
-
-
       <p>There are two main methods for procuring for schools:</p>
       <ol class="govuk-list govuk-list--number">
-         <li><a href="#0">using frameworks</a></li>
-         <li><a href="#0">running your own buying process</a></li>
+         <li><a href="#frameworks">using a framework</a></li>
+         <li><a href="#tender">running your own buying process</a></li>
        </ol>
 
-       <p>DfE recommends schools use frameworks as they offer good value, saving time and money and ensuring compliance with <a href="#0">EU procurement thresholds</a>.</p>
+       <p>DfE recommend that schools use frameworks as they offer good value &ndash; saving time and money and ensuring compliance with <a href="#0">EU procurement thresholds</a>.</p>
 
        {{ govukInsetText({
          html: 'Always follow your school&rsquo;s procurement rules. These may be your school’s own rules, or set by the local authority.'
@@ -86,9 +47,13 @@
 
        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <h3 class='govuk-heading-m govuk-!-margin-top-6'>
+
+
+
+
+      <h2 id="frameworks" class='govuk-heading-l'>
         Using a framework
-      </h3>
+      </h2>
 
       <p>Frameworks are a type of contract with agreed terms and conditions for buying goods, works or services for your school. You can use them without having to run a full buying process.</p>
 
@@ -101,6 +66,10 @@
         <li>an agreed set of terms and conditions</li>
       </ul>
 
+      <h3 class='govuk-heading-m'>
+        Framework benefits
+      </h3>
+
       <p>Buying from a framework will usually be quicker and easier than getting bids or quotes because the agreements:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>have already been through a full competitive tender process</li>
@@ -112,21 +81,29 @@
       {{ govukButton({
         text: 'Find a framework',
         href: 'find-framework/start',
-        classes: 'govuk-button--start'
+        classes: 'govuk-button--start govuk-!-margin-bottom-9'
       }) }}
 
 
 
 
 
-      <h2 class='govuk-heading-m govuk-!-margin-top-6'>
+      <h2 id="tender" class='govuk-heading-l'>
         Running your own buying process
       </h2>
 
-      <p>If you cannot get what you need through a framework agreement you&rsquo;ll have to run your own buying process. Your school&rsquo;s procurement rules will set the method you need to follow.</p>
+      <p>If you cannot get what you need through a framework agreement you&rsquo;ll have to run your own buying process. Your school&rsquo;s procurement rules will set the method you need to follow, but it will usually involve:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>deciding how you will assess the bids</li>
+        <li>getting quotes from at least 3 suppliers</li>
+        <li>assessing all the quotes you get fairly</li>
+        <li>choosing the supplier that offers best value for money</li>
+      </ul>
 
-      <h3 class='govuk-heading-s'>
-        Schools contract finder
+      <p>See <a href="https://www.gov.uk/guidance/buying-for-schools/find-the-right-way-to-buy#running-your-own-buying-process">running your own buying process</a> for more guidance.</p>
+
+      <h3 class='govuk-heading-m'>
+        Finding a supplier
       </h3>
 
       <p>The <a href="#0">schools contract finder</a> allows schools to find suppliers to procure goods and service by posting specifications which suppliers can see.</p>
@@ -137,65 +114,12 @@
         classes: 'govuk-button--start'
       }) }}
 
-      {# <h3 class='govuk-heading-s'>
-        Tenders over the EU procurement threshold
-      </h3>
-
-      {{ govukWarningText({
-        classes: '',
-        text: 'We recommend that you get legal advice if what you are buying is over, or near to, the EU procurement thresholds.',
-        iconFallbackText: 'Warning'
-      }) }}
-
-      <p>EU procurement thresholds are:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>goods &ndash; £181,302</li>
-        <li>works &ndash; £4,551,413</li>
-        <li>most services &ndash; £181,302</li>
-      </ul> #}
-
-
-
-
-      <nav class="gem-c-pagination" role="navigation" aria-label="Pagination">
-        <ul class="gem-c-pagination__list">
-            <li class="gem-c-pagination__item gem-c-pagination__item--previous">
-              <a href="#0" class="gem-c-pagination__link">
-                <span class="gem-c-pagination__link-title">
-                  <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
-                    <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-                  </svg>
-                  <span class="gem-c-pagination__link-text">
-                    Previous
-                  </span>
-                </span>
-                  <span class="govuk-visually-hidden">:</span>
-                  <span class="gem-c-pagination__link-label">Before you start</span>
-              </a>
-            </li>
-            <li class="gem-c-pagination__item gem-c-pagination__item--next">
-              <a href="#0" class="gem-c-pagination__link">
-                <span class="gem-c-pagination__link-title">
-                  <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
-                    <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-                  </svg>
-                  <span class="gem-c-pagination__link-text">
-                    Next
-                  </span>
-                </span>
-                  <span class="govuk-visually-hidden">:</span>
-                  <span class="gem-c-pagination__link-label">Work with other schools</span>
-              </a>
-            </li>
-        </ul>
-      </nav>
-
     </div>
 
     <div class="govuk-grid-column-one-third">
 
-      <aside class="app-related-items gem-c-related-navigation" role="complementary">
-        <h2 class="govuk-heading-s" id="subsection-title">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
           Related content
         </h2>
         <nav role="navigation" aria-labelledby="subsection-title">
