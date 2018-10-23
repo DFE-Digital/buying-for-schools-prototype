@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="category">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="confirmation" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          classes: '',
+          idPrefix: 'framework-type',
+          name: 'framework-type',
+          fieldset: {
+            legend: {
+              text: 'Are you buying goods or services?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'Goods',
+              text: 'Goods'
+            },
+            {
+              value: 'Services',
+              text: 'Services'
+            },
+            {
+              value: 'Both',
+              text: 'Both'
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

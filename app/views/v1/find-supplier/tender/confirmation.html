@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Specification uploaded</h1>
+        <div class="govuk-panel__body">
+          Your specification is now on the Schools Marketplace
+        </div>
+      </div>
+
+      <p>We have sent you a confirmation email.</p>
+
+      <p><a href="#0">View your specification on Schools Marketplace</a></p>
+
+      {% from 'inset-text/macro.njk' import govukInsetText %}
+
+      {{ govukInsetText({
+        text: 'If you need to edit or remove your specification you can use the links in your confirmation email.',
+        classes: ''
+      }) }}
+
+      <p><a href="#0">What did you think of this service?</a> (takes 30 seconds)</p>
+
+
+    </div>
+  </div>
+{% endblock %}

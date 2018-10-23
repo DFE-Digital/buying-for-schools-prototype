@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="category">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="type" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          classes: '',
+          idPrefix: 'framework-sub-category',
+          name: 'framework-sub-category',
+          fieldset: {
+            legend: {
+              text: 'Which sub-category are you buying in?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'Building maintenance',
+              text: 'Building maintenance'
+            },
+            {
+              value: 'Cleaning and waste management',
+              text: 'Cleaning and waste management'
+            },
+            {
+              value: 'Grounds maintenance',
+              text: 'Grounds maintenance'
+            },
+
+            {
+              value: 'Mechanical and electrical',
+              text: 'Mechanical and electrical'
+            },
+            {
+              value: 'Outdoor facilities',
+              text: 'Outdoor facilities'
+            },
+            {
+              value: 'Removals',
+              text: 'Removals'
+            },
+            {
+              value: 'Security',
+              text: 'Security'
+            },
+            {
+              value: 'Signage',
+              text: 'Signage'
+            },
+            {
+              value: 'Vending',
+              text: 'Vending'
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

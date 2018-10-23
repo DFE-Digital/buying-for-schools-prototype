@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#0">Education, training and skills</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#0">School procurement</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <h2 class='govuk-heading-l'>
+        Ways to procure goods and services
+      </h2>
+
+      <p>There are two main methods for procuring for schools:</p>
+      <ol class="govuk-list govuk-list--number">
+         <li><a href="#frameworks">using a framework</a></li>
+         <li><a href="#tender">running your own buying process</a></li>
+       </ol>
+
+       <p>DfE recommend that schools use frameworks as they offer good value &ndash; saving time and money and ensuring compliance with <a href="#0">EU procurement thresholds</a>.</p>
+
+       {{ govukInsetText({
+         html: 'Always follow your school&rsquo;s procurement rules. These may be your school’s own rules, or set by the local authority.'
+       }) }}
+
+       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+
+
+      <h2 id="frameworks" class='govuk-heading-l'>
+        Using a framework
+      </h2>
+
+      <p>Frameworks are a type of contract with agreed terms and conditions for buying goods, works or services for your school. You can use them without having to run a full buying process.</p>
+
+      <p>Each framework agreement will have:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>details of the products and services available</li>
+        <li>an agreed pricing structure</li>
+        <li>details of the suppliers</li>
+        <li>instructions on how to buy</li>
+        <li>an agreed set of terms and conditions</li>
+      </ul>
+
+      <h3 class='govuk-heading-m'>
+        Framework benefits
+      </h3>
+
+      <p>Buying from a framework will usually be quicker and easier than getting bids or quotes because the agreements:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have already been through a full competitive tender process</li>
+        <li>have been quality checked</li>
+        <li>are checked to make sure they comply with the law</li>
+        <li>may have draft specifications and help available</li>
+      </ul>
+
+      {{ govukButton({
+        text: 'Find a framework',
+        href: 'find-framework/start',
+        classes: 'govuk-button--start govuk-!-margin-bottom-9'
+      }) }}
+
+
+
+
+
+      <h2 id="tender" class='govuk-heading-l'>
+        Running your own buying process
+      </h2>
+
+      <p>If you cannot get what you need through a framework agreement you&rsquo;ll have to run your own buying process. Your school&rsquo;s procurement rules will set the method you need to follow, but it will usually involve:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>deciding how you will assess the bids</li>
+        <li>getting quotes from at least 3 suppliers</li>
+        <li>assessing all the quotes you get fairly</li>
+        <li>choosing the supplier that offers best value for money</li>
+      </ul>
+
+      <p>See <a href="#0">running your own buying process</a> for more guidance.</p>
+
+      <h3 class='govuk-heading-m'>
+        Finding a supplier
+      </h3>
+
+      <p>The <a href="#0">schools contract finder</a> allows schools to find suppliers to procure goods and service by posting specifications which suppliers can see.</p>
+
+      {{ govukButton({
+        text: 'Post a specification',
+        href: 'find-supplier/start',
+        classes: 'govuk-button--start'
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#0">
+                Deals for schools
+              </a>
+            </li>
+            <li>
+              <a href="#0">
+                Supporting excellent school resource management
+              </a>
+            </li>
+            <li>
+              <a href="#0">
+                Trends in school spending: 2002 to 2016
+              </a>
+            </li>
+            <li>
+              <a href="#0">
+                School procurement: expression of interest form
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
