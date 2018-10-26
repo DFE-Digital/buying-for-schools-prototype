@@ -8,20 +8,57 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="confirmation" method="post" autocomplete="off">
+      <form class="form" action="sub-category" method="post" autocomplete="off">
 
-        <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--xl" for="v3-framework-autocomplete">
-              What are you looking to buy?
-            </label>
-          </h1>
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters">
-              <div id="v3-framework-autocomplete-container"></div>
-            </div>
-          </div>
-        </div>
+        {{ govukRadios({
+          classes: '',
+          idPrefix: 'framework-category',
+          name: 'framework-category',
+          fieldset: {
+            legend: {
+              text: 'Which category are you buying in?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'Energy and utilities',
+              text: 'Energy and utilities'
+            },
+            {
+              value: 'ICT',
+              text: 'ICT'
+            },
+            {
+              value: 'Printers, copiers and multi-functional devices (MFDs)',
+              text: 'Printers, copiers and multi-functional devices (MFDs)'
+            },
+            {
+              value: 'Insurance',
+              text: 'Insurance'
+            },
+            {
+              value: 'Audit services',
+              text: 'Audit services'
+            },
+            {
+              value: 'Facilities management and estates',
+              text: 'Facilities management and estates'
+            },
+            {
+              value: 'Books and materials',
+              text: 'Books and materials'
+            },
+            {
+              value: 'Recruitment',
+              text: 'Recruitment'
+            }
+          ]
+        }) }}
 
         {{ govukButton({
           text: "Continue",

@@ -1,54 +1,98 @@
 {% extends "layout.html" %}
 
-{% block beforeContent %}
-  <a class="govuk-back-link" href="category">Back</a>
-{% endblock %}
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-xl">Recommended framework</span>
-      <h1 class="govuk-heading-xl">Desktop Hardware</h1>
+      <h1 class="govuk-heading-xl">Building Cleaning Services</h1>
 
-      <p>Based on your answers we think you should use the Crescent Purchasing Consortium (CPC) framework <a href="https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=168">Desktop hardware</a>.</p>
+      <p>Based on your answers we think you should use the Crescent Purchasing Consortium (CPC) framework <a href="https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160">Building Cleaning Services</a>.</p>
 
       <h2 class='govuk-heading-m'>
         What it offers
       </h2>
 
-      <p>This framework is an agreement for the supply of a wide range of ICT equipment and supporting services, which runs until 17 January 2020.</p>
+      <p>The framework offers 19 suppliers over 12 regional lots.</p>
 
-      <p>Products and services include:</p>
+      <p>It includes:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>IT hardware and components (monitors, keyboards, mice, thin clients, and storage).</li>
-        <li>desktop PCs</li>
-        <li>laptops</li>
-        <li>tablets</li>
-        <li>notebooks</li>
-        <li>Apple products (iPads, iPhones, iMacs and accessories)</li>
-        <li>services for hardware installation, maintenance, and staff training</li>
-        <li>IT equipment disposal and recycling, for products including computers, printers, laptops, smart devices, telephony, and cabling</li>
+        <li>janitorial services</li>
+        <li>deep/periodic cleaning</li>
+        <li>high-level cleaning</li>
+        <li>window cleaning</li>
       </ul>
 
       <h2 class='govuk-heading-m'>
         Benefits
       </h2>
-      <p>The framework is quick and easy with online quotes and offers substantial savings on IT brands.</p>
-      <p>Benefits include:</p>
+      <p>Key benefits of the framework are:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>access to a range of well-known and reputable IT brands</li>
-        <li>over 20 specialist ICT hardware suppliers, to help you maximise competition</li>
-        <li>substantial education discounts relative to the market place</li>
-        <li>a quick route to market through direct call-off or mini competition</li>
-        <li>average savings of 18.69% (as at June 2017)</li>
+        <li>quality assured suppliers who have been checked against rigorous selection criteria</li>
+        <li>secure onsite managed cleaning service with DBS-checked personnel</li>
+        <li>compliant route to market through mini-competition</li>
+        <li>full compliance with EU Regulations and the Public Contract Regulations 2015</li>
+        <li>simplified contract management, with expert support from the CPC team</li>
+        <li>comprehensive mini-competition template document including sample specification to assist with the process</li>
       </ul>
 
       {{ govukButton({
         text: 'Continue to CPC to purchase',
-        href: 'https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=168',
-        classes: 'govuk-!-margin-bottom-9'
+        href: 'https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160',
+        classes: 'govuk-!-margin-bottom-0'
       }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class='govuk-heading-m'>
+        Your answers
+      </h2>
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Category
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Facilities management and estates
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="category">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Sub-category
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Cleaning and waste management
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="category">
+              Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Procurement type
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Services
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="type">
+              Change
+            </a>
+          </dd>
+        </div>
+      </dl>
 
 
 

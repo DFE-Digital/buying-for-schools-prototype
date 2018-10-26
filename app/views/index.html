@@ -28,13 +28,13 @@
   				{# Start of prototype write up #}
   				<div class="prototype-write-up">
             {{ govukTag({
-              text: 'Sprint 2',
+              text: 'Sprint 3',
               classes: ''
             }) }}
 
             <h3 class='govuk-heading-m'>
               Find a supplier for a school
-              <span class="version">Version 2</span>
+              <span class="version">Version 3</span>
             </h3>
 
             <h4 class="govuk-heading-s">Feature hypothesis</h4>
@@ -45,44 +45,23 @@
             </p>
 
             <h4 class="govuk-heading-s">User need</h4>
-            <p>I want help finding the best supplier who fits my needs, so that I procure at best value.</p>
+            <p>I want to find a supplier who fits my needs, so that I procure at best value.</p>
 
   					<h4 class="govuk-heading-s">Method</h4>
-  					<p>The design will simplify how buyers find suppliers by pointing them to the correct procurement method and assisting them, by pointing them to a framework or helping them post a specificiation for tender.</p>
+  					<p>The design will simplify how buyers find suppliers by letting them post a specificiation and have suppliers respond in to them, either with frameworks or to quote themselves.</p>
 
             <h4 class="govuk-heading-s">Changes</h4>
-            <p>Different buying methods are covered on a GOV.UK landing page, rather than having to ask the user about budget. The 'Find a framework' and 'Post a specification' flows are then treated as two seperate tools.</p>
+            <p>This version will extend the post a specification route, exploring the service behind it and touching more on how suppliers could repsond and what details the school will get back.</p>
 
-  					<h4 class="govuk-heading-s">Research notes</h4>
+  					<!-- <h4 class="govuk-heading-s">Research notes</h4>
   					<p>
   						Findings will go here.
-  					</p>
+  					</p> -->
 
             {{ govukButton({
               text: "View prototype",
-              href: "v2/landing"
+              href: "v3/landing"
             }) }}
-
-            <details class="govuk-details govuk-!-margin-bottom-0">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Show all versions
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <h3 class='govuk-heading-m'>
-                  Version 1
-                </h3>
-
-                <h4 class="govuk-heading-s">Research notes</h4>
-                <p>This version wasn&rsquo;t researched with users, after an interanl review it was felt that there were two seperate method journeys and the first section to find method was unnecessary and could be covered on a content page.</p>
-
-                {{ govukButton({
-                  text: 'View prototype',
-                  href: 'v1/find-supplier/start'
-                }) }}
-              </div>
-            </details>
 
   				</div>
   				{# End of prototype write up #}
@@ -112,6 +91,79 @@
           {# Start of prototype write up #}
   				<div class="prototype-write-up">
             {{ govukTag({
+              text: 'Sprint 2',
+              classes: 'govuk-!-margin-bottom-4'
+            }) }}
+
+            <h3 class='govuk-heading-m'>
+              Find a supplier for a school
+              <span class="version">Version 2</span>
+            </h3>
+
+            <h4 class="govuk-heading-s">Feature hypothesis</h4>
+            <p>
+              <a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses#Hypotheses-Hypothesis1–Findasupplierwhoiscompliantandgivesagooddeal">Hypothesis 1 &ndash; Find a supplier who is compliant and gives a good deal</a>
+              <br>
+              <a href="https://skillsfundingagency.atlassian.net/wiki/spaces/DBFS/pages/749634172/Hypotheses#Hypotheses-Hypothesis2–Supportedprocurementprocess">Hypothesis 2 &ndash; Supported/managed procurement process</a>
+            </p>
+
+            <h4 class="govuk-heading-s">User need</h4>
+            <p>I want help finding the best supplier who fits my needs, so that I procure at best value.</p>
+
+  					<h4 class="govuk-heading-s">Method</h4>
+  					<p>The design will simplify how buyers find suppliers by pointing them to the correct procurement method and assisting them, by pointing them to a framework or helping them post a specificiation for tender.</p>
+
+            <h4 class="govuk-heading-s">Changes</h4>
+            <p>Different buying methods are covered on a GOV.UK landing page, rather than having to ask the user about budget. The 'Find a framework' and 'Post a specification' flows are then treated as two seperate tools.</p>
+
+  					<h4 class="govuk-heading-s">Research notes</h4>
+  					<p>
+  						Findings will go here.
+  					</p>
+
+            <h4 class="govuk-heading-s">Prototype</h4>
+            {{ govukInsetText({
+              text: 'You will be asked for the username and password again, they are the same.',
+              classes: ''
+            }) }}
+
+            {{ govukButton({
+              text: 'View prototype',
+              href: 'https://buying-for-schools-prototype-2.herokuapp.com/v2/landing'
+            }) }}
+
+            <details class="govuk-details govuk-!-margin-bottom-0">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Show all versions
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <h3 class='govuk-heading-m'>
+                  Version 1
+                </h3>
+
+                <h4 class="govuk-heading-s">Research notes</h4>
+                <p>This version wasn&rsquo;t researched with users, after an interanl review it was felt that there were two seperate method journeys and the first section to find method was unnecessary and could be covered on a content page.</p>
+
+                <h4 class="govuk-heading-s">Prototype</h4>
+                {{ govukButton({
+                  text: 'View prototype',
+                  href: 'https://buying-for-schools-prototype-2.herokuapp.com/v1/find-supplier/start'
+                }) }}
+              </div>
+            </details>
+
+  				</div>
+  				{# End of prototype write up #}
+
+
+
+
+
+          {# Start of prototype write up #}
+  				<div class="prototype-write-up">
+            {{ govukTag({
               text: 'Sprint 1',
               classes: 'govuk-!-margin-bottom-4'
             }) }}
@@ -135,19 +187,16 @@
   						Findings will go here.
   					</p>
 
-            <form action='create-specification/start' method='post' class='form' autocomplete='off'>
+            <h4 class="govuk-heading-s">Prototype</h4>
+            {{ govukInsetText({
+              text: 'You will be asked for the username and password again, they are the same.',
+              classes: ''
+            }) }}
 
-              {{ govukInsetText({
-                text: 'You will be asked for the username and password again, they are the same.',
-                classes: ''
-              }) }}
-
-              {{ govukButton({
-                text: 'View prototype',
-                href: 'https://buying-for-schools-prototype-1.herokuapp.com/'
-              }) }}
-
-            </form>
+            {{ govukButton({
+              text: 'View prototype',
+              href: 'https://buying-for-schools-prototype-1.herokuapp.com/create-specification/start'
+            }) }}
 
   				</div>
   				{# End of prototype write up #}
