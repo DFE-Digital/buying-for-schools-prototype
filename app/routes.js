@@ -4,59 +4,48 @@ const marked = require('marked')
 
 // Add your routes here - above the module.exports line
 
-
-// VERSION 1
-// Set service name based on sub folders for different prototypes
-router.get('/v1/find-supplier*', function(req, res, next){
-  res.locals['serviceName'] = 'Find a supplier for a school'
-
-  next()
-})
-
-// Method routing
-router.post('/v1/find-supplier/method', function (req, res){
-  const budget = req.session.data['budget']
-
-  if (budget < 10000) {
-    res.redirect('/v1/find-supplier/method-low-spend')
-  } else {
-    res.redirect('/v1/find-supplier/method-framework')
-  }
-
-})
-
-
-
-
-
-
-// VERSION 2
-// Set service name based on sub folders for different prototypes
-router.get('/v2/find-framework*', function(req, res, next){
-  res.locals['serviceName'] = 'Find a framework for a school'
-  res.locals['serviceUrl'] = '/v2/find-framework/start'
-
-  next()
-})
-router.get('/v2/find-supplier*', function(req, res, next){
-  res.locals['serviceName'] = 'Schools contract finder'
-  res.locals['serviceUrl'] = '/v2/find-supplier/start'
-
-  next()
-})
-
 // VERSION 3
 // Set service name based on sub folders for different prototypes
-router.get('/v3/find-framework*', function(req, res, next){
-  res.locals['serviceName'] = 'Find a framework for a school'
-  res.locals['serviceUrl'] = '/v2/find-framework/start'
+router.get('/v3*', function(req, res, next){
+  res.locals['serviceName'] = 'Schools Marketplace'
+  res.locals['serviceUrl'] = '/v3/index'
 
   next()
 })
-router.get('/v3/find-supplier*', function(req, res, next){
-  res.locals['serviceName'] = 'Schools contract finder'
-  res.locals['serviceUrl'] = '/v2/find-supplier/start'
 
+// Check complete tags and increase total for task list
+router.get('/v3/create/task-list', function(req, res, next){
+  // Starts at 1 as title is pre-set to that, they have to enter a title to get to the task-list
+  var completeTrue = 1
+
+  if (req.session.data['complete-school'] == "true") {completeTrue++}
+  if (req.session.data['complete-description'] == "true") {completeTrue++}
+  if (req.session.data['complete-upload'] == "true") {completeTrue++}
+
+  res.locals['completeTotal'] = completeTrue
+
+  next()
+})
+
+// Render all opportunities
+router.get('/v3/opportunities/', function (req, res, next) {
+  const data = req.session.data['opportunities']
+
+  res.locals.opportunities = data
+  next()
+})
+
+// Save new opportunities
+router.get('/v3/create/confirmation', function (req, res, next) {
+  const data = req.session.data['opportunities']
+  const newItem = Object.assign({
+    id: Math.floor((Math.random() * 999999)),
+    title: req.session.data['title'],
+    summary: req.session.data['summary'],
+    name: req.session.data['school-name']
+  })
+
+  data.push(newItem)
   next()
 })
 

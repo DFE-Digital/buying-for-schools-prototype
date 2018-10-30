@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+        What do you want to call your requirements?
+      </h1>
+
+      <form action='task-list' method='post' class='form' autocomplete='off'>
+
+        {{ govukCharacterCount({
+          name: "title",
+          id: "title",
+          maxlength: 100,
+          rows: 3,
+          label: {
+            text: ""
+          },
+          hint: {
+            text: "This will help you refer to your requirements when talking to suppliers."
+          },
+          "value": data['title']
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div
+  </div>
+{% endblock %}

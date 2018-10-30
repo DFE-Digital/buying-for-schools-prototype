@@ -22,6 +22,7 @@
 {% from "tag/macro.njk"           import govukTag %}
 {% from "textarea/macro.njk"      import govukTextarea %}
 {% from "warning-text/macro.njk"  import govukWarningText %}
+{% from "character-count/macro.njk" import govukCharacterCount %}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -31,6 +32,22 @@
   Prototype: Buying for schools
 {% endblock %}
 
+{% if data['signedin'] == "true" %}
+  {% set signText %}
+    Sign out
+  {% endset -%}
+  {% set signLink %}
+    #0
+  {% endset -%}
+{% else %}
+  {% set signText %}
+    Sign in
+  {% endset -%}
+  {% set signLink %}
+    /v3/sign-in/index?si-create=false
+  {% endset -%}
+{% endif %}
+
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
@@ -38,7 +55,13 @@
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: serviceUrl,
-    containerClasses: "govuk-width-container"
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: signLink,
+        text: signText
+      }
+    ]
   }) }}
 {% endblock %}
 

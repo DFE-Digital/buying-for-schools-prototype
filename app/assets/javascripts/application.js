@@ -15,52 +15,6 @@ $(document).ready(function () {
 
 
 
-// VERSION 3
-// Autocomplete
-const framework = [
-  'IT hardware and components',
-    'Monitors',
-    'Keyboards',
-    'Mice',
-    'Thin clients',
-    'Storage',
-    'Servers',
-    'Interactive whiteboards',
-  'Software',
-  'Desktop PCs',
-    'Desktop computers',
-  'Laptops',
-  'Tablets',
-  'Notebooks',
-  'Apple products',
-    'iPads',
-    'iPhones',
-    'iMacs',
-    'Macbooks',
-  'Hardware installation',
-    'Computer installation',
-  'Hardware maintenance',
-    'Computer maintenance',
-  'IT recycling',
-  'IT disposal',
-  'Online and Cloud storage solutions',
-  'Network security systems',
-  'Local Area Networks (LAN) virtualisation',
-  'Wireless network systems',
-  'Data backup and archiving solutions',
-  'Network Attached Storage (NAS)',
-  'Storage Area Network (SAN)'
-]
-
-accessibleAutocomplete({
-  element: document.querySelector('#v3-framework-autocomplete-container'),
-  id: 'v3-framework-autocomplete', // To match it to the existing <label>.
-  source: framework
-})
-
-
-
-
 
 
 // Currency input

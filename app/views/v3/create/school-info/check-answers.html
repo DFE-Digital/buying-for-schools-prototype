@@ -28,40 +28,30 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            End date
+            Address
           </dt>
           <dd class="app-check-your-answers__answer">
-            {% set specificationDate = data['specification-date-year'] + "-" + data['specification-date-month'] + "-" + data['specification-date-day'] %}
-
-            {{ specificationDate | date("D MMMM YYYY") }}
+            {{ data['school-address-line-1'] }} {{ data['school-address-line-2'] }} {{ data['school-address-town'] }} {{ data['school-address-county'] }} {{ data['school-address-postcode'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="name">
-              Change
-            </a>
-          </dd>
-        </div>
-
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Specification
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            {{ data['spec-upload'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="upload">
+            <a href="address">
               Change
             </a>
           </dd>
         </div>
       </dl>
 
-      {{ govukButton({
-        text: 'Publish your specification',
-        href: 'confirmation',
-        classes: ''
-      }) }}
+      <form action='../task-list' method='post' class='form' autocomplete='off'>
+        {{ govukInput({
+          name: 'complete-school',
+          value: "true",
+          type: 'hidden'
+        }) }}
+
+        {{ govukButton({
+          text: "Save school information"
+        }) }}
+      </form>
 
     </div>
   </div>

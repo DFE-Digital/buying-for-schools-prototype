@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class='govuk-heading-xl govuk-!-margin-bottom-1'>
+        Supplier opportunities in schools
+      </h1>
+      <p>View requirements for goods and services.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <p>filters</p>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      {% for opportunity in opportunities | reverse %}
+      <h2 class='govuk-heading-m'>
+        {{ opportunity.title }}
+      </h2>
+      <ul class="govuk-list">
+        <li>{{ opportunity.name }}</li>
+        <li>{{ opportunity.address.county }}</li>
+      </ul>
+      <p>{{ opportunity.summary }}</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

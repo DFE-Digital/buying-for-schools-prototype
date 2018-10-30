@@ -1,34 +1,34 @@
 {% extends "layout.html" %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="start">Back</a>
+  {{ govukBackLink({
+    text: "Back",
+    href: "../task-list"
+  }) }}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <form class="form" action="date" method="post" autocomplete="off">
+      <form action='address' method='post' class='form' autocomplete='off'>
 
         {{ govukInput({
           label: {
             html: 'What is the school&rsquo;s name?',
             isPageHeading: true,
-            classes: "govuk-label--xl"
+            classes: 'govuk-label--xl'
           },
           id: 'school-name',
           name: 'school-name',
           classes: 'govuk-input--width-30',
-          value: data['school-name']
+          "value": data['school-name']
         }) }}
 
         {{ govukButton({
-          text: "Continue",
-          classes: ""
+          text: "Continue"
         }) }}
 
       </form>
-
-    </div>
+    </div
   </div>
 {% endblock %}
