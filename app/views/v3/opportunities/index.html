@@ -13,7 +13,7 @@
     </div>
 
     <div class="govuk-grid-column-one-third">
-      <p>filters</p>
+      {% include "includes/filters.html" %}
     </div>
     <div class="govuk-grid-column-two-thirds">
       {% for opportunity in opportunities | reverse %}

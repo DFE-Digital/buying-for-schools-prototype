@@ -153,3 +153,47 @@ $govuk-button-secondary-colour: darken(govuk-colour("grey-3"), 5%);
   border-bottom: 1px solid $govuk-border-colour;
   color: $govuk-secondary-text-colour;
 }
+
+
+
+
+.filter-item {
+  background-color: govuk-colour("grey-3");
+  padding: 5px;
+  margin-bottom: 20px;
+
+  .govuk-form-group {
+    margin-bottom: 0;
+  }
+
+  .govuk-heading-s {
+    margin: 5px 0 10px;
+  }
+
+  .govuk-checkboxes {
+    background-color: white;
+    padding: 5px;
+  }
+  .govuk-checkboxes__input,
+  .govuk-checkboxes__input + .govuk-checkboxes__label::before {
+    width: 20px;
+    height: 20px;
+  }
+  .govuk-checkboxes__item {
+    height: 20px;
+    padding: 0 0 0 20px;
+    min-height: 20px;
+  }
+  .govuk-checkboxes__label {
+    padding: 0 10px 5px;
+    width: 100%;
+  }
+  .govuk-checkboxes__input + .govuk-checkboxes__label::after {
+    border-width: 0 0 3px 3px;
+    top: 4px;
+    left: 4px;
+    width: 9px;
+    height: 5px;
+  }
+
+}

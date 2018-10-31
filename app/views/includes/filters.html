@@ -1,0 +1,61 @@
+<div class="filter-item">
+  <h3 class='govuk-heading-s'>
+    Keyword search
+  </h3>
+  {{ govukInput({
+    id: 'filter-search',
+    name: 'filter-search'
+  }) }}
+</div>
+
+
+
+
+
+<h3 class='govuk-heading-s govuk-!-margin-top-6 govuk-!-margin-bottom-2'>
+  Apply filters
+</h3>
+
+<div class="filter-item">
+  <h3 class='govuk-heading-s'>
+    Status
+  </h3>
+  {{ govukCheckboxes({
+    idPrefix: 'filter-status',
+    name: 'filter-status',
+    items: [
+      {
+        value: 'Open',
+        text: 'Open'
+      },
+      {
+        value: 'Closed',
+        text: 'Closed'
+      }
+    ]
+  }) }}
+</div>
+
+<div class="filter-item">
+  <h3 class='govuk-heading-s'>
+    Location
+  </h3>
+  {{ govukCheckboxes({
+    idPrefix: 'filter-status',
+    name: 'filter-status',
+    items: [
+      { text: 'Scotland' },
+      { text: 'North East England' },
+      { text: 'North West England' },
+      { text: 'Yorkshire and the Humber' },
+      { text: 'East Midlands' },
+      { text: 'West Midlands' },
+      { text: 'East of England' },
+      { text: 'Wales' },
+      { text: 'London' },
+      { text: 'South East England' },
+      { text: 'South West England' },
+      { text: 'Northern Ireland' }
+    ]
+  }) }}
+</div>
