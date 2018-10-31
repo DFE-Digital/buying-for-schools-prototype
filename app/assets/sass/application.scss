@@ -90,3 +90,56 @@ $govuk-global-styles: true;
     color: lighten($govuk-error-colour, 10%);
   }
 }
+
+
+
+
+$govuk-button-secondary-colour: darken(govuk-colour("grey-3"), 5%);
+
+.govuk-button--secondary {
+  background-color: $govuk-button-secondary-colour;
+  color: $govuk-text-colour;
+  box-shadow: 0 2px 0 darken($govuk-button-secondary-colour, 15%);
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $govuk-text-colour;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($govuk-button-secondary-colour, 5%);
+  }
+}
+
+
+
+
+.list-entry {
+    vertical-align: middle;
+    margin-bottom: 15px;
+    position: relative
+}
+
+.list-entry .govuk-form-group {
+  margin-bottom: 15px;
+}
+
+.list-entry-remove {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  position: static;
+}
+
+@media (min-width: 641px) {
+   .list-entry-remove {
+       position: absolute;
+       top: -4px;
+       left: 100%;
+       margin-left: 0.6em
+   }
+}

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../task-list"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action='essential' method='post' class='form' autocomplete='off'>
+
+        {{ govukCheckboxes({
+          idPrefix: 'eval-how',
+          name: 'eval-how',
+          fieldset: {
+            legend: {
+              html: 'How will you assess suppliers?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            html: '
+              <p class="govuk-body-l">Optional</p>
+              <p class="govuk-!-font-weight-bold">You must ask all suppliers that reach the assessment stage for a written proposal.</p>
+              <p>You can only use the methods you choose here, eg if you don&rsquo;t select a case study now, you won&rsquo;t be able to ask for one later.</p>',
+            classes: 'govuk-!-margin-bottom-8'
+          },
+          items: [
+            {
+              value: 'Case study',
+              text: 'Case study',
+              hint: {
+                text: "A case study is a good way to see the work suppliers have done before. It can help you understand whether the people who’ll be working on your project have the right skills and experience."
+              },
+              checked: checked('eval-how', 'Case study')
+            },
+            {
+              value: 'Work history',
+              text: 'Work history',
+              hint: {
+                text: "A work history lists the previous work a supplier has done. It should give you a view of the skills and experience of the team members who’ll be working on your project."
+              },
+              checked: checked('eval-how', 'Work history')
+            },
+            {
+              value: 'Reference',
+              text: 'Reference',
+              hint: {
+                text: "A written reference is a good way of confirming whether a supplier has done the work they’ve said they’ve done. You should always ask for references that relate to a specific timeframe, eg work they’ve done in the last 2 years."
+              },
+              checked: checked('eval-how', 'Reference')
+            },
+            {
+              value: 'Presentation',
+              text: 'Presentation',
+              hint: {
+                text: "A presentation can help you understand a supplier’s approach to delivering an outcome, eg a practical demonstration of a prototype or discovery kick-off meeting."
+              },
+              checked: checked('eval-how', 'Presentation')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div
+  </div>
+{% endblock %}

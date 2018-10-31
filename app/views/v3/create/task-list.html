@@ -85,10 +85,16 @@
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <a class="app-task-list__task-name" href="#">
-                Upload specification and supporting documents
+              {% if data['complete-evaluation'] == "true" %}
+              <a class="app-task-list__task-name" href="evaluate/check-answers">
+                Describe evaluation process
               </a>
-              <!-- <strong class="govuk-tag app-task-list__task-completed">Completed</strong> -->
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="evaluate/how">
+                Describe evaluation process
+              </a>
+              {% endif %}
             </li>
           </ul>
         </li>
@@ -98,9 +104,15 @@
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <a class="app-task-list__task-name" href="confirmation">
+              {% if completeTotal >= 5 %}
+              <a class="app-task-list__task-name" href="publish">
                 Review and publish your requirements
               </a>
+              {% else %}
+              <a class="app-task-list__task-name" href="not-yet">
+                Review and publish your requirements
+              </a>
+              {% endif %}
             </li>
           </ul>
         </li>

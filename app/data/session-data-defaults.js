@@ -23,6 +23,7 @@ module.exports = {
   "complete-school": "false",
   "complete-description": "false",
   "complete-upload": "false",
+  "complete-evaluation": "false",
 
 
 

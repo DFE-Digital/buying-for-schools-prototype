@@ -21,6 +21,7 @@ router.get('/v3/create/task-list', function(req, res, next){
   if (req.session.data['complete-school'] == "true") {completeTrue++}
   if (req.session.data['complete-description'] == "true") {completeTrue++}
   if (req.session.data['complete-upload'] == "true") {completeTrue++}
+  if (req.session.data['complete-evaluation'] == "true") {completeTrue++}
 
   res.locals['completeTotal'] = completeTrue
 

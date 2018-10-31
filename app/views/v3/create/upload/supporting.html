@@ -3,7 +3,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "../task-list"
+    href: "check-answers"
   }) }}
 {% endblock %}
 
@@ -14,10 +14,10 @@
       <form class="form" action="check-answers" method="post" autocomplete="off">
 
         {{ govukFileUpload({
-          id: 'spec-upload',
-          name: 'spec-upload',
+          id: 'supporting-upload',
+          name: 'supporting-upload',
           label: {
-            html: 'Upload your specification',
+            html: 'Upload your supporting document',
             isPageHeading: true,
             classes: "govuk-label--xl"
           },

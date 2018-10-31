@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "task-list"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Publish your requirements and evaluation criteria
+      </h1>
+
+      <p>
+        All requirements are published on the {{ serviceName }} where anyone can see them.
+      </p>
+
+      {% set closingDate = data['closing-date-year'] + "-" + data['closing-date-month'] + "-" + data['closing-date-day'] %}
+      <p>
+        Your requirements will be open until {{ closingDate | date("D MMMM YYYY") }}.
+      </p>
+
+      <p>
+        Supplier questions will be sent to:<br>
+        {{ data['signin-email'] if data['signin-email'] else "your email address" }}
+      </p>
+
+      {{ govukButton({
+        text: 'Publish requirements',
+        href: 'confirmation',
+        classes: 'govuk-!-margin-top-6 govuk-!-margin-bottom-3'
+      }) }}
+      <p>or <a href="task-list">return to task list</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

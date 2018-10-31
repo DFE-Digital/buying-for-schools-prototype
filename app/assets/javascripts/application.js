@@ -10,7 +10,21 @@ $(document).ready(function () {
 
   // Disable Chrome autofill
   $('.govuk-input').attr('autocomplete', 'new-password');
+
+  // show hidden inputs
+  $('.js-showhidden').click(function() {
+    $('.js-hidden').first()
+    .removeClass('js-hidden')
+    .show()
+  })
+
+  $('.list-entry-remove').click(function() {
+    $(this).parent('.list-entry')
+    .addClass('js-hidden')
+    .hide()
+  })
 })
+
 
 
 
