@@ -18,7 +18,7 @@
     <div class="govuk-grid-column-two-thirds">
       {% for opportunity in opportunities | reverse %}
       <h2 class='govuk-heading-m'>
-        {{ opportunity.title }}
+        <a href="{{ opportunity.title }}">{{ opportunity.title }}</a>
       </h2>
       <ul class="govuk-list">
         <li>{{ opportunity.name }}</li>

@@ -57,7 +57,7 @@
             {% if opportunity.published == "true" %}
               <tr class="govuk-table__row">
                 <th class="govuk-table__header" scope="row">
-                  <a href="create/task-list">{{ opportunity.title }}</a>
+                  <a href="opportunities/{{ opportunity.id }}">{{ opportunity.title }}</a>
                 </th>
                 <td class="govuk-table__cell">
                   {{ opportunity.date | date("D MMMM YYYY") }}

@@ -29,10 +29,9 @@ module.exports = {
 
   "opportunities": [
     {
-      "id": "100876",
       "title": "A robust and enduring alarm system installing",
       "summary": "Install a new wired alarm system with the required number of sensors, sounders and master panel. Use the existing sounders and sensors but install a new master alarm panel. Install a new wireless system with the required number of sensors, sounders and master panel.",
-      "date": "2018-10-12",
+      "budget": "20000",
       "name": "St Christophers School",
       "address": {
         "street": "Building A",
@@ -40,23 +39,22 @@ module.exports = {
         "city": "Schooltown",
         "county": "South Schoolshire",
         "postcode": "SK0 0LL"
+      },
+      "date": "2018-10-12",
+      "specification": "st-christophers-alarm-specification.docx",
+      "supporting": "school_energy_policy.PDF",
+      "evaluation": [
+        "Case study",
+        "Presentation"
+      ],
+      "essential": {
+        "one": "Have security clearance",
+        "two": "Provide support after installation"
+      },
+      "nice": {
+        "one": "Work outside of school hours"
       }
     }
-
-    // {
-    //   "id": "100877",
-    //   "title": "A robust and enduring alarm system installing 2",
-    //   "summary": "Install a new wired alarm system with the required number of sensors, sounders and master panel. Use the existing sounders and sensors but install a new master alarm panel. Install a new wireless system with the required number of sensors, sounders and master panel.",
-    //   "date": "2018-10-28"
-    //   "name": "St Christophers School",
-    //   "address": {
-    //     "street": "Building A",
-    //     "street2": "123 School Road",
-    //     "city": "Schooltown",
-    //     "county": "South Schoolshire",
-    //     "postcode": "SK0 0LL"
-    //   }
-    // }
   ]
 
 }

@@ -5,12 +5,12 @@ const marked = require('marked')
 // Add your routes here - above the module.exports line
 
 // VERSION 3
-// Set service name based on sub folders for different prototypes
 router.get('/v3*', function(req, res, next){
+  // Set service name based on sub folders for different prototypes
   res.locals['serviceName'] = 'Schools Marketplace'
   res.locals['serviceUrl'] = '/v3/index'
 
-
+  // Check complete tags and increase total for task list
   // Starts at 1 as title is pre-set to that, they have to enter a title to get to the task-list
   var completeTrue = 1
 
@@ -24,19 +24,26 @@ router.get('/v3*', function(req, res, next){
   next()
 })
 
-// Check complete tags and increase total for task list
-router.get('/v3/create/task-list', function(req, res, next){
-
-
-  next()
-})
-
 // Render all opportunities
 router.get('/v3/opportunities/', function (req, res, next) {
   const data = req.session.data['opportunities']
 
   res.locals.opportunities = data
   next()
+})
+
+// Render individual opportunity
+router.get('/v3/opportunities/:title', function (req, res) {
+  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
+
+  res.locals.opportunity = opportunityToView[0]
+
+  if (opportunityToView == false) {
+    res.render('find/no-match')
+  } else {
+    res.render('v3/opportunities/opportunity')
+  }
+
 })
 
 // Render users requirements
@@ -52,7 +59,6 @@ router.get('/v3/account', function (req, res, next) {
 router.get('/v3/create/confirmation', function (req, res, next) {
   const data = req.session.data['opportunities']
   const newItem = Object.assign({
-    id: Math.floor((Math.random() * 999999)),
     title: req.session.data['title'],
     summary: req.session.data['summary'],
     budget: req.session.data['budget'],
@@ -65,6 +71,8 @@ router.get('/v3/create/confirmation', function (req, res, next) {
       postcode: req.session.data['school-address-postcode'],
     },
     date: req.session.data['closing-date-year'] + "-" + req.session.data['closing-date-month'] + "-" + req.session.data['closing-date-day'],
+    specification: req.session.data['spec-upload'],
+    supporting: req.session.data['supporting-upload'],
     evaluation: req.session.data['eval-how'],
     essential: {
       one: req.session.data['essential-1'],
