@@ -16,6 +16,7 @@
       {% include "includes/filters.html" %}
     </div>
     <div class="govuk-grid-column-two-thirds">
+
       {% for opportunity in opportunities | reverse %}
       <h2 class='govuk-heading-m'>
         <a href="{{ opportunity.title }}">{{ opportunity.title }}</a>
@@ -25,6 +26,7 @@
         <li>{{ opportunity.address.county }}</li>
       </ul>
       <p>{{ opportunity.summary }}</p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       {% endfor %}
     </div>
   </div>
