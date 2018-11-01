@@ -7,7 +7,7 @@ const marked = require('marked')
 // VERSION 3
 router.get('/v3*', function(req, res, next){
   // Set service name based on sub folders for different prototypes
-  res.locals['serviceName'] = 'Eclipse'
+  res.locals['serviceName'] = 'Schools Marketplace'
   res.locals['serviceUrl'] = '/v3/index'
 
   // Check complete tags and increase total for task list
