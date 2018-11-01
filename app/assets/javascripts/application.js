@@ -9,7 +9,7 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
   // Disable Chrome autofill
-  $('.govuk-input').attr('autocomplete', 'new-password');
+  //$('.govuk-input').attr('autocomplete', 'new-password');
 
   // show hidden inputs
   $('.js-showhidden').click(function() {

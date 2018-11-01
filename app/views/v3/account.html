@@ -18,8 +18,8 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col">Title</th>
-            <th class="govuk-table__header" scope="col">Date created</th>
-            <th class="govuk-table__header" scope="col">Tasks completed</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date created</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Tasks completed</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -27,17 +27,17 @@
             <th class="govuk-table__header" scope="row">
               <a href="create/task-list">{{ data['title'] }}</a>
             </th>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ today | date("D MMMM YYYY") }}
             </td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell govuk-table__cell--numeric">
               {{ completeTotal }} of 6
             </td>
           </tr>
         </tbody>
       </table>
       {% else %}
-      <p class="empty-table">You don&rsquo;t have any draft requirements</p>
+      <p class="empty-table">You don&rsquo;t have any draft requirements, <a href="create/">create new requirements</a></p>
       {% endif %}
 
       <h2 class="govuk-heading-m">
@@ -48,8 +48,8 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th class="govuk-table__header" scope="col">Title</th>
-            <th class="govuk-table__header" scope="col">Closing date</th>
-            <th class="govuk-table__header" scope="col">Responses</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Closing date</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Responses</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -57,12 +57,12 @@
             {% if opportunity.published == "true" %}
               <tr class="govuk-table__row">
                 <th class="govuk-table__header" scope="row">
-                  <a href="opportunities/{{ opportunity.id }}">{{ opportunity.title }}</a>
+                  <a href="opportunities/{{ opportunity.title }}">{{ opportunity.title }}</a>
                 </th>
-                <td class="govuk-table__cell">
+                <td class="govuk-table__cell govuk-table__cell--numeric">
                   {{ opportunity.date | date("D MMMM YYYY") }}
                 </td>
-                <td class="govuk-table__cell">
+                <td class="govuk-table__cell govuk-table__cell--numeric">
                   0
                 </td>
               </tr>
@@ -73,6 +73,36 @@
       {% else %}
       <p class="empty-table">You don&rsquo;t have any published requirements</p>
       {% endif %}
+
+      <h2 class="govuk-heading-m">
+        Requirements ready for review
+      </h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Title</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Closing date</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Responses</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for opportunity in opportunities %}
+            {% if opportunity.review == "true" %}
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">
+                  <a href="responses/{{ opportunity.title }}">{{ opportunity.title }}</a>
+                </th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  {{ opportunity.date | date("D MMMM YYYY") }}
+                </td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  {{ opportunity.response }}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
 
       <h2 class="govuk-heading-m">
         Closed requirements

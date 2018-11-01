@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/v3/responses/"+ opportunity.title
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% for response in opportunity.responses %}
+        {% if response.name == responder %}
+
+        <h1 class='govuk-heading-xl govuk-!-margin-bottom-2'>
+          {{ response.name }}
+        </h1>
+
+        {% from 'inset-text/macro.njk' import govukInsetText %}
+
+        {% set contactHTML %}
+          <h2 class='govuk-heading-m'>
+            Contact details
+          </h2>
+          <ul class="govuk-list">
+            <li>{{ response.phone }}</li>
+            <li>{{ response.address }}</li>
+          </ul>
+        {% endset -%}
+
+        {{ govukInsetText({
+          html: contactHTML,
+          classes: 'govuk-!-margin-bottom-9'
+        }) }}
+
+        <h2 class='govuk-heading-l'>
+          Essential skills and experience
+        </h2>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              {{ opportunity.essential.one }}
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ response.essentialone }}
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              {{ opportunity.essential.two }}
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ response.essentialtwo }}
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class='govuk-heading-l'>
+          Nice-to-have skills and experience
+        </h2>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              {{ opportunity.nice.one }}
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ response.niceone }}
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class='govuk-heading-l'>
+          Supplier response
+        </h2>
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Written proposal
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              <a href="#0">{{ response.name | lower | urlencode }}%20proposal.DOCX</a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Reference
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              <a href="#0">{{ response.name | lower | urlencode }}%20references.DOCX</a>
+            </dd>
+          </div>
+        </dl>
+
+        {% endif %}
+      {% endfor %}
+
+      {{ govukButton({
+        text: 'Award to this supplier',
+        href: "#0",
+        classes: "govuk-button--start "
+      }) }}
+    </div>
+  </div>
+{% endblock %}

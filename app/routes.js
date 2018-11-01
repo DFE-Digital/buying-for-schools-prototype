@@ -7,7 +7,7 @@ const marked = require('marked')
 // VERSION 3
 router.get('/v3*', function(req, res, next){
   // Set service name based on sub folders for different prototypes
-  res.locals['serviceName'] = 'Schools Marketplace'
+  res.locals['serviceName'] = 'Eclipse'
   res.locals['serviceUrl'] = '/v3/index'
 
   // Check complete tags and increase total for task list
@@ -26,9 +26,7 @@ router.get('/v3*', function(req, res, next){
 
 // Render all opportunities
 router.get('/v3/opportunities/', function (req, res, next) {
-  const data = req.session.data['opportunities']
-
-  res.locals.opportunities = data
+  res.locals.opportunities = req.session.data['opportunities']
   next()
 })
 
@@ -48,10 +46,7 @@ router.get('/v3/opportunities/:title', function (req, res) {
 
 // Render users requirements
 router.get('/v3/account', function (req, res, next) {
-  const data = req.session.data['opportunities']
-  // .filter(opportunity => opportunity.published === true)
-
-  res.locals.opportunities = data
+  res.locals.opportunities = req.session.data['opportunities']
   next()
 })
 
@@ -134,6 +129,38 @@ router.get('/v3/create/confirmation/:title', function (req, res) {
     res.render('v3/create/confirmation')
   }
 })
+
+
+
+
+
+// Render opportunity for responses
+router.get('/v3/responses/:title', function (req, res) {
+  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
+
+  res.locals.opportunity = opportunityToView[0]
+
+  if (opportunityToView == false) {
+    res.render('find/no-match')
+  } else {
+    res.render('v3/responses/index')
+  }
+})
+
+// Render single responses
+router.get('/v3/responses/:title/:name', function (req, res) {
+  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
+
+  res.locals.opportunity = opportunityToView[0]
+  res.locals.responder = req.params.name
+
+  if (opportunityToView == false) {
+    res.render('find/no-match')
+  } else {
+    res.render('v3/responses/response')
+  }
+})
+
 
 
 
