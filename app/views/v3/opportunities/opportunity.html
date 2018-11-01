@@ -28,6 +28,15 @@
       <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
+            Category
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ opportunity.category }}
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
             Summary
           </dt>
           <dd class="app-check-your-answers__answer">
@@ -35,7 +44,7 @@
           </dd>
         </div>
 
-        {% if opportunity.budget %}
+        <!-- {% if opportunity.budget %}
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Budget
@@ -44,7 +53,7 @@
             £{{ opportunity.budget }}
           </dd>
         </div>
-        {% endif %}
+        {% endif %} -->
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">

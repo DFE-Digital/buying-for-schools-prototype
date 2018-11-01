@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "summary"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action='summary' method='post' class='form' autocomplete='off'>
+
+        {{ govukRadios({
+          idPrefix: 'category',
+          name: 'category',
+          fieldset: {
+            legend: {
+              text: 'Which category will you be buying in?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'Energy and utilities',
+              text: 'Energy and utilities',
+              checked: checked('category', 'Energy and utilities')
+            },
+            {
+              value: 'ICT',
+              text: 'ICT',
+              checked: checked('category', 'ICT')
+            },
+            {
+              value: 'Printers, copiers and multi-functional devices (MFDs)',
+              text: 'Printers, copiers and multi-functional devices (MFDs)',
+              checked: checked('category', 'Printers, copiers and multi-functional devices (MFDs)')
+            },
+            {
+              value: 'Insurance',
+              text: 'Insurance',
+              checked: checked('category', 'Insurance')
+            },
+            {
+              value: 'Audit services',
+              text: 'Audit services',
+              checked: checked('category', 'Audit services')
+            },
+            {
+              value: 'Facilities management and estates',
+              text: 'Facilities management and estates',
+              checked: checked('category', 'Facilities management and estates')
+            },
+            {
+              value: 'Books and materials',
+              text: 'Books and materials',
+              checked: checked('category', 'Books and materials')
+            },
+            {
+              value: 'Recruitment',
+              text: 'Recruitment',
+              checked: checked('category', 'Recruitment')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div
+  </div>
+{% endblock %}

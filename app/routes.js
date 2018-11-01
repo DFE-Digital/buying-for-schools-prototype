@@ -60,6 +60,7 @@ router.get('/v3/create/confirmation', function (req, res, next) {
   const data = req.session.data['opportunities']
   const newItem = Object.assign({
     title: req.session.data['title'],
+    summary: req.session.data['catefory'],
     summary: req.session.data['summary'],
     budget: req.session.data['budget'],
     name: req.session.data['school-name'],
@@ -93,6 +94,7 @@ router.get('/v3/create/confirmation', function (req, res, next) {
   data.push(newItem)
 
   delete req.session.data['title']
+  delete req.session.data['catefory']
   delete req.session.data['summary']
   delete req.session.data['budget']
   delete req.session.data['school-name']

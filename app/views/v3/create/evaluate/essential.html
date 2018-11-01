@@ -24,14 +24,16 @@
         <div class="list-entry">
           {{ govukInput({
             id: 'essential-1',
-            name: 'essential-1'
+            name: 'essential-1',
+            "value": data['essential-1']
           }) }}
         </div>
 
         <div class="list-entry">
           {{ govukInput({
             id: 'essential-2',
-            name: 'essential-2'
+            name: 'essential-2',
+            "value": data['essential-2']
           }) }}
           {{ govukButton({
             text: 'Remove',
@@ -43,7 +45,8 @@
         <div class="list-entry js-hidden" style="display: none">
           {{ govukInput({
             id: 'essential-3',
-            name: 'essential-3'
+            name: 'essential-3',
+            "value": data['essential-3']
           }) }}
           {{ govukButton({
             text: 'Remove',
@@ -54,7 +57,8 @@
         <div class="list-entry js-hidden" style="display: none">
           {{ govukInput({
             id: 'essential-4',
-            name: 'essential-4'
+            name: 'essential-4',
+            "value": data['essential-4']
           }) }}
           {{ govukButton({
             text: 'Remove',
@@ -65,7 +69,8 @@
         <div class="list-entry js-hidden" style="display: none">
           {{ govukInput({
             id: 'essential-5',
-            name: 'essential-5'
+            name: 'essential-5',
+            "value": data['essential-5']
           }) }}
           {{ govukButton({
             text: 'Remove',

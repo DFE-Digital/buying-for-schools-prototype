@@ -45,15 +45,17 @@
           },
           items: [
             {
-              value: 'yes',
+              value: 'Yes',
               text: 'Yes',
               conditional: {
                 html: budgetHTML
-              }
+              },
+              checked: checked('budget-check', 'Yes')
             },
             {
-              value: 'no',
-              text: 'No'
+              value: 'No',
+              text: 'No',
+              checked: checked('budget-check', 'No')
             }
           ]
         }) }}
