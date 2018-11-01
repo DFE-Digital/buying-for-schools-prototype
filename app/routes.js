@@ -56,7 +56,7 @@ router.get('/v3/account', function (req, res, next) {
 })
 
 // Save new opportunities
-router.get('/v3/create/confirmation', function (req, res, next) {
+router.get('/v3/create/confirmation/:title', function (req, res) {
   const data = req.session.data['opportunities']
   const newItem = Object.assign({
     title: req.session.data['title'],
@@ -122,10 +122,18 @@ router.get('/v3/create/confirmation', function (req, res, next) {
   req.session.data['complete-upload'] = "false"
   req.session.data['complete-evaluation'] = "false"
   req.session.data['published'] = "true"
-  next()
+
+
+  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
+
+  res.locals.opportunity = opportunityToView[0]
+
+  if (opportunityToView == false) {
+    res.render('find/no-match')
+  } else {
+    res.render('v3/create/confirmation')
+  }
 })
-
-
 
 
 

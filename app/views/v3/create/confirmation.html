@@ -14,11 +14,14 @@
         </div>
       </div>
 
-      <p>We have sent you a confirmation email.</p>
+      <p><a href="/v3/opportunities/{{ opportunity.title }}">View your opportunity</a>.</p>
 
-      <p><a href="../opportunities/">View opportunities</a>.</p>
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>Your requirements have been published and will be open until {{ opportunity.date | date("D MMMM YYYY") }}. After the closing date you will be able to compare the responses.</p>
+      <p>You can keep track of how many responses you get in <a href="/v3/account">your account</a>.</p>
 
 
+      <p class="govuk-!-margin-top-9"><a href="#0">What did you think of this service?</a> (takes 30 seconds)</p>
 
     </div>
   </div>
