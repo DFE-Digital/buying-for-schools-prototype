@@ -41,18 +41,6 @@
               <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
             </li>
             <li class="app-task-list__item">
-              {% if data['complete-school'] == "true" %}
-              <a class="app-task-list__task-name" href="school-info/check-answers">
-               Provide school information
-              </a>
-              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
-              {% else %}
-              <a class="app-task-list__task-name" href="school-info/name">
-               Provide school information
-              </a>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item">
               {% if data['complete-description'] == "true" %}
               <a class="app-task-list__task-name" href="description/check-answers">
                 Description of what you want
@@ -74,6 +62,19 @@
               {% else %}
               <a class="app-task-list__task-name" href="upload/">
                 Upload specification and supporting documents
+              </a>
+              {% endif %}
+            </li>
+            
+            <li class="app-task-list__item">
+              {% if data['complete-school'] == "true" %}
+              <a class="app-task-list__task-name" href="school-info/check-answers">
+               Provide school information
+              </a>
+              <strong class="govuk-tag app-task-list__task-completed">Completed</strong>
+              {% else %}
+              <a class="app-task-list__task-name" href="school-info/name">
+               Provide school information
               </a>
               {% endif %}
             </li>
