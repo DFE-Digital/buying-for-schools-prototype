@@ -31,6 +31,7 @@ module.exports = {
     // Review requirement with 1 response
     {
       title: "A robust and enduring alarm system installing",
+      category: "Facilities management and estates",
       summary: "Install a new wired alarm system with the required number of sensors, sounders and master panel. Use the existing sounders and sensors but install a new master alarm panel. Install a new wireless system with the required number of sensors, sounders and master panel.",
       budget: "20000",
       name: "St Christophers School",
@@ -73,6 +74,7 @@ module.exports = {
     // Review requirement with 0 response
     {
       title: "Value for money and reliable waste collection service",
+      category: "Facilities management and estates",
       summary: "We are seeking a value for money and reliable waste collection service that includes 1 x 8yrd bin to be collected twice per week (or 2 x 8rd bins to be collected once per week (whichever is the cheaper option), 4 x 1100ltr general waste wheelie bins to be collected once per week, 1 x 1100ltr (or equivalent) plastic recycling bin to be collected once per week, and 1 x 1100ltr (or equivalent) paper and card recycling bin to be collected once per week",
       name: "Thomas Davidson College and Sixth Form",
       address: {
@@ -103,6 +105,7 @@ module.exports = {
     // Review requirement with 18 response
     {
       title: "Caterer to provide a high quality daily catering service to the Students, School Staff and Governors.",
+      category: "Facilities management and estates",
       summary: "The Contractor shall order, supply and pay for the food, beverages and all other provisions and commodities required by the Contractor in order to provide the Service specified in this Contract.",
       name: "Shermer High School",
       address: {
