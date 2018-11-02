@@ -11,6 +11,8 @@ $govuk-global-styles: true;
 
 // Components that aren't in Frontend
 @import "components/cookie-banner";
+@import "components/cards";
+@import "components/pagination";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -22,30 +24,13 @@ $govuk-global-styles: true;
 
 
 
-// Add some basic DL styles
-dl {
-  @include govuk-font($size: 19);
-}
 
-dt {
-  font-weight: bold;
-}
-
-dd {
-    margin: 0;
-    padding: 0 0 0.5em 0;
-  }
-
-
-
-
-.letter {
-  padding: 4em 5em;
-  margin: 0 0 30px 0;
-  border: 1px #dee0e2 solid;
-
-  * {
-    font-family: "Arial", sans-serif;
+// Move sign out link to top right
+.govuk-header__navigation {
+  @include govuk-media-query($from: desktop) {
+    position: absolute;
+    top: 10px;
+    right: 15px;
   }
 }
 
@@ -53,35 +38,163 @@ dd {
 
 
 
+// Marketplace header
+.marketplace-heading {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  padding: 20px 0;
+  background-color: #005ea5;
+  color: white;
+  width: 100%;
+  // height: 155px;
 
-// Default UL to bullet list for rendered markdown
-ul {
-  @extend .govuk-list;
-  @extend .govuk-list--bullet;
+  &__container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include govuk-font($size: 48, $weight: bold);
+  }
+
+  + .govuk-grid-row {
+    margin-top: 155px;
+  }
 }
 
-.letter ul {
-  @include govuk-font($size: 16);
+
+
+
+
+.govuk-list--nav-options {
+  li {
+    margin-bottom: 20px;
+  }
+
+  a {
+    @include govuk-font($size: 24, $weight: bold);
+  }
 }
 
 
 
 
+.link-delete {
+  &:link,
+  &:visited,
+  &:focus {
+    color: $govuk-error-colour;
+  }
 
-.doc-icon {
-  margin-bottom: 1.8em;
-  cursor: pointer;
+  &:hover,
+  &:active {
+    color: lighten($govuk-error-colour, 10%);
+  }
 }
 
-.doc-icon:before {
-  content: '';
-  width: 2em;
-  height: 3em;
-  margin-right: 1em;
-  position: relative;
-  top: 1.3em;
-  display: inline-block;
-  background: govuk-colour("grey-2");
-  box-shadow: 3px  -3px 0 #fff,
-              6px -6px 0 govuk-colour("grey-2");
+
+
+
+$govuk-button-secondary-colour: darken(govuk-colour("grey-3"), 5%);
+
+.govuk-button--secondary {
+  background-color: $govuk-button-secondary-colour;
+  color: $govuk-text-colour;
+  box-shadow: 0 2px 0 darken($govuk-button-secondary-colour, 15%);
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $govuk-text-colour;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($govuk-button-secondary-colour, 5%);
+  }
+}
+
+
+
+
+.list-entry {
+    vertical-align: middle;
+    margin-bottom: 15px;
+    position: relative
+}
+
+.list-entry .govuk-form-group {
+  margin-bottom: 15px;
+}
+
+.list-entry-remove {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  position: static;
+}
+
+@media (min-width: 641px) {
+   .list-entry-remove {
+       position: absolute;
+       top: -4px;
+       left: 100%;
+       margin-left: 0.6em
+   }
+}
+
+
+
+
+.empty-table {
+  padding: 10px 0;
+  border-top: 1px solid $govuk-border-colour;
+  border-bottom: 1px solid $govuk-border-colour;
+  color: $govuk-secondary-text-colour;
+}
+
+
+
+
+.filter-item {
+  background-color: govuk-colour("grey-3");
+  padding: 5px;
+  margin-bottom: 20px;
+
+  .govuk-form-group {
+    margin-bottom: 0;
+  }
+
+  .govuk-heading-s {
+    margin: 5px 0 10px;
+  }
+
+  .govuk-checkboxes {
+    background-color: white;
+    padding: 5px;
+  }
+  .govuk-checkboxes__input,
+  .govuk-checkboxes__input + .govuk-checkboxes__label::before {
+    width: 20px;
+    height: 20px;
+  }
+  .govuk-checkboxes__item {
+    padding: 0 0 0 20px;
+    min-height: 20px;
+  }
+  .govuk-checkboxes__label {
+    padding: 0 10px 5px;
+    width: 100%;
+  }
+  .govuk-checkboxes__input + .govuk-checkboxes__label::after {
+    border-width: 0 0 3px 3px;
+    top: 4px;
+    left: 4px;
+    width: 9px;
+    height: 5px;
+  }
+
 }

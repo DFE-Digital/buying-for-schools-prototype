@@ -1,0 +1,112 @@
+.previous-next-navigation {
+    padding-left: 0;
+    position: relative;
+    overflow: hidden;
+    margin: 60px 0 0;
+    width: 100%
+}
+
+.previous-next-navigation li {
+    font-family: "nta",Arial,sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 20px;
+    line-height: 1.11111;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    float: left
+}
+
+@media (min-width: 641px) {
+    .previous-next-navigation li {
+        font-size:27px;
+        line-height: 1.11111
+    }
+}
+
+.previous-next-navigation li.next {
+    float: right;
+    text-align: right
+}
+
+.previous-next-navigation li.next a {
+    padding: 15px 35px 15px 0
+}
+
+.previous-next-navigation li.next a:before {
+    background: transparent url("/public/images/pagination-arrow-sprite.png") no-repeat -102px -11px;
+    margin: -4px -32px 0 0;
+    display: block;
+    float: right;
+    width: 30px;
+    height: 38px;
+    content: " "
+}
+
+.previous-next-navigation li.previous a {
+    padding: 15px 0 15px 35px
+}
+
+.previous-next-navigation li.previous a:before {
+    background: transparent url("/static/images/pagination-arrow-sprite.png") no-repeat -20px -11px;
+    margin: -4px 0 0 -32px;
+    display: block;
+    float: left;
+    width: 30px;
+    height: 38px;
+    content: " "
+}
+
+.previous-next-navigation li a {
+    display: block;
+    text-decoration: none
+}
+
+.previous-next-navigation li a span {
+    display: block;
+    font-family: "nta",Arial,sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 12px;
+    line-height: 1.25
+}
+
+@media (min-width: 641px) {
+    .previous-next-navigation li a span {
+        font-size:14px;
+        line-height: 1.42857
+    }
+}
+
+.previous-next-navigation li a:focus .page-numbers,.previous-next-navigation li a:hover .page-numbers {
+    text-decoration: underline
+}
+
+.previous-next-navigation li a:hover {
+    background: #f8f8f8
+}
+
+.previous-next-navigation li a:active {
+    background: #dee0e2
+}
+
+@media (min-width: 641px) {
+    .previous-next-navigation li .visuallyhidden {
+        font-family:"nta",Arial,sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 20px;
+        line-height: 1.11111;
+        display: inline-block;
+        position: static
+    }
+}
+
+@media (min-width: 641px) and (min-width: 641px) {
+    .previous-next-navigation li .visuallyhidden {
+        font-size:27px;
+        line-height: 1.11111
+    }
+}

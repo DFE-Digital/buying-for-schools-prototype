@@ -9,54 +9,22 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
   // Disable Chrome autofill
-  $('.govuk-input').attr('autocomplete', 'new-password');
+  //$('.govuk-input').attr('autocomplete', 'new-password');
+
+  // show hidden inputs
+  $('.js-showhidden').click(function() {
+    $('.js-hidden').first()
+    .removeClass('js-hidden')
+    .show()
+  })
+
+  $('.list-entry-remove').click(function() {
+    $(this).parent('.list-entry')
+    .addClass('js-hidden')
+    .hide()
+  })
 })
 
-
-
-
-// VERSION 3
-// Autocomplete
-const framework = [
-  'IT hardware and components',
-    'Monitors',
-    'Keyboards',
-    'Mice',
-    'Thin clients',
-    'Storage',
-    'Servers',
-    'Interactive whiteboards',
-  'Software',
-  'Desktop PCs',
-    'Desktop computers',
-  'Laptops',
-  'Tablets',
-  'Notebooks',
-  'Apple products',
-    'iPads',
-    'iPhones',
-    'iMacs',
-    'Macbooks',
-  'Hardware installation',
-    'Computer installation',
-  'Hardware maintenance',
-    'Computer maintenance',
-  'IT recycling',
-  'IT disposal',
-  'Online and Cloud storage solutions',
-  'Network security systems',
-  'Local Area Networks (LAN) virtualisation',
-  'Wireless network systems',
-  'Data backup and archiving solutions',
-  'Network Attached Storage (NAS)',
-  'Storage Area Network (SAN)'
-]
-
-accessibleAutocomplete({
-  element: document.querySelector('#v3-framework-autocomplete-container'),
-  id: 'v3-framework-autocomplete', // To match it to the existing <label>.
-  source: framework
-})
 
 
 

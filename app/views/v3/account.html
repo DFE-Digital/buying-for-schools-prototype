@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Your account</span>
+      <h1 class="govuk-heading-xl">Joe Bloggs</h1>
+
+      <h2 class="govuk-heading-m">
+        Draft requirements
+      </h2>
+      {% if data['title'] %}
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Title</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Date created</th>
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Tasks completed</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">
+              <a href="create/task-list">{{ data['title'] }}</a>
+            </th>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ today | date("D MMMM YYYY") }}
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              {{ completeTotal }} of 6
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      {% else %}
+      <p class="empty-table">You don&rsquo;t have any draft requirements, <a href="create/">create new requirements</a></p>
+      {% endif %}
+
+      <h2 class="govuk-heading-m">
+        Published requirements
+      </h2>
+      {% if data['published'] %}
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Title</th>
+            <!-- <th class="govuk-table__header govuk-table__header--numeric" scope="col">Closing date</th> -->
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Responses</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for opportunity in opportunities %}
+            {% if opportunity.published == "true" %}
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">
+                  <a href="opportunities/{{ opportunity.title }}">{{ opportunity.title }}</a>
+                </th>
+                <!-- <td class="govuk-table__cell govuk-table__cell--numeric">
+                  {{ opportunity.date | date("D MMMM YYYY") }}
+                </td> -->
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  0
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p class="empty-table">You don&rsquo;t have any published requirements</p>
+      {% endif %}
+
+      <h2 class="govuk-heading-m">
+        Requirements ready for review
+      </h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Title</th>
+            <!-- <th class="govuk-table__header govuk-table__header--numeric" scope="col">Closing date</th> -->
+            <th class="govuk-table__header govuk-table__header--numeric" scope="col">Responses</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for opportunity in opportunities %}
+            {% if opportunity.review == "true" %}
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">
+                  <a href="responses/{{ opportunity.title }}">{{ opportunity.title }}</a>
+                </th>
+                <!-- <td class="govuk-table__cell govuk-table__cell--numeric">
+                  {{ opportunity.date | date("D MMMM YYYY") }}
+                </td> -->
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  {{ opportunity.response }}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h2 class="govuk-heading-m">
+        Closed requirements
+      </h2>
+      <p class="empty-table">You don&rsquo;t have any requirements that are closed</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Account settings
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#0">
+                Change your password
+              </a>
+            </li>
+            <li>
+              <a href="#0">
+                Change your email
+              </a>
+            </li>
+            <li>
+              <a href="#0">
+                Close your account
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

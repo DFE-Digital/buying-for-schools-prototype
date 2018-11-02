@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "check-answers"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-answers" method="post" autocomplete="off">
+
+        {{ govukFileUpload({
+          id: 'supporting-upload',
+          name: 'supporting-upload',
+          label: {
+            html: 'Upload your supporting document',
+            isPageHeading: true,
+            classes: "govuk-label--xl",
+            "value": data['supporting-upload']
+          },
+          hint: {
+            text: 'Your file can be a PDF, DOC, DOCX, RTF or ODT.'
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Upload",
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

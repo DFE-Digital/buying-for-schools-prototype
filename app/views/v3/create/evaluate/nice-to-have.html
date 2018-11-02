@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "essential"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action='check-answers' method='post' class='form' autocomplete='off'>
+
+        <h1 class='govuk-heading-xl govuk-!-margin-bottom-2'>
+          Nice-to-have skills and experience
+        </h1>
+        <p class="govuk-body-l">Optional</p>
+        <p class="govuk-!-margin-top-6">
+          List the skills and experience you&rsquo;d like the supplier to have. If too many suppliers have all the essential skills and experience, use the nice-to-have skills and experience to exclude suppliers.
+        </p>
+
+        <p class="govuk-!-font-weight-bold">The supplier can:</p>
+
+        <div class="list-entry">
+          {{ govukInput({
+            id: 'nice-1',
+            name: 'nice-1',
+            "value": data['nice-1']
+          }) }}
+        </div>
+
+        <div class="list-entry">
+          {{ govukInput({
+            id: 'nice-2',
+            name: 'nice-2',
+            "value": data['nice-2']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+
+        <div class="list-entry js-hidden" style="display: none">
+          {{ govukInput({
+            id: 'nice-3',
+            name: 'nice-3',
+            "value": data['nice-3']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+        <div class="list-entry js-hidden" style="display: none">
+          {{ govukInput({
+            id: 'nice-4',
+            name: 'nice-4',
+            "value": data['nice-4']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+        <div class="list-entry js-hidden" style="display: none">
+          {{ govukInput({
+            id: 'nice-5',
+            name: 'nice-5',
+            "value": data['nice-5']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+
+        <div class="govuk-form-group">
+          {{ govukButton({
+            text: 'Add another',
+            href: '#0',
+            classes: 'govuk-button--secondary js-showhidden'
+          }) }}
+        </div>
+
+        <div class="govuk-form-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+        </div>
+
+      </form>
+    </div
+  </div>
+{% endblock %}

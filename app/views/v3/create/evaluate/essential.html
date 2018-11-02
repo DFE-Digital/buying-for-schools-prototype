@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "how"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action='nice-to-have' method='post' class='form' autocomplete='off'>
+
+        <h1 class='govuk-heading-xl govuk-!-margin-bottom-6'>
+          Essential skills and experience
+        </h1>
+        <p>
+          List all the specific skills or experience the supplier must have. Suppliers who don&rsquo;t meet your essential skills and experience are excluded.
+        </p>
+
+        <p class="govuk-!-font-weight-bold">The supplier must:</p>
+
+        <div class="list-entry">
+          {{ govukInput({
+            id: 'essential-1',
+            name: 'essential-1',
+            "value": data['essential-1']
+          }) }}
+        </div>
+
+        <div class="list-entry">
+          {{ govukInput({
+            id: 'essential-2',
+            name: 'essential-2',
+            "value": data['essential-2']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+
+        <div class="list-entry js-hidden" style="display: none">
+          {{ govukInput({
+            id: 'essential-3',
+            name: 'essential-3',
+            "value": data['essential-3']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+        <div class="list-entry js-hidden" style="display: none">
+          {{ govukInput({
+            id: 'essential-4',
+            name: 'essential-4',
+            "value": data['essential-4']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+        <div class="list-entry js-hidden" style="display: none">
+          {{ govukInput({
+            id: 'essential-5',
+            name: 'essential-5',
+            "value": data['essential-5']
+          }) }}
+          {{ govukButton({
+            text: 'Remove',
+            href: '#0',
+            classes: 'govuk-button--secondary list-entry-remove'
+          }) }}
+        </div>
+
+        <div class="govuk-form-group">
+          {{ govukButton({
+            text: 'Add another',
+            href: '#0',
+            classes: 'govuk-button--secondary js-showhidden'
+          }) }}
+        </div>
+
+        <div class="govuk-form-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+        </div>
+
+      </form>
+    </div
+  </div>
+{% endblock %}

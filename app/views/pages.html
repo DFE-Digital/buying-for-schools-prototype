@@ -1,0 +1,137 @@
+
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">Prototypes</span>
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <h2 class='govuk-heading-l'>
+        Schools Marketplace pages
+      </h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="v3/">Home</a>
+        </li>
+        <li>
+          <a href="v3/opportunities/">Opportunities</a>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="v3/opportunities/Caterer%20to%20provide%20a%20high%20quality%20daily%20catering%20service%20to%20the%20Students,%20School%20Staff%20and%20Governors.">Example opportunity</a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="v3/sign-in/index?si-create=true">Sign in</a>
+        </li>
+
+        <li>
+          <a href="v3/create/">Create</a>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="v3/create/task-list">Task list</a>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="v3/create/school-info/name">School name</a>
+                </li>
+                <li>
+                  <a href="v3/create/school-info/address">School address</a>
+                </li>
+                <li>
+                  <a href="v3/create/school-info/check-answers">Check answers</a>
+                </li>
+              </ul>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="v3/create/description/category">Category</a>
+                </li>
+                <li>
+                  <a href="v3/create/description/summary">Summary</a>
+                </li>
+                <li>
+                  <a href="v3/create/description/date">Date</a>
+                </li>
+                <li>
+                  <a href="v3/create/description/check-answers">Check answers</a>
+                </li>
+              </ul>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="v3/create/upload/">Specification upload</a>
+                </li>
+                <li>
+                  <a href="v3/create/upload/check-answers">Check answers</a>
+                </li>
+                <li>
+                  <a href="v3/create/upload/supporting">Supporting doc upload</a>
+                </li>
+              </ul>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="v3/create/evaluate/how">Assess suppliers</a>
+                </li>
+                <li>
+                  <a href="v3/create/evaluate/essential">Essential skills</a>
+                </li>
+                <li>
+                  <a href="v3/create/evaluate/nice-to-have">Nice to haves</a>
+                </li>
+                <li>
+                  <a href="v3/create/evaluate/check-answers">Check answers</a>
+                </li>
+              </ul>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="v3/create/not-yet">Publish not ready (tasks still to do)</a>
+                </li>
+                <li>
+                  <a href="v3/create/publish">Publish confirm</a>
+                </li>
+                <li>
+                  <a href="v3/create/confirmation/">Confirmation (needs at least a <a href="v3/create/">title</a> entering)</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="v3/account">Account</a>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="v3/responses/A%20robust%20and%20enduring%20alarm%20system%20installing">Responses example with response</a>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  <a href="v3/responses/A%20robust%20and%20enduring%20alarm%20system%20installing/Alarms%20R%20Us%20Limited">Response example</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="v3/responses/Value%20for%20money%20and%20reliable%20waste%20collection%20service">Responses example no responses</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+</div>
+
+{% endblock %}
