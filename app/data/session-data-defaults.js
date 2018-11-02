@@ -229,6 +229,80 @@ module.exports = {
           niceone: "We offer flexible working hours and are happy to arrange the project during school holidays."
         }
       ]
+    },
+
+    // Examples for supplier side
+    {
+      title: "Upgrade school computers",
+      category: "ICT",
+      summary: "We are a small primary school with 250 pupils. We want to replace our current outdated desktop computers with new machines, ideally more portable and interactive.",
+      name: "Willow Park Primary",
+      address: {
+        street: "37  Netherpark Crescent",
+        street2: "",
+        city: "Stearsby",
+        county: "",
+        postcode: "YO6 1NJ"
+      },
+      date: "2019-1-12",
+      specification: "specification.docx",
+      evaluation: [
+        "Case study",
+        "Presentation"
+      ],
+      essential: {
+        two: "Provide support after installation"
+      },
+      published: "false",
+      review: "false"
+    },
+    {
+      title: "Printers and scanners contract",
+      category: "Printers, copiers and multi-functional devices (MFDs)",
+      summary: "We want quotes for a new printer and copier contract. Must include toner and on-going support.",
+      name: "Pine Hills Academy",
+      address: {
+        street: "114  South Crescent",
+        street2: "",
+        city: "Pine Hills",
+        county: "",
+        postcode: "LN12 7PG"
+      },
+      date: "2019-1-14",
+      specification: "specification.docx",
+      evaluation: [
+        "Case study",
+        "Presentation"
+      ],
+      essential: {
+        two: "Provide support after installation"
+      },
+      published: "false",
+      review: "false"
+    },
+    {
+      title: "Supply teacher management",
+      category: "Recruitment",
+      summary: "Looking for suppliers available for hiring of all temporary and fixed term teaching staff.",
+      name: "Greenfield High",
+      address: {
+        street: "75  Church Way",
+        street2: "",
+        city: "Brae",
+        county: "",
+        postcode: "IV24 2NU"
+      },
+      date: "2019-1-14",
+      specification: "specification.docx",
+      evaluation: [
+        "Case study",
+        "Presentation"
+      ],
+      essential: {
+        two: "Provide support after installation"
+      },
+      published: "false",
+      review: "false"
     }
   ]
 
