@@ -12,16 +12,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Publish your requirements and evaluation criteria
+        Publish your advert and evaluation criteria
       </h1>
 
       <p>
-        All requirements are published on the {{ serviceName }} where anyone can see them.
+        We&rsquo;ll publish your advert on the {{ serviceName }} where anyone can see it.
       </p>
 
       {% set closingDate = data['closing-date-year'] + "-" + data['closing-date-month'] + "-" + data['closing-date-day'] %}
       <p>
-        Your requirements will close on {{ closingDate | date("D MMMM YYYY") }}.
+        Your advert will close on {{ closingDate | date("D MMMM YYYY") }}.
       </p>
 
       <p>
@@ -30,7 +30,7 @@
       </p>
 
       {{ govukButton({
-        text: 'Publish requirements',
+        text: 'Publish advert',
         href: 'confirmation/' + data['title'],
         classes: 'govuk-!-margin-top-6 govuk-!-margin-bottom-3'
       }) }}

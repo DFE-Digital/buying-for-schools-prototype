@@ -11,7 +11,7 @@
       <h1 class="govuk-heading-xl">Joe Bloggs</h1>
 
       <h2 class="govuk-heading-m">
-        Draft requirements
+        Draft advert
       </h2>
       {% if data['title'] %}
       <table class="govuk-table">
@@ -37,11 +37,11 @@
         </tbody>
       </table>
       {% else %}
-      <p class="empty-table">You don&rsquo;t have any draft requirements, <a href="create/">create new requirements</a></p>
+      <p class="empty-table">You don&rsquo;t have any draft adverts, <a href="create/">create a new advert</a></p>
       {% endif %}
 
       <h2 class="govuk-heading-m">
-        Published requirements
+        Published adverts
       </h2>
       {% if data['published'] %}
       <table class="govuk-table">
@@ -71,11 +71,11 @@
         </tbody>
       </table>
       {% else %}
-      <p class="empty-table">You don&rsquo;t have any published requirements</p>
+      <p class="empty-table">You don&rsquo;t have any published adverts</p>
       {% endif %}
 
       <h2 class="govuk-heading-m">
-        Requirements ready for review
+        Adverts ready for review
       </h2>
       <table class="govuk-table">
         <thead class="govuk-table__head">
@@ -105,9 +105,9 @@
       </table>
 
       <h2 class="govuk-heading-m">
-        Closed requirements
+        Closed adverts
       </h2>
-      <p class="empty-table">You don&rsquo;t have any requirements that are closed</p>
+      <p class="empty-table">You don&rsquo;t have any closed adverts</p>
 
     </div>
 

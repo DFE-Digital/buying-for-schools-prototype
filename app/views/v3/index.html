@@ -31,14 +31,14 @@
        Find a supplier
       </h2>
 
-      <p>You can use the {{ serviceName }} to help you find a supplier for your school to purchase goods or services.</p>
+      <p>Advertise the things your school wants to buy to potential suppliers.</p>
 
       <h3 class='govuk-heading-m'>
        Before you start
       </h3>
-      <p>You need to write &lsquo;requirements&rsquo; to describe what you want. The supplier can&rsquo;t work for you outside the scope of your written requirements.</p>
+      <p>You need to write an advert describing what you want. Suppliers cannot provide things outside of your advert.</p>
 
-      <p>Your requirements should include:</p>
+      <p>Your advert should include:</p>
       <ul class="govuk-list govuk-list--bullet">
        <li>a precise description of what you need</li>
        <li>an explanation of what it should do, if needed</li>
@@ -57,7 +57,7 @@
         {% endset -%}
       {% endif %}
       {{ govukButton({
-       text: 'Create requirements',
+       text: 'Create an advert',
        href: createLink,
        classes: "govuk-button--start"
       }) }}
