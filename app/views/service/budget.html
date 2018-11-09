@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "method"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action='tender/confirmation' method='post' class='form' autocomplete='off'>
+
+        {{ govukRadios({
+          idPrefix: 'budget',
+          name: 'budget',
+          fieldset: {
+            legend: {
+              text: 'How much are you spending?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: 'Excluding VAT'
+          },
+          items: [
+            {
+              value: 'Under £10,000',
+              text: 'Under £10,000',
+              checked: checked('budget', 'Under £10,000')
+            },
+            {
+              value: '£10,000 to £40,000',
+              text: '£10,000 to £40,000',
+              checked: checked('budget', '£10,000 to £40,000')
+            },
+            {
+              value: 'Over £40,000',
+              text: 'Over £40,000',
+              checked: checked('budget', 'Over £40,000')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div
+  </div>
+{% endblock %}

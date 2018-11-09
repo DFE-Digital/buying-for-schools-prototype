@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['budget'] == 'Under £10,000' %}
+        <h1 class="govuk-heading-xl">Small tender</h1>
+      {% elif data['budget'] == '£10,000 to £40,000' %}
+        <h1 class="govuk-heading-xl">Medium tender</h1>
+      {% elif data['budget'] == 'Over £40,000' %}
+        <h1 class="govuk-heading-xl">Large tender</h1>
+      {% endif %}
+
+    </div>
+  </div>
+{% endblock %}

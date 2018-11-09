@@ -1,0 +1,19 @@
+<h1 class="govuk-heading-xl">
+  Eastern Shires Purchasing Organisation (ESPO) catalogue
+</h1>
+<p>The ESPO catalogue has been used in schools for many years and contains over 25,000 products, of which 4500 are brand new this year, including many additions to the exercise books, curriculum stationery, sports and furniture ranges.</p>
+
+{{ govukInsetText({
+    html: '
+    <p>Before buying from the catalogue you&rsquo;ll need to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://www.espo.org/Registration">create an ESPO account</a></li>
+      <li><a href="https://www.espo.org/Online-Catalogue-Login-Request">request a catalogue login</a></li>
+    </ul>'
+}) }}
+
+{{ govukButton({
+  text: 'View ESPO catalogue',
+  href: 'https://www.espocatalogue.org/WebConnectEPO/',
+  classes: ''
+}) }}
