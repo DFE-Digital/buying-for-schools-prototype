@@ -5,13 +5,13 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
       {% if data['budget'] == 'Under £40,000' %}
         {% include "includes/tender-small.html" %}
-      {% elif data['budget'] == '£40,000 to £1800,000' %}
+      {% elif data['budget'] == '£40,000 to £180,000' %}
         {% include "includes/tender-medium.html" %}
-      {% elif data['budget'] == 'Over £1800,000' %}
+      {% elif data['budget'] == 'Over £180,000' %}
         {% include "includes/tender-large.html" %}
       {% endif %}
 
