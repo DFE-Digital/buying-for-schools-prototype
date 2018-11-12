@@ -3,7 +3,7 @@
 {% block beforeContent %}
 {{ govukBackLink({
   text: "Back",
-  href: "type"
+  href: "category"
 }) }}
 {% endblock %}
 
@@ -11,12 +11,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="check-category" method="post" autocomplete="off">
+      <form class="form" action="method" method="post" autocomplete="off">
 
-        {% if data['type'] == 'Goods' %}
-          {% include "includes/categories-goods.html" %}
-        {% elif data['type'] == 'Service contract' %}
-          {% include "includes/categories-services.html" %}
+        {% if data['category'] == 'Energy and utilities' %}
+          {% include "includes/sub-categories-energy.html" %}
         {% endif %}
 
         {{ govukButton({

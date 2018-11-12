@@ -13,12 +13,14 @@ const marked = require('marked')
 // })
 
 // Check if catalogue
-router.get('/service/check-catalogue', function (req, res) {
+router.get('/service/check-category', function (req, res) {
   const type = req.session.data['type']
   const category = req.session.data['category']
 
   if (type == "Goods" && (category == "ICT" || category == "Office supplies")) {
     res.redirect('/service/catalogue/confirmation')
+  } else if (category == "Energy and utilities") {
+    res.redirect('/service/sub-category')
   } else {
     res.redirect('/service/method')
   }

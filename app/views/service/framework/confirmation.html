@@ -9,30 +9,53 @@
 
       {% if data['category'] == 'Audit services' %}
         {% include "includes/framework-audit.html" %}
+
       {% elif data['category'] == 'Books and materials' %}
         {% include "includes/framework-books.html" %}
+
       {% elif data['category'] == 'Energy and utilities' %}
-        {% include "includes/framework-energy.html" %}
+        {% if data['category-energy'] == 'Electricity' %}
+          {% include "includes/framework-energy-electricity.html" %}
+        {% elif data['category-energy'] == 'Energy efficiency improvements' %}
+          {% include "includes/framework-energy-efficiency.html" %}
+        {% elif data['category-energy'] == 'Loans for energy saving' %}
+          {% include "includes/framework-energy-loans.html" %}
+        {% elif data['category-energy'] == 'Natural gas' %}
+          {% include "includes/framework-energy-gas.html" %}
+        {% elif data['category-energy'] == 'Waste water removal (sewerage)' %}
+          {% include "includes/framework-energy-water.html" %}
+        {% elif data['category-energy'] == 'Water' %}
+          {% include "includes/framework-energy-water.html" %}
+        {% endif %}
+
       {% elif data['category'] == 'Facilities management and estates' %}
         {% if data['type'] == 'Goods' %}
           {% include "includes/framework-fm-goods.html" %}
         {% elif data['type'] == 'Service contract' %}
           {% include "includes/framework-fm.html" %}
         {% endif %}
+
       {% elif data['category'] == 'ICT' %}
         {% include "includes/framework-ict.html" %}
+
       {% elif data['category'] == 'Insurance' %}
         {% include "includes/framework-insurance.html" %}
+
       {% elif data['category'] == 'Leasing services' %}
         {% include "includes/framework-leasing.html" %}
+
       {% elif data['category'] == 'Legal services' %}
         {% include "includes/framework-legal.html" %}
+
       {% elif data['category'] == 'Office supplies' %}
         {% include "includes/framework-office-supplies.html" %}
+
       {% elif data['category'] == 'Printers, copiers and multi-functional devices (MFDs)' %}
         {% include "includes/framework-mfds.html" %}
+
       {% elif data['category'] == 'Professional services' %}
         {% include "includes/framework-professional.html" %}
+
       {% elif data['category'] == 'Recruitment' %}
         {% include "includes/framework-recruitment.html" %}
       {% endif %}

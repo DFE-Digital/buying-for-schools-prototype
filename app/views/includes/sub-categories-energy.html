@@ -1,0 +1,47 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'category-energy',
+  name: 'category-energy',
+  fieldset: {
+    legend: {
+      text: 'What are you looking for within energy and utilities?',
+      isPageHeading: true,
+      classes: 'govuk-fieldset__legend--xl'
+    }
+  },
+  hint: {
+    text: ''
+  },
+  items: [
+    {
+      value: 'Electricity',
+      text: 'Electricity',
+      checked: checked('category-energy', 'Electricity')
+    },
+    {
+      value: 'Energy efficiency improvements',
+      text: 'Energy efficiency improvements',
+      checked: checked('category-energy', 'Energy efficiency improvements')
+    },
+    {
+      value: 'Loans for energy saving',
+      text: 'Loans for energy saving',
+      checked: checked('category-energy', 'Loans for energy saving')
+    },
+    {
+      value: 'Natural gas',
+      text: 'Natural gas',
+      checked: checked('category-energy', 'Natural gas')
+    },
+    {
+      value: 'Waste water removal (sewerage)',
+      text: 'Waste water removal (sewerage)',
+      checked: checked('category-energy', 'Waste water removal (sewerage)')
+    },
+    {
+      value: 'Water',
+      text: 'Water',
+      checked: checked('category-energy', 'Water')
+    }
+  ]
+}) }}
