@@ -7,12 +7,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['budget'] == 'Under £10,000' %}
-        <h1 class="govuk-heading-xl">Small tender</h1>
-      {% elif data['budget'] == '£10,000 to £40,000' %}
-        <h1 class="govuk-heading-xl">Medium tender</h1>
-      {% elif data['budget'] == 'Over £40,000' %}
-        <h1 class="govuk-heading-xl">Large tender</h1>
+      {% if data['budget'] == 'Under £40,000' %}
+        {% include "includes/tender-small.html" %}
+      {% elif data['budget'] == '£40,000 to £1800,000' %}
+        {% include "includes/tender-medium.html" %}
+      {% elif data['budget'] == 'Over £1800,000' %}
+        {% include "includes/tender-large.html" %}
       {% endif %}
 
     </div>

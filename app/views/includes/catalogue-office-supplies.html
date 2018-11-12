@@ -1,0 +1,22 @@
+<span class="govuk-caption-xl">Recommended catalogue</span>
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+  Office supplies
+</h1>
+<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the Eastern Shires Purchasing Organisation (ESPO) <a href="https://www.espocatalogue.org/WebConnectEPO/">office supplies catalogue</a>.</p>
+
+<p>The catalogue has been used in schools for many years and contains over 25,000 products, of which 4500 are brand new this year, including many additions to the exercise books, curriculum stationery, sports and furniture ranges.</p>
+
+{{ govukInsetText({
+    html: '
+    <p>Before buying from the catalogue you&rsquo;ll need to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://www.espo.org/Registration">create an ESPO account</a></li>
+      <li><a href="https://www.espo.org/Online-Catalogue-Login-Request">request a catalogue login</a></li>
+    </ul>'
+}) }}
+
+{{ govukButton({
+  text: 'View ESPO catalogue',
+  href: 'https://www.espocatalogue.org/WebConnectEPO/',
+  classes: ''
+}) }}

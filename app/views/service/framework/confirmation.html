@@ -1,102 +1,41 @@
 {% extends "layout.html" %}
 
-<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{# Adds a class to increase vertical spacing for pages without a back button #}
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Recommended framework</span>
-      <h1 class="govuk-heading-xl">Building Cleaning Services</h1>
-
-      <p>Based on your answers we think you should use the Crescent Purchasing Consortium (CPC) framework <a href="https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160">Building Cleaning Services</a>.</p>
-
-      <h2 class='govuk-heading-m'>
-        What it offers
-      </h2>
-
-      <p>The framework offers 19 suppliers over 12 regional lots.</p>
-
-      <p>It includes:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>janitorial services</li>
-        <li>deep/periodic cleaning</li>
-        <li>high-level cleaning</li>
-        <li>window cleaning</li>
-      </ul>
-
-      <h2 class='govuk-heading-m'>
-        Benefits
-      </h2>
-      <p>Key benefits of the framework are:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>quality assured suppliers who have been checked against rigorous selection criteria</li>
-        <li>secure onsite managed cleaning service with DBS-checked personnel</li>
-        <li>compliant route to market through mini-competition</li>
-        <li>full compliance with EU Regulations and the Public Contract Regulations 2015</li>
-        <li>simplified contract management, with expert support from the CPC team</li>
-        <li>comprehensive mini-competition template document including sample specification to assist with the process</li>
-      </ul>
-
-      {{ govukButton({
-        text: 'Continue to CPC to purchase',
-        href: 'https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160',
-        classes: 'govuk-!-margin-bottom-0'
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-      <h2 class='govuk-heading-m'>
-        Your answers
-      </h2>
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Category
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            Facilities management and estates
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="category">
-              Change
-            </a>
-          </dd>
-        </div>
-
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Sub-category
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            Cleaning and waste management
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="category">
-              Change
-            </a>
-          </dd>
-        </div>
-
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Procurement type
-          </dt>
-          <dd class="app-check-your-answers__answer">
-            Services
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="type">
-              Change
-            </a>
-          </dd>
-        </div>
-      </dl>
-
-
-
-      <p><a href="#0">What did you think of this service?</a> (takes 30 seconds)</p>
+      {% if data['category'] == 'Audit services' %}
+        {% include "includes/framework-audit.html" %}
+      {% elif data['category'] == 'Books and materials' %}
+        {% include "includes/framework-books.html" %}
+      {% elif data['category'] == 'Energy and utilities' %}
+        {% include "includes/framework-energy.html" %}
+      {% elif data['category'] == 'Facilities management and estates' %}
+        {% if data['type'] == 'Goods' %}
+          {% include "includes/framework-fm-goods.html" %}
+        {% elif data['type'] == 'Service contract' %}
+          {% include "includes/framework-fm.html" %}
+        {% endif %}
+      {% elif data['category'] == 'ICT' %}
+        {% include "includes/framework-ict.html" %}
+      {% elif data['category'] == 'Insurance' %}
+        {% include "includes/framework-insurance.html" %}
+      {% elif data['category'] == 'Leasing services' %}
+        {% include "includes/framework-leasing.html" %}
+      {% elif data['category'] == 'Legal services' %}
+        {% include "includes/framework-legal.html" %}
+      {% elif data['category'] == 'Office supplies' %}
+        {% include "includes/framework-office-supplies.html" %}
+      {% elif data['category'] == 'Printers, copiers and multi-functional devices (MFDs)' %}
+        {% include "includes/framework-mfds.html" %}
+      {% elif data['category'] == 'Professional services' %}
+        {% include "includes/framework-professional.html" %}
+      {% elif data['category'] == 'Recruitment' %}
+        {% include "includes/framework-recruitment.html" %}
+      {% endif %}
 
 
     </div>

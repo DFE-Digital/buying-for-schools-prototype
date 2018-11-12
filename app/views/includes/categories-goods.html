@@ -1,0 +1,42 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'category',
+  name: 'category',
+  fieldset: {
+    legend: {
+      text: 'Which category are you buying in?',
+      isPageHeading: true,
+      classes: 'govuk-fieldset__legend--xl'
+    }
+  },
+  hint: {
+    text: ''
+  },
+  items: [
+    {
+      value: 'Books and materials',
+      text: 'Books and materials',
+      checked: checked('category', 'Books and materials')
+    },
+    {
+      value: 'Facilities management and estates',
+      text: 'Facilities management and estates',
+      checked: checked('category', 'Facilities management and estates')
+    },
+    {
+      value: 'ICT',
+      text: 'ICT',
+      checked: checked('category', 'ICT')
+    },
+    {
+      value: 'Office supplies',
+      text: 'Office supplies',
+      checked: checked('category', 'Office supplies')
+    },
+    {
+      value: 'Printers, copiers and multi-functional devices (MFDs)',
+      text: 'Printers, copiers and multi-functional devices (MFDs)',
+      checked: checked('category', 'Printers, copiers and multi-functional devices (MFDs)')
+    }
+  ]
+}) }}
