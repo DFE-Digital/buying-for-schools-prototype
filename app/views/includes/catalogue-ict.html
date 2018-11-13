@@ -2,16 +2,29 @@
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
   Technology
 </h1>
+
 <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the Crown Commercial Services (CCS) <a href="https://purchasingplatform.crowncommercial.gov.uk">technology catalogue</a>.</p>
 
-<p>The catalogue covers hardware, software and related service products and offers schools a flexible and compliant route to market for all their commodity technology product needs; whether it is a single cable or an entire corporate infrastructure.</p>
 
-{{ govukInsetText({
-    html: 'Before buying from the catalogue you&rsquo;ll need to <a href="https://buying.crowncommercial.gov.uk/s/login/SelfRegister">create an account</a>'
-}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-{{ govukButton({
-  text: 'View CCS catalogue',
-  href: 'https://purchasingplatform.crowncommercial.gov.uk',
-  classes: ''
-}) }}
+    <h2 class='govuk-heading-m related-main-content'>
+      What it offers
+    </h2>
+    <p>The catalogue covers hardware, software and related service products and offers schools a flexible and compliant route to market for all their commodity technology product needs; whether it is a single cable or an entire corporate infrastructure.</p>
+
+    {{ govukInsetText({
+        html: 'Before buying from the catalogue you&rsquo;ll need to <a href="https://buying.crowncommercial.gov.uk/s/login/SelfRegister">create an account</a>'
+    }) }}
+
+    {{ govukButton({
+      text: 'View CCS catalogue',
+      href: 'https://purchasingplatform.crowncommercial.gov.uk',
+      classes: ''
+    }) }}
+
+  </div>
+
+  {% include "includes/framework-aside.html" %}
+</div>

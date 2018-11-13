@@ -38,3 +38,20 @@ $govuk-global-styles: true;
 .app-check-your-answers__question {
   font-weight: normal;
 }
+
+
+// Updated related content to match new gov styles
+.app-related-items {
+  border-top: 2px solid #005ea5;
+  padding-top: 15px;
+
+  h3 {
+    border-top: 1px solid #bfc1c3;
+    padding: 15px 0 0;
+    margin: 30px 0 10px;
+  }
+}
+.related-main-content {
+  border-top: 1px solid #bfc1c3;
+  padding-top: 20px;
+}

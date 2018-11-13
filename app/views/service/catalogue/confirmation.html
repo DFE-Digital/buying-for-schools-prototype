@@ -5,7 +5,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
       {% if data['category'] == 'Office supplies' %}
         {% include "includes/catalogue-office-supplies.html" %}
@@ -13,8 +13,10 @@
         {% include "includes/catalogue-ict.html" %}
       {% endif %}
 
-      {% include "includes/answers.html" %}
+    </div>
 
+    <div class="govuk-grid-column-two-thirds">
+      {% include "includes/answers.html" %}
     </div>
   </div>
 {% endblock %}

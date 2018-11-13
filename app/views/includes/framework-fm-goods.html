@@ -2,31 +2,41 @@
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
   Furniture
 </h1>
+
 <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the North East Procurement Organisation (NEPO) <a href="https://www.nepo.org/solutions/furniture">furniture framework</a>.</p>
 
-<h2 class='govuk-heading-m'>
-  What it offers
-</h2>
-<p>The framework offers 7 suppliers over 3 lots.</p>
 
-<p>It includes:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>office furniture</li>
-  <li>educational furniture</li>
-  <li>residential/domestic furniture</li>
-</ul>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-<h2 class='govuk-heading-m'>
-  Benefits
-</h2>
-<p>Key benefits of the framework are:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>may be accessed either via direct award (where the value is less than £25k) or via further competition for larger projects</li>
-  <li>access to a full no obligation design and consultancy service for major projects (e.g. furniture for new school buildings)</li>
-</ul>
+    <h2 class='govuk-heading-m related-main-content'>
+      What it offers
+    </h2>
+    <p>The framework offers 7 suppliers over 3 lots.</p>
 
-{{ govukButton({
-  text: 'Continue to NEPO to view framework',
-  href: 'https://www.nepo.org/solutions/furniture',
-  classes: ''
-}) }}
+    <p>It includes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>office furniture</li>
+      <li>educational furniture</li>
+      <li>residential/domestic furniture</li>
+    </ul>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+    <p>Key benefits of the framework are:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>may be accessed either via direct award (where the value is less than £25k) or via further competition for larger projects</li>
+      <li>access to a full no obligation design and consultancy service for major projects (e.g. furniture for new school buildings)</li>
+    </ul>
+
+    {{ govukButton({
+      text: 'Continue to NEPO to view framework',
+      href: 'https://www.nepo.org/solutions/furniture',
+      classes: ''
+    }) }}
+
+  </div>
+
+  {% include "includes/framework-aside.html" %}
+</div>

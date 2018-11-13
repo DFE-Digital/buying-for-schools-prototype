@@ -2,25 +2,35 @@
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
   NEPRO (Specialist Professional Services)
 </h1>
+
 <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the North East Procurement Organisation (NEPO) framework <a href="https://nepro.org.uk/get-started/buyers/">NEPRO (Specialist Professional Services)</a>.</p>
 
-<h2 class='govuk-heading-m'>
-  What it offers
-</h2>
-<p>Specifically designed for the procurement of professional services by the public sector covering a range of spend areas, including training, construction, ICT and education consultancy. Extensive experience within the local authority and school sector.</p>
 
-<h2 class='govuk-heading-m'>
-  Benefits
-</h2>
-<p>Key benefits of the framework are:</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li>a compliant and effective route to source professional services</li>
-  <li>a wide range of suppliers from large national companies to smaller local and regional operations</li>
-  <li>payment when the work is completed to your satisfaction</li>
-</ul>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-{{ govukButton({
-  text: 'Continue to NEPRO to sign up',
-  href: 'https://nepro.org.uk/get-started/buyers/',
-  classes: ''
-}) }}
+    <h2 class='govuk-heading-m related-main-content'>
+      What it offers
+    </h2>
+    <p>Specifically designed for the procurement of professional services by the public sector covering a range of spend areas, including training, construction, ICT and education consultancy. Extensive experience within the local authority and school sector.</p>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+    <p>Key benefits of the framework are:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a compliant and effective route to source professional services</li>
+      <li>a wide range of suppliers from large national companies to smaller local and regional operations</li>
+      <li>payment when the work is completed to your satisfaction</li>
+    </ul>
+
+    {{ govukButton({
+      text: 'Continue to NEPRO to sign up',
+      href: 'https://nepro.org.uk/get-started/buyers/',
+      classes: ''
+    }) }}
+
+  </div>
+
+  {% include "includes/framework-aside.html" %}
+</div>
