@@ -1,6 +1,5 @@
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-<h2 class="govuk-heading-m" style="margin-bottom: -26px">
+<!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
+<h2 class="govuk-heading-m govuk-!-margin-top-9" style="margin-bottom: -26px">
   Previous answers
 </h2>
 
@@ -8,10 +7,10 @@
   <a href="/start-again">Start again</a>
 </p>
 
-<dl class="app-check-your-answers app-check-your-answers--short">
-  <div class="app-check-your-answers__contents">
+<dl class="app-check-your-answers" style="width: 100%">
+  <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Procurement type
+      Are you buying goods or a service contract?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['type'] }}
@@ -24,9 +23,9 @@
   </div>
 
   {% if data['category'] %}
-  <div class="app-check-your-answers__contents">
+  <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Category
+      Which category are you buying in?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['category'] }}
@@ -39,10 +38,10 @@
   </div>
   {% endif %}
 
-  {% if data['category-energy'] %}
-  <div class="app-check-your-answers__contents">
+  {% if data['category'] == "Energy and utilities" and data['category-energy'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Sub-category
+      What are you looking for within energy and utilities?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['category-energy'] }}
@@ -56,9 +55,9 @@
   {% endif %}
 
   {% if data['method'] %}
-  <div class="app-check-your-answers__contents">
+  <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Method
+      Do you want to use a framework or run your own buying process?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['method'] }}
@@ -72,9 +71,9 @@
   {% endif %}
 
   {% if data['budget'] %}
-  <div class="app-check-your-answers__contents">
+  <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Budget
+      How much are you spending?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['budget'] }}

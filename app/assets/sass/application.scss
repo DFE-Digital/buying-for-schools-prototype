@@ -30,3 +30,11 @@ $govuk-global-styles: true;
 .secondary-text {
   color: $govuk-secondary-text-colour;
 }
+
+// Changes to check your answers to match 'Smart answers'
+.app-check-your-answers {
+  width: 100%;
+}
+.app-check-your-answers__question {
+  font-weight: normal;
+}
