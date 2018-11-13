@@ -12,6 +12,12 @@ const marked = require('marked')
 //   next()
 // })
 
+// On start again delete session data
+router.get('/start-again', function (req, res) {
+  req.session.destroy()
+  res.redirect('/service/index')
+})
+
 // Check if catalogue
 router.get('/service/check-category', function (req, res) {
   const type = req.session.data['type']

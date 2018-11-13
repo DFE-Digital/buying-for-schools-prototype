@@ -1,0 +1,89 @@
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m" style="margin-bottom: -26px">
+  Previous answers
+</h2>
+
+<p class="text-right" style="padding-bottom: 10px">
+  <a href="/start-again">Start again</a>
+</p>
+
+<dl class="app-check-your-answers app-check-your-answers--short">
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Procurement type
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['type'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/type">
+        Change
+      </a>
+    </dd>
+  </div>
+
+  {% if data['category'] %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Category
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['category'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/category">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['category-energy'] %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Sub-category
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['category-energy'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/sub-category">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['method'] %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Method
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['method'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/method">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['budget'] %}
+  <div class="app-check-your-answers__contents">
+    <dt class="app-check-your-answers__question">
+      Budget
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['budget'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/budget">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+</dl>
