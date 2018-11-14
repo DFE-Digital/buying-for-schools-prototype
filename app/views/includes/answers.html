@@ -25,7 +25,7 @@
   {% if data['category'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Which category are you buying in?
+      What are you buying?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['category'] }}
@@ -41,7 +41,7 @@
   {% if data['category'] == "Energy and utilities" and data['category-energy'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      What are you looking for within energy and utilities?
+      What are you looking for in energy and utilities?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['category-energy'] }}
@@ -57,7 +57,7 @@
   {% if data['method'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Do you want to use a framework or run your own buying process?
+      How do you want to buy?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['method'] }}
@@ -73,7 +73,7 @@
   {% if data['budget'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      How much are you spending?
+      Do you think you&rsquo;re going to spend around £180,000 or more?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['budget'] }}

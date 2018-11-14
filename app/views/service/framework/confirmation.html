@@ -20,9 +20,9 @@
           {% include "includes/framework-energy-efficiency.html" %}
         {% elif data['category-energy'] == 'Loans for energy saving' %}
           {% include "includes/framework-energy-loans.html" %}
-        {% elif data['category-energy'] == 'Natural gas' %}
+        {% elif data['category-energy'] == 'Gas' %}
           {% include "includes/framework-energy-gas.html" %}
-        {% elif data['category-energy'] == 'Waste water removal (sewerage)' %}
+        {% elif data['category-energy'] == 'Drains and sewerage' %}
           {% include "includes/framework-energy-water.html" %}
         {% elif data['category-energy'] == 'Water' %}
           {% include "includes/framework-energy-water.html" %}
@@ -36,7 +36,11 @@
         {% endif %}
 
       {% elif data['category'] == 'ICT' %}
-        {% include "includes/framework-ict.html" %}
+        {% if data['type'] == 'Goods' %}
+          {% include "includes/catalogue-ict.html" %}
+        {% elif data['type'] == 'Service contract' %}
+          {% include "includes/framework-ict.html" %}
+        {% endif %}
 
       {% elif data['category'] == 'Insurance' %}
         {% include "includes/framework-insurance.html" %}
@@ -48,7 +52,11 @@
         {% include "includes/framework-legal.html" %}
 
       {% elif data['category'] == 'Office supplies' %}
+      {% if data['type'] == 'Goods' %}
+        {% include "includes/catalogue-office-supplies.html" %}
+      {% elif data['type'] == 'Service contract' %}
         {% include "includes/framework-office-supplies.html" %}
+      {% endif %}
 
       {% elif data['category'] == 'Printers, copiers and multi-functional devices (MFDs)' %}
         {% include "includes/framework-mfds.html" %}

@@ -7,12 +7,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {% if data['budget'] == 'Under £40,000' %}
-        {% include "includes/tender-small.html" %}
-      {% elif data['budget'] == '£40,000 to £180,000' %}
-        {% include "includes/tender-medium.html" %}
-      {% elif data['budget'] == 'Over £180,000' %}
-        {% include "includes/tender-large.html" %}
+      {% if data['budget'] == 'Yes' %}
+        {% include "includes/tender-ojeu.html" %}
+      {% elif data['budget'] == 'No' %}
+        {% include "includes/tender-low.html" %}
       {% endif %}
 
     </div>

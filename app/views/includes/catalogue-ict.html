@@ -1,28 +1,45 @@
-<span class="govuk-caption-xl">Recommended catalogue</span>
+<span class="govuk-caption-xl">Recommended framework</span>
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-  Technology
+  Technology catalogue
 </h1>
 
-<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the Crown Commercial Services (CCS) <a href="https://purchasingplatform.crowncommercial.gov.uk">technology catalogue</a>.</p>
+<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the Crown Commercial Services (CCS) catalogue.</p>
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class='govuk-heading-m related-main-content'>
-      What it offers
+      What they offer
     </h2>
-    <p>The catalogue covers hardware, software and related service products and offers schools a flexible and compliant route to market for all their commodity technology product needs; whether it is a single cable or an entire corporate infrastructure.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>hardware</li>
+      <li>software</li>
+      <li>related services</li>
+    </ul>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>over 350,000 items</li>
+      <li>legally compliant</li>
+    </ul>
 
     {{ govukInsetText({
         html: 'Before buying from the catalogue you&rsquo;ll need to <a href="https://buying.crowncommercial.gov.uk/s/login/SelfRegister">create an account</a>'
     }) }}
 
     {{ govukButton({
-      text: 'View CCS catalogue',
+      text: 'View the catalogue',
       href: 'https://purchasingplatform.crowncommercial.gov.uk',
-      classes: ''
+      classes: 'govuk-!-margin-bottom-8'
     }) }}
+
+    <h2 class='govuk-heading-m'>
+      If they do not have what you want
+    </h2>
+    <p>Check our <a href="https://www.gov.uk/government/publications/deals-for-schools/deals-for-schools">list of other places to buy</a> or <a href="/service/budget">run your own buying process</a>.</p>
 
   </div>
 

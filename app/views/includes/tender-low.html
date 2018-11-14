@@ -1,0 +1,34 @@
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+        Buying things under the EU procurement threshold
+      </h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-6">
+        Based on your answers we think you&rsquo;re buying something below the EU procurement threshold.
+      </p>
+
+      {{ govukInsetText({
+          html: 'Always follow your school&rsquo;s procurement rules. These may be your school&rsquo;s own rules, or set by the local authority.',
+          classes: 'govuk-!-margin-bottom-7'
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Buying low to medium cost things
+      </h2>
+      <p>To buy in this way you should research suppliers and get at least 3 quotes.</p>
+      <p><a href="https://www.gov.uk/guidance/buying-for-schools/buying-low-to-medium-cost-things">See our guidance on buying low to medium cost things</a> </p>
+
+
+      <h2 class="govuk-heading-m">
+        Buying high-value things
+      </h2>
+      <p>To buy in this way you should advertise a contract and run a procurement process.</p>
+      <p><a href="https://www.gov.uk/guidance/buying-for-schools/buying-high-value-things-under-the-eu-procurement-threshold">See our guidance on buying high value things</a></p>
+
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+</div>

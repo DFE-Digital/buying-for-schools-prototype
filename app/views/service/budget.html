@@ -14,11 +14,12 @@
       <form action='tender/confirmation' method='post' class='form' autocomplete='off'>
 
         {{ govukRadios({
+          classes: "govuk-radios--inline",
           idPrefix: 'budget',
           name: 'budget',
           fieldset: {
             legend: {
-              text: 'How much are you spending?',
+              html: 'Do you think you&rsquo;re going to spend around £180,000 or more?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
@@ -28,19 +29,14 @@
           },
           items: [
             {
-              value: 'Under £40,000',
-              text: 'Under £40,000',
-              checked: checked('budget', 'Under £40,000')
+              value: 'Yes',
+              text: 'Yes',
+              checked: checked('budget', 'Yes')
             },
             {
-              value: '£40,000 to £180,000',
-              text: '£40,000 to £180,000',
-              checked: checked('budget', '£40,000 to £180,000')
-            },
-            {
-              value: 'Over £180,000',
-              text: 'Over £180,000',
-              checked: checked('budget', 'Over £180,000')
+              value: 'No',
+              text: 'No',
+              checked: checked('budget', 'No')
             }
           ]
         }) }}

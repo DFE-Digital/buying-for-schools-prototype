@@ -18,21 +18,6 @@ router.get('/start-again', function (req, res) {
   res.redirect('/service/index')
 })
 
-// Check if catalogue
-router.get('/service/check-category', function (req, res) {
-  const type = req.session.data['type']
-  const category = req.session.data['category']
-
-  if (type == "Goods" && (category == "ICT" || category == "Office supplies")) {
-    res.redirect('/service/catalogue/confirmation')
-  } else if (category == "Energy and utilities") {
-    res.redirect('/service/sub-category')
-  } else {
-    res.redirect('/service/method')
-  }
-
-})
-
 
 // Check if framework
 router.get('/service/check-method', function (req, res) {
