@@ -27,7 +27,7 @@ router.get('/service/check-category', function (req, res) {
 router.get('/service/check-method', function (req, res) {
   const method = req.session.data['method']
 
-  if (method == "Framework") {
+  if (method == "Recommended framework") {
     res.redirect('/service/framework/confirmation')
   } else {
     res.redirect('/service/budget')
