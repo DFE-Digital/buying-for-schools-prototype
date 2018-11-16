@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "category"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-method" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          classes: '',
+          idPrefix: 'method',
+          name: 'method',
+          fieldset: {
+            legend: {
+              text: 'How do you want to buy?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            html: 'We have a recommended framework. Frameworks are a type of contract with agreed terms and conditions. You can use them without having to run a full buying process.'
+          },
+          items: [
+            {
+                value: 'Recommended framework',
+                text: 'Recommended framework',
+                checked: checked('method', 'Recommended framework')
+            },
+            {
+              value: 'Run your own buying process',
+              text: 'Run your own buying process',
+              checked: checked('method', 'Run your own buying process')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+  </div>
+{% endblock %}

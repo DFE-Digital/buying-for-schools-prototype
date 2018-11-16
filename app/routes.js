@@ -4,162 +4,37 @@ const marked = require('marked')
 
 // Add your routes here - above the module.exports line
 
-// VERSION 3
-router.get('/v3*', function(req, res, next){
-  // Set service name based on sub folders for different prototypes
-  res.locals['serviceName'] = 'Schools Marketplace'
-  res.locals['serviceUrl'] = '/v3/index'
 
-  // Check complete tags and increase total for task list
-  // Starts at 1 as title is pre-set to that, they have to enter a title to get to the task-list
-  var completeTrue = 1
-
-  if (req.session.data['complete-school'] == "true") {completeTrue++}
-  if (req.session.data['complete-description'] == "true") {completeTrue++}
-  if (req.session.data['complete-upload'] == "true") {completeTrue++}
-  if (req.session.data['complete-evaluation'] == "true") {completeTrue++}
-
-  res.locals['completeTotal'] = completeTrue
-
-  next()
+// On start again delete session data
+router.get('/start-again', function (req, res) {
+  req.session.destroy()
+  res.redirect('/service/index')
 })
 
-// Render all opportunities
-router.get('/v3/opportunities/', function (req, res, next) {
-  res.locals.opportunities = req.session.data['opportunities']
-  next()
-})
+// Check if catalogue
+router.get('/service/check-category', function (req, res) {
+  const category = req.session.data['category']
 
-// Render individual opportunity
-router.get('/v3/opportunities/:title', function (req, res) {
-  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
-
-  res.locals.opportunity = opportunityToView[0]
-
-  if (opportunityToView == false) {
-    res.render('find/no-match')
+  if (category == "Energy and utilities") {
+    res.redirect('/service/sub-category')
   } else {
-    res.render('v3/opportunities/opportunity')
+    res.redirect('/service/method')
   }
 
 })
 
-// Render users requirements
-router.get('/v3/account', function (req, res, next) {
-  res.locals.opportunities = req.session.data['opportunities']
-  next()
-})
+// Check if framework
+router.get('/service/check-method', function (req, res) {
+  const method = req.session.data['method']
 
-// Save new opportunities
-router.get('/v3/create/confirmation/:title', function (req, res) {
-  const data = req.session.data['opportunities']
-  const newItem = Object.assign({
-    title: req.session.data['title'],
-    summary: req.session.data['category'],
-    summary: req.session.data['summary'],
-    budget: req.session.data['budget'],
-    name: req.session.data['school-name'],
-    address: {
-      street: req.session.data['school-address-line-1'],
-      street2: req.session.data['school-address-line-2'],
-      city: req.session.data['school-address-town'],
-      county: req.session.data['school-address-county'],
-      postcode: req.session.data['school-address-postcode'],
-    },
-    date: req.session.data['closing-date-year'] + "-" + req.session.data['closing-date-month'] + "-" + req.session.data['closing-date-day'],
-    specification: req.session.data['spec-upload'],
-    supporting: req.session.data['supporting-upload'],
-    evaluation: req.session.data['eval-how'],
-    essential: {
-      one: req.session.data['essential-1'],
-      two: req.session.data['essential-2'],
-      three: req.session.data['essential-3'],
-      four: req.session.data['essential-4'],
-      five: req.session.data['essential-5']
-    },
-    nice: {
-      one: req.session.data['nice-1'],
-      two: req.session.data['nice-2'],
-      three: req.session.data['nice-3'],
-      four: req.session.data['nice-4'],
-      five: req.session.data['nice-5']
-    },
-    published: "true"
-  })
-  data.push(newItem)
-
-  delete req.session.data['title']
-  delete req.session.data['category']
-  delete req.session.data['summary']
-  delete req.session.data['budget']
-  delete req.session.data['school-name']
-  delete req.session.data['school-address-line-1']
-  delete req.session.data['school-address-line-2']
-  delete req.session.data['school-address-town']
-  delete req.session.data['school-address-county']
-  delete req.session.data['school-address-postcode']
-  delete req.session.data['closing-date-year']
-  delete req.session.data['closing-date-month']
-  delete req.session.data['closing-date-day']
-  delete req.session.data['eval-how']
-  delete req.session.data['essential-1']
-  delete req.session.data['essential-2']
-  delete req.session.data['essential-3']
-  delete req.session.data['essential-4']
-  delete req.session.data['essential-5']
-  delete req.session.data['nice-1']
-  delete req.session.data['nice-2']
-  delete req.session.data['nice-3']
-  delete req.session.data['nice-4']
-  delete req.session.data['nice-5']
-  req.session.data['complete-school'] = "false"
-  req.session.data['complete-description'] = "false"
-  req.session.data['complete-upload'] = "false"
-  req.session.data['complete-evaluation'] = "false"
-  req.session.data['published'] = "true"
-
-
-  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
-
-  res.locals.opportunity = opportunityToView[0]
-
-  if (opportunityToView == false) {
-    res.render('find/no-match')
+  if (method == "Recommended framework") {
+    res.redirect('/service/framework/confirmation')
   } else {
-    res.render('v3/create/confirmation')
+    res.redirect('/service/budget')
   }
+
 })
 
-
-
-
-
-// Render opportunity for responses
-router.get('/v3/responses/:title', function (req, res) {
-  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
-
-  res.locals.opportunity = opportunityToView[0]
-
-  if (opportunityToView == false) {
-    res.render('find/no-match')
-  } else {
-    res.render('v3/responses/index')
-  }
-})
-
-// Render single responses
-router.get('/v3/responses/:title/:name', function (req, res) {
-  const opportunityToView = req.session.data['opportunities'].filter(opportunity => opportunity.title === req.params.title)
-
-  res.locals.opportunity = opportunityToView[0]
-  res.locals.responder = req.params.name
-
-  if (opportunityToView == false) {
-    res.render('find/no-match')
-  } else {
-    res.render('v3/responses/response')
-  }
-})
 
 
 
