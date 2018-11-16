@@ -2,7 +2,6 @@
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
   Office supplies
 </h1>
-
 <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the Eastern Shires Purchasing Organisation (ESPO) catalogue</a>.</p>
 
 
@@ -10,9 +9,26 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class='govuk-heading-m related-main-content'>
-      What it offers
+      What they offer
     </h2>
-    <p>The catalogue has been used in schools for many years and contains over 25,000 products, of which 4500 are brand new this year, including many additions to the exercise books, curriculum stationery, sports and furniture ranges.</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>over 25,000 products, including:</li>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>stationary</li>
+        <li>exercise books</li>
+        <li>ICT consumables</li>
+        <li>furniture ranges</li>
+      </ul>
+    </ul>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>continuously updated, 4500 new products this year</li>
+      <li>benchmarked low prices</li>
+      <li>account managers and a major projects team and can also offer a schools purchasing health check </li>
+    </ul>
 
     {{ govukInsetText({
         html: '
@@ -24,10 +40,15 @@
     }) }}
 
     {{ govukButton({
-      text: 'View ESPO catalogue',
+      text: 'View the catalogue',
       href: 'https://www.espocatalogue.org/WebConnectEPO/',
       classes: ''
     }) }}
+
+    <h2 class='govuk-heading-m'>
+      If they do not have what you want
+    </h2>
+    <p>Check our list of <a href="https://www.gov.uk/government/publications/deals-for-schools/deals-for-schools">all DfE approvedframeworks and deals</a> or <a href="/service/budget">run your own buying process</a>.</p>
 
   </div>
 
