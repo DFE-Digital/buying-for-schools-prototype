@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 
-{% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "category"
-}) }}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
 {% endblock %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
 
 {% block content %}
   <div class="govuk-grid-row">
