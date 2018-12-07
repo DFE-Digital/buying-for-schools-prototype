@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Prepare an invite to tender</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Your timeline
+        </h1>
+
+        <p class="govuk-heading-m">Set deadlines for:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the clarification period &ndash; when suppliers can ask you questions</li>
+          <li>when suppliers must submit their bid</li>
+          <li>the ‘standstill period’ if you have one</li>
+          <li>when you intend to enter into the contract</li>
+        </ul>
+
+        <p class="govuk-heading-m">Give suppliers enough time to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>understand your needs</li>
+          <li>ask questions and use the information in your reply</li>
+          <li>respond to your questions and pricing requirements</li>
+        </ul>
+
+        <p class="doc-icon govuk-!-margin-top-7">You can download one of our <a href="https://www.gov.uk/government/publications/school-procurement-example-timelines" target="_blank">example timelines</a>.</p>
+
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'award-criteria',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

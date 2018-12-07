@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Prepare an invite to tender</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Your specification
+        </h1>
+
+        <p>Your specification is what you give to suppliers explaining what you want to buy.</p>
+
+        <p class="govuk-heading-m">Your specification should include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a precise description of what you need</li>
+          <li>an explanation of what it should do, if needed</li>
+          <li>the amount you need</li>
+          <li>what quality it should be</li>
+          <li>when you need it</li>
+        </ul>
+
+        <p>Think about what is essential, what would be nice to have and what you will need in 1 or 2 years time.</p>
+
+        <p>Check you have included everything you need. If you miss something out it may cost more once you have a supplier, as there will no longer be other people competing to supply it cheaper.</p>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'letter',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

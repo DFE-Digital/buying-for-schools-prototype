@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          How to buy from a framework
+        </h1>
+
+
+        <ul class="govuk-list">
+
+          <li>
+            <span class="circle circle-step circle-white">1</span>
+            <h2 class="govuk-heading-m">Prepare an invite to tender</h2>
+            <p>Invitations should include information like your timeline, specifcation, and your award criteria.</p>
+          </li>
+
+          <li>
+            <span class="circle circle-step circle-white">2</span>
+            <h2 class="govuk-heading-m">Send your invitation to the suppliers</h2>
+            <p>You need to send it to all suppliers who can provide what you need, unless you run an <a href="#0">expression of interest process</a> first.</p>
+          </li>
+
+          <li>
+            <span class="circle circle-step circle-white">3</span>
+            <h2 class="govuk-heading-m">Fairly assess all the bids you get</h2>
+            <p>Choose the supplier that offers best value for money, assessing them using the award criteria you sent out in your invitation to tender.</p>
+          </li>
+
+          <li>
+            <span class="circle circle-step circle-white">4</span>
+            <h2 class="govuk-heading-m">Award the contract to the winning supplier</h2>
+            <p>You need to inform all of the suppliers, and then your school or organisation and the supplier should sign the contract.</p>
+          </li>
+        </ul>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'invite/timeline',
+            classes: 'govuk-!-margin-top-4'
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "I need help doing things online",
+          html: "<p>You can call the Hubs and ask for help</p>
+          <p>Telephone: +44 (0) 300 330 0901<br>Textphone: +44 (0) 300 330 0808<br>Monday to Friday, 8:00am to 8:00pm (UK time)<br>Weekends and public holidays, 9:00am to 5:30pm (UK time)</p>"
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
