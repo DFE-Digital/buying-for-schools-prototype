@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Award the contract to the winning supplier</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Notify suppliers and award the contract
+        </h1>
+
+        <p>Send a letter to all the bidders at the same time including:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the name of the winning bidder</li>
+          <li>the award criteria you used</li>
+          <li>the scores for the winning bid</li>
+          <li>the relative advantages of the winning bidder</li>
+          <li>when the standstill period ends, if you have one</li>
+          <li>their scores and feedback &ndash; for unsuccessful bidders</li>
+        </ul>
+
+        <p class="doc-icon govuk-!-margin-top-7">You can download one of our <a href="https://www.gov.uk/government/publications/school-procurement-example-letters-for-the-tender-process" target="_blank">example letters</a>.</p>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'standstill',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

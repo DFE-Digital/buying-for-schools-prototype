@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Award the contract to the winning supplier</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Sign the contract
+        </h1>
+
+        <p>After the standstill period, tell the successful supplier that you&rsquo;re placing the contract with them. Your school or organisation and the supplier should then sign the contract.</p>
+
+        <p>The contract&rsquo;s terms and conditions (or &lsquo;service order terms&rsquo;) will have generally been set as part of the framework agreement and you should not change them. You can only add in those things that you agreed as part of the buying process.</p>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: '#0',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

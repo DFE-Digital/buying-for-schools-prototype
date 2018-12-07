@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Send your invitation to the suppliers</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Answer questions from the suppliers
+        </h1>
+
+        <p>You should have a &lsquo;clarification stage&rsquo; &ndash; a time when suppliers can ask questions. No matter who asks the question, in most cases you should generally:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>send the question and reply to all the bidders with the same information</li>
+          <li>anonymise the question, so no one knows who asked it</li>
+        </ul>
+
+        <p>Do not reveal copyrighted or sensitive information. Ask suppliers if they are happy for you to publish their question and your answer. If they say no, consider their request and give them the opportunity to withdraw the question if you do not agree.</p>
+
+        <p>We recommend that you:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ask suppliers to email the questions</li>
+          <li>keep a log of the questions and the answers you gave</li>
+        </ul>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: '../assess/who',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

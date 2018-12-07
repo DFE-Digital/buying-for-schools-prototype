@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Fairly assess all the bids you get</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Who should assess the bids
+        </h1>
+
+        <p>It&rsquo;s best to have at least 2 people assess each bid. When they&rsquo;re finished they should compare their scores and:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>discuss where they&rsquo;ve scored differently</li>
+          <li>reach an agreed score</li>
+        </ul>
+
+        <p>This process is called moderation. Be aware, the more people involved, the harder it can be to reach an agreed score.</p>
+
+        <p>Bring in a specialist if you need expert knowledge to assess a criteria.</p>
+
+        <p>You may also ask the framework owner when they last ran a financial check on the supplier. Ask them to run a new one if needed.</p>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'decide',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
