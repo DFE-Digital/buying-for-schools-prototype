@@ -29,7 +29,7 @@
   }
 
   h2 {
-    margin: 25px 0 5px 0;
+    margin: 30px 0 5px 0;
   }
 
   p, li {
@@ -64,8 +64,7 @@
     color: govuk-colour("blue");
     background-color: govuk-colour("white");
     font-weight: bold;
-    padding-left: 3em;
-    padding-right: 3em;
+    min-width: 200px;
 
     &:visited {
       color: govuk-colour("blue");
