@@ -15,7 +15,7 @@
           name: 'type',
           fieldset: {
             legend: {
-              text: 'Are you buying goods or a service contract?',
+              text: 'What type of purchase are you doing?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
@@ -25,14 +25,24 @@
           },
           items: [
             {
-                value: 'Goods',
-                text: 'Goods',
-                checked: checked('type', 'Goods')
+                value: 'Buying goods',
+                text: 'Buying goods',
+                checked: checked('type', 'Buying goods')
             },
             {
-              value: 'Service contract',
-              text: 'Service contract',
-              checked: checked('type', 'Service contract')
+              value: "Leasing goods",
+              text: "Leasing goods",
+              checked: checked('type', 'Leasing goods')
+            },
+            {
+              value: 'One-off service',
+              text: 'One-off service',
+              checked: checked('type', 'One-off service')
+            },
+            {
+              value: 'Onngoing service contract',
+              text: 'Onngoing service contract',
+              checked: checked('type', 'Onngoing service contract')
             }
           ]
         }) }}
