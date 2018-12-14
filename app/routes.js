@@ -11,6 +11,15 @@ router.get('/start-again', function (req, res) {
   res.redirect('/service/index')
 })
 
+// Check if lease
+router.get('/service/category', function (req, res, next) {
+  if (req.session.data['type'] == "Leasing goods") {
+    res.render('service/outcome')
+  } else {
+    next()
+  }
+})
+
 // Check if catalogue
 router.get('/service/check-category', function (req, res) {
   const category = req.session.data['category']
@@ -18,7 +27,7 @@ router.get('/service/check-category', function (req, res) {
   if (category == "Energy and utilities") {
     res.redirect('/service/sub-category')
   } else {
-    res.redirect('/service/framework/confirmation')
+    res.redirect('/service/outcome')
   }
 
 })
