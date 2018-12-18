@@ -34,14 +34,14 @@
         {% elif data['category'] == 'Facilities management and estates' %}
           {% if data['type'] == 'Buying goods' %}
             {% include "includes/framework-fm-goods.html" %}
-          {% elif data['type'] == 'Service contract' %}
+          {% elif data['type'] == 'One-off service' or data['type'] == 'Ongoing service contract' %}
             {% include "includes/framework-fm.html" %}
           {% endif %}
 
         {% elif data['category'] == 'ICT' %}
           {% if data['type'] == 'Buying goods' %}
             {% include "includes/catalogue-ict.html" %}
-          {% elif data['type'] == 'Service contract' %}
+          {% elif data['type'] == 'One-off service' or data['type'] == 'Ongoing service contract' %}
             {% include "includes/framework-ict.html" %}
           {% endif %}
 
@@ -54,7 +54,7 @@
         {% elif data['category'] == 'Office supplies' %}
         {% if data['type'] == 'Buying goods' %}
           {% include "includes/catalogue-office-supplies.html" %}
-        {% elif data['type'] == 'Service contract' %}
+        {% elif data['type'] == 'One-off service' or data['type'] == 'Ongoing service contract' %}
           {% include "includes/framework-office-supplies.html" %}
         {% endif %}
 
