@@ -13,7 +13,7 @@
         {% if data['category'] == 'Audit services' %}
           {% include "includes/framework-audit.html" %}
 
-        {% elif data['category'] == 'Books and materials' %}
+        {% elif data['category'] == 'Books and media' %}
           {% include "includes/framework-books.html" %}
 
         {% elif data['category'] == 'Energy and utilities' %}
@@ -31,12 +31,12 @@
             {% include "includes/framework-energy-water.html" %}
           {% endif %}
 
+        {% elif data['category'] == 'Furniture' %}
+          {% include "includes/framework-fm-goods.html" %}
+
         {% elif data['category'] == 'Facilities management and estates' %}
-          {% if data['type'] == 'Buying goods' %}
-            {% include "includes/framework-fm-goods.html" %}
-          {% elif data['type'] == 'One-off service' or data['type'] == 'Ongoing service contract' %}
-            {% include "includes/framework-fm.html" %}
-          {% endif %}
+          {% include "includes/framework-fm.html" %}
+
 
         {% elif data['category'] == 'ICT' %}
           {% if data['type'] == 'Buying goods' %}
