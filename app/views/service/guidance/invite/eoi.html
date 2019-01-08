@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Send your invitation</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Reduce the number of bidders with an expression of interest
+        </h1>
+
+        <p>Not all frameworks allow an expression of interest (EOI), check the rules first.</p>
+
+        <p>If you want to find out how many suppliers are interested in bidding, then you can send an EOI to them. After, you only need to send your invitation to suppliers who respond.</p>
+
+        <p class="govuk-heading-m">Your EOI should include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>an overview of your needs</li>
+          <li>the size of your school</li>
+          <li>how long the contract will last, with any important deadlines</li>
+          <li>when they must respond by</li>
+        </ul>
+
+        <p class="doc-icon govuk-!-margin-top-7">Download our <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/496501/Template_Expression_of_Interest_-_Feb_2016.docx">example EOI</a>.</p>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'send',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

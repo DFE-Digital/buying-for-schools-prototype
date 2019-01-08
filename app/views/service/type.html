@@ -1,10 +1,5 @@
 {% extends "layout.html" %}
 
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
-
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
@@ -20,7 +15,7 @@
           name: 'type',
           fieldset: {
             legend: {
-              text: 'Are you buying goods or a service contract?',
+              text: 'What is the type of purchase?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
@@ -30,14 +25,24 @@
           },
           items: [
             {
-                value: 'Goods',
-                text: 'Goods',
-                checked: checked('type', 'Goods')
+                value: 'Buying goods',
+                text: 'Buying goods',
+                checked: checked('type', 'Buying goods')
             },
             {
-              value: 'Service contract',
-              text: 'Service contract',
-              checked: checked('type', 'Service contract')
+              value: "Leasing goods",
+              text: "Leasing goods",
+              checked: checked('type', 'Leasing goods')
+            },
+            {
+              value: 'One-off service',
+              text: 'One-off service',
+              checked: checked('type', 'One-off service')
+            },
+            {
+              value: 'Ongoing service contract',
+              text: 'Ongoing service contract',
+              checked: checked('type', 'Ongoing service contract')
             }
           ]
         }) }}

@@ -1,8 +1,8 @@
 <span class="govuk-caption-xl">Recommended framework</span>
 <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-  Books and materials
+  Books and related materials
 </h1>
-<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers we think you should use the Eastern Shires Purchasing Organisation (ESPO) framework.</p>
+<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, we think you should use the Eastern Shires Purchasing Organisation (ESPO) framework.</p>
 
 
 
@@ -10,7 +10,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class='govuk-heading-m related-main-content'>
-      What they offer
+      What it offers
     </h2>
     <ul class="govuk-list govuk-list--bullet">
       <li>books</li>
@@ -27,29 +27,23 @@
     </h2>
     <ul class="govuk-list govuk-list--bullet">
       <li>a wide range of suppliers</li>
-      <li>discounts of over 41% on some titles</li>
+      <li>discounts of over 40% on some titles</li>
       <li>pre-agreed terms and conditions</li>
     </ul>
 
-    {{ govukInsetText({
-        html: '
-        <p>Before buying from the catalogue you&rsquo;ll need to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="https://www.espo.org/Registration">create an ESPO account</a></li>
-          <li><a href="https://www.espo.org/Pages/Books-for-schools-framework-376E-guide">follow the instructions in the ESPO guide</a></li>
-        </ul>'
-    }) }}
+    {% include "includes/framework-help.html" %}
+
+    <p>Before buying from the framework you&rsquo;ll need to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://www.espo.org/Registration">create an ESPO account</a></li>
+      <li><a href="https://www.espo.org/Pages/Books-for-schools-framework-376E-guide">follow the instructions in the ESPO guide</a></li>
+    </ul>
 
     {{ govukButton({
       text: 'Continue to the framework',
       href: 'https://www.espo.org/Pages/Books-for-schools-framework-376E-guide',
       classes: ''
     }) }}
-
-    <h2 class='govuk-heading-m'>
-      If they do not have what you want
-    </h2>
-    <p>Check our list of <a href="https://www.gov.uk/government/publications/deals-for-schools/deals-for-schools">all DfE approvedframeworks and deals</a> or <a href="/service/budget">run your own buying process</a>.</p>
 
   </div>
 

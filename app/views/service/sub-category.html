@@ -1,10 +1,5 @@
 {% extends "layout.html" %}
 
-{% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
-{% endblock %}
-
 <!-- Adds a class to increase vertical spacing for pages without a back button -->
 {% set mainClasses = "govuk-main-wrapper--l" %}
 
@@ -12,7 +7,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="method" method="post" autocomplete="off">
+      <form class="form" action="outcome" method="post" autocomplete="off">
 
         {% if data['category'] == 'Energy and utilities' %}
           {% include "includes/sub-categories-energy.html" %}

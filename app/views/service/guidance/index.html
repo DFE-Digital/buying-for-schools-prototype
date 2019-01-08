@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back to your recommended framework',
+      href: '/service/outcome'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          How to buy from a framework
+        </h1>
+
+        <ul class="govuk-list">
+
+          <li>
+            <span class="circle circle-step circle-white">1</span>
+            <h2 class="govuk-heading-m">Prepare an invitation to quote</h2>
+            <p>Invitations should include information like your timeline, specification, and award criteria.</p>
+            <p><a href="prepare/timeline">Find out more about preparing an invite to quote</a></p>
+          </li>
+
+          <li>
+            <span class="circle circle-step circle-white">2</span>
+            <h2 class="govuk-heading-m">Send your invitation</h2>
+            <p>You need to send your invitation to suppliers who can provide what you need, unless you run an expression of interest first.</p>
+            <p><a href="invite/eoi">Find out more about sending your invitation</a></p>
+          </li>
+
+          <li>
+            <span class="circle circle-step circle-white">3</span>
+            <h2 class="govuk-heading-m">Fairly assess all bids</h2>
+            <p>Choose the supplier that offers best value for money. You can assess them using the award criteria sent in your invitation to tender.</p>
+            <p><a href="assess/who">Find out more about assessing bids</a></p>
+          </li>
+
+          <li>
+            <span class="circle circle-step circle-white">4</span>
+            <h2 class="govuk-heading-m">Award the contract</h2>
+            <p>Inform the winning supplier and get them to sign the contract.</p>
+            <p><a href="award/notify">Find out more about awarding the contract</a></p>
+          </li>
+        </ul>
+<!--
+
+        {{ govukDetails({
+          summaryText: "I need help doing things online",
+          html: "<p>You can call the Hubs and ask for help</p>
+          <p>Telephone: +44 (0) 300 330 0901<br>Textphone: +44 (0) 300 330 0808<br>Monday to Friday, 8:00am to 8:00pm (UK time)<br>Weekends and public holidays, 9:00am to 5:30pm (UK time)</p>",
+          classes: "govuk-!-margin-top-9"
+        }) }} -->
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

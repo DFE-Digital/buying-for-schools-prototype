@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Send your invitation</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Contact the suppliers
+        </h1>
+
+        <p>You must send your invitation to tender to every supplier on the framework who can meet your needs, unless you&rsquo;ve sent an expression of interest.</p>
+
+        <p>Some framework providers have tools that let you contact the suppliers. These are usually referred to as quote tools.</p>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'questions',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Prepare an invitation to quote</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Your letter
+        </h1>
+
+        <p>Invitations should include:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a timetable</li>
+          <li>how to ask questions</li>
+          <li>how to submit a bid</li>
+          <li>your specification</li>
+          <li>your award criteria</li>
+          <li>specific levels of service you want</li>
+          <li>your terms of appointment</li>
+        </ul>
+
+        <p class="doc-icon govuk-!-margin-top-7">Download our <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/496956/Invitation_to_tender_itt_feb_2016.doc">example invitation to quote letter</a>.</p>
+
+        {{ govukButton({
+            text: 'Finished',
+            href: '../',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

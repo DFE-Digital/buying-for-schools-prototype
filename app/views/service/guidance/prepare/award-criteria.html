@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back',
+      href: 'javascript:history.back()'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <span class="govuk-caption-xl">Prepare an invitation to quote</span>
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Your award criteria
+        </h1>
+
+        <p>Some frameworks have rules on the questions you can ask and the weighting you can give.</p>
+
+        <p class="govuk-heading-m">If the framework does not state the rules</p>
+
+        <p class="">Choose how you&rsquo;ll decide which bid:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>best meets your specification</li>
+          <li>is the the one that best combines price and quality (most economically advantageous)</li>
+        </ul>
+
+        <p class="">Give each criteria:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a score &ndash; such as 1 to 5, with 5 being the highest</li>
+          <li>a weighting &ndash; a figure you multiply the score by depending on how important the criteria is</li>
+        </ul>
+
+        {{ govukInsetText({
+            html: '<p class="govuk-!-font-weight-bold">Example<p>
+            <p>If price is most important, you might give it a weighting of 5 – so a score of 4 would be worth 20.</p>'
+        }) }}
+
+
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'specification',
+            classes: 'govuk-!-margin-top-4 govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
