@@ -22,11 +22,23 @@
 {% endblock %}
 
 {% block content %}
+<style>
+@media (min-width: 40.0625em) {
+  .govuk-heading-xl {
+    font-size: 36px;
+  }
+  .govuk-heading-l {
+    font-size: 27px;
+    margin-top: 45px;
+  }
+}
+</style>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">Guidance</span>
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Buying educational resources: How to get the most out of your funds
       </h1>
       <p class="govuk-body-l">Use this step-by-step guide to get the best value (academically and financially) from the books and learning materials you purchase for your school or Multi Academy Trust (MAT).</p>
@@ -60,10 +72,10 @@
               <a href="#find">Find the right way to buy</a>
             </li>
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a href="#0">Choosing the right supplier</a>
+              <a href="#choose">Choosing the right supplier</a>
             </li>
             <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
-              <a href="#0">Next steps</a>
+              <a href="#next">Next steps</a>
             </li>
           </ol>
         </nav>
@@ -164,7 +176,7 @@
 
 
 
-      <h2 class='govuk-heading-l' id="find">
+      <h2 class='govuk-heading-l' id="choose">
         3. Choosing the right supplier
       </h2>
 
@@ -181,7 +193,7 @@
 
 
 
-      <h2 class='govuk-heading-l' id="find">
+      <h2 class='govuk-heading-l' id="next">
         4. Next steps
       </h2>
       <p>Before making the purchase, you may need to fill in a business case for your school leadership team. You can download our simple template here. If you do not control your budget, make sure you’ve spoken to the person responsible for this so you have available funds to make the purchase.</p>
@@ -208,7 +220,7 @@
 
     </div>
 
-    <div class="govuk-grid-column-one-third">
+    <!-- <div class="govuk-grid-column-one-third">
 
       <aside class="app-related-items gem-c-related-navigation" role="complementary" style="margin-top: 0">
         <h2 class="govuk-heading-s" id="subsection-title">
@@ -240,6 +252,6 @@
         </nav>
       </aside>
 
-    </div>
+    </div> -->
   </div>
 {% endblock %}
