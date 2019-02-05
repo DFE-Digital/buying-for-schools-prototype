@@ -14,7 +14,11 @@
           {% include "includes/framework-audit.html" %}
 
         {% elif data['category'] == 'Books and media' %}
-          {% include "includes/framework-books.html" %}
+          {% if data['old-version'] == 'true' %}
+            {% include "includes/framework-books-old.html" %}
+          {% else %}
+            {% include "includes/framework-books.html" %}
+          {% endif %}
 
         {% elif data['category'] == 'Energy and utilities' %}
           {% if data['category-energy'] == 'Electricity' %}
