@@ -14,7 +14,7 @@
           {% include "includes/framework-audit.html" %}
 
         {% elif data['category'] == 'Books and media' %}
-          {% if data['old-version'] == 'true' %}
+          {% if data['oldversion'] == 'true' %}
             {% include "includes/framework-books-old.html" %}
           {% else %}
             {% include "includes/framework-books.html" %}
