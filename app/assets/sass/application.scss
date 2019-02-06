@@ -56,3 +56,16 @@ $govuk-global-styles: true;
   border-top: 1px solid #bfc1c3;
   padding-top: 20px;
 }
+
+
+.cta-box {
+  margin: 2em 0;
+  background-color: #dee0e2;
+  padding: 2em;
+
+  p:last-child,
+  ul:last-child,
+  ol:last-child {
+    margin-bottom: 0;
+  }
+}
