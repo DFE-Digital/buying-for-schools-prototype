@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          Our recommendation is a framework
+        </h1>
+
+        <p class="govuk-body-l">Frameworks are a type of contract with agreed terms and conditions. You can use them without having to run a full buying process.</p>
+
+        <p>Buying from a framework will usually be quicker and easier than getting bids or quotes because the agreements:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>have already been through a full competitive tender process</li>
+          <li>have been quality checked</li>
+          <li>are checked to make sure they comply with the law</li>
+          <li>may have draft specifications and help available</li>
+        </ul>
+
+
+        {{ govukInsetText({
+            html: "<p>See our <a href='/service/guidance/'>guide on how to buy from a framework</a> for help, advice and useful templates.</p>"
+        }) }}
+
+        {{ govukButton({
+            text: 'Continue to recommended framework',
+            href: '#'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

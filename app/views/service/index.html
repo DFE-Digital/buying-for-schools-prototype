@@ -22,45 +22,116 @@
 {% endblock %}
 
 {% block content %}
+<style>
+@media (min-width: 40.0625em) {
+  .govuk-heading-xl {
+    font-size: 36px;
+  }
+  .govuk-heading-l {
+    font-size: 27px;
+    margin-top: 45px;
+  }
+}
+</style>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <span class="govuk-caption-l">Guidance</span>
       <h1 class="govuk-heading-xl">
         {{ serviceName }}
       </h1>
+      <p class="govuk-body-l">How to use a framework to buy goods or services for your school.</p>
 
-      <p>Use this service to:</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body-s govuk-!-margin-bottom-7">
+        Published 22 January 2019<br>
+        Last updated 29 January 2019 — <a href="#">see all updates</a><br>
+        From: <a href="#">Department for Education</a>
+      </p>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <p>This service replaces the deals for schools guidance.</p>
+
+      <p>If you&rsquo;re a school buyer, use this service to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>find Department for Education (DfE)-recommended ways to buy goods or services</li>
+        <li>find Department for Education (DfE) recommended ways to buy goods or services</li>
         <li>get value for money</li>
-        <li>comply with EU procurement law</li>
+        <li>comply with EU procurement law (OJEU)</li>
       </ul>
 
+      {# Remove the class 'govuk-button--start' for a standard button #}
       {{ govukButton({
-        text: 'Start',
-        href: 'type',
-        classes: 'govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8'
+          text: 'Find a framework',
+          href: 'type',
+          classes: 'govuk-button--start'
       }) }}
 
-      <p>You can also view <a href="/service/guidance/">step-by-step framework buying guidance</a>.</p>
+
+      <h2 class='govuk-heading-l'>
+        How are frameworks selected?
+      </h2>
+      <p>The Schools Commercial Team (SCT) within DfE reviews a range of frameworks. These frameworks are assessed for compliance with procurement regulations, ease of use, suitability and value for money. Feedback from schools is also considered when selecting frameworks.</p>
+      <p>SCT continues to review and add to the list of recommended frameworks.</p>
+
+      <h2 class='govuk-heading-l'>
+        What happens after you’ve used the service?
+      </h2>
+      <p>After you&rsquo;ve answered the relevant questions, you&rsquo;ll be given the most suitable framework based on your answers.</p>
+
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-9">
+      <p class="govuk-body-s">
+        Published 26 March 2015<br>
+        Last updated 20 December 2018 <a href="#0">+ show all updates</a>
+      </p>
 
     </div>
 
     <div class="govuk-grid-column-one-third">
 
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
+      <aside class="app-related-items app-related-items--small" role="complementary">
+        <h2 class="govuk-heading-s">
           Related content
         </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="https://www.gov.uk/government/collections/buying-for-schools">
-                Buying for schools: templates and forms
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://www.gov.uk/guidance/buying-for-schools">
+              Buying for schools guidance
+            </a>
+          </li>
+          <li>
+            <a href="/collection/">
+              Buying for schools: category guidance
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/government/collections/buying-for-schools">
+              Buying for schools: templates and forms
+            </a>
+          </li>
+        </ul>
+        <!-- <h3 class="govuk-body-s">
+          Collection
+        </h3>
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="/collection/">
+              Buying for schools: category guidance
+            </a>
+          </li>
+        </ul> -->
       </aside>
 
     </div>

@@ -1,0 +1,267 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#0">Education, training and skills</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#0">School procurement</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+<style>
+@media (min-width: 40.0625em) {
+  .govuk-heading-xl {
+    font-size: 36px;
+  }
+  .govuk-heading-l {
+    font-size: 27px;
+    margin-top: 45px;
+  }
+}
+</style>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-xl">
+        Buy books and related materials for your school
+      </h1>
+      <p class="govuk-body-l">Use this guide to get the best value (academically and financially) from the books and learning materials purchased for your school or multi-academy trust (MAT).</p>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body-s govuk-!-margin-bottom-7">
+        Published 22 January 2019<br>
+        Last updated 29 January 2019 — <a href="#">see all updates</a><br>
+        From: <a href="#">Department for Education</a>
+      </p>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <aside id="contents" class="part-navigation-container" role="complementary" style="border:0">
+        <nav role="navigation" class="gem-c-contents-list  " data-module="track-click" aria-label="Pages in this guide">
+
+          <h2 class="gem-c-contents-list__title govuk-body-s govuk-!-margin-bottom-0">Contents</h2>
+
+          <ol class="gem-c-contents-list__list">
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a href="#spec">Write a specification</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a href="#discounts">Discounts</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a href="#find">Find the right way to buy</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a href="#choose">Choosing the right supplier</a>
+            </li>
+            <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+              <a href="#next">Next steps</a>
+            </li>
+          </ol>
+        </nav>
+
+      </aside>
+
+      <h2 class='govuk-heading-l' id="spec">
+        Write a specification
+      </h2>
+
+      <p>You should write a <a href="https://www.gov.uk/guidance/buying-for-schools/writing-a-specification">specification</a> of what you need before you buy.</p>
+
+      <p>A specification tells suppliers exactly what you need. Writing a specification may help you save time, money and ensure you get the right products for your pupils.
+
+      <p>When writing a specification, you may want to consider if you need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>teaching support, revision, assessment or intervention materials</li>
+        <li>reading schemes, subscriptions, printed resources (fiction and non-fiction), digital (e-books) or a combination of both</li>
+        <li>to target a specific group of pupils with 1 resource</li>
+        <li>a complete, coherent programme or a resource that will support an existing programme</li>
+      </ul>
+
+
+
+
+      <h2 class='govuk-heading-l' id="discounts">
+        Discounts
+      </h2>
+
+      <p>To get discounts from suppliers, you can combine budgets across several departments, schools or an entire MAT. If you&rsquo;re not already linked with your local schools and would like to be, sign up to the <a href="https://www.gov.uk/government/publications/join-or-create-a-network-for-school-business-professionals/school-business-professional-networks-directory">School Business Professional Networks</a>.</p>
+
+      <p>For more support, get advice from colleagues, peers, subject associations and teaching hubs by following subject groups and influential teachers on Twitter, such as <a href="https://twitter.com/ukedchat">@ukedchat</a>.</p>
+
+
+
+
+      <h2 class='govuk-heading-l' id="find">
+        Find the right way to buy
+      </h2>
+
+      <p>It&rsquo;s important to find the right way to buy depending on your circumstances. Here are three suggestions:</p>
+
+      <h3 class='govuk-heading-s'>
+        Use a framework
+      </h3>
+
+      <div class="cta-box">
+        <p><a href="/service/">{{ serviceName }}</a>.</p>
+      </div>
+
+      <p>Buying from a framework is usually quicker and easier than getting bids or quotes because the agreements:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have already been through a full competitive tender process</li>
+        <li>have been quality checked</li>
+        <li>are checked to make sure they comply with the law</li>
+        <li>may have draft specifications and help available</li>
+      </ul>
+
+      <p>The Department of Education (DfE) reviews a range of frameworks. These are assessed for compliance with procurement regulations, ease of use, suitability and value for money.</p>
+
+
+
+
+
+      <h3 class='govuk-heading-s'>
+        Use a catalogue or third party supplier
+      </h3>
+
+      {{ govukWarningText({
+        html: 'Selecting this route means you&rsquo;ll need to lead your own procurement. You can find step-by-step guidance to <a href="https://www.gov.uk/government/collections/buying-for-schools">support you through the procurement process</a>.',
+        iconFallbackText: 'Warning'
+      }) }}
+
+      <p>If your preferred resources are not available via a framework or if you&rsquo;re looking to purchase a small or urgent order of books, you may want to compare third party suppliers or wholesalers. You can research these online or find an educational trade supplier recommended by the <a href="https://www.besa.org.uk/">British Educational Suppliers Association</a>.</p>
+
+      <p>Before you use this route, make sure you&rsquo;ve got at least 3 quotes from a range of suppliers and evaluated their offers against price and quality to get the best value for money. Do not be afraid to negotiate lower prices or enhanced support from suppliers.</p>
+
+
+
+
+
+
+      <h3 class='govuk-heading-s'>
+        Buy direct from publishers
+      </h3>
+
+      {{ govukWarningText({
+        html: 'Selecting this route means you&rsquo;ll need to lead your own procurement. You can find step-by-step guidance to <a href="https://www.gov.uk/government/collections/buying-for-schools">support you through the procurement process</a>.',
+        iconFallbackText: 'Warning'
+      }) }}
+
+      <p>If you need help selecting the right resource for your school, you can invite publishers to give advice on which products would suit your specifications.</p>
+
+      <p>To get the most out of your funds, sales leads can offer a range of services to support you when choosing and embedding the resource in your school. You can contact sales leads via each publisher&rsquo;s website or <a href="https://publishers.org.uk/about-us/members-and-affiliates/">The Publishers Association</a>.</p>
+
+      <p>Many publishers can help aggregate funds with other schools and academies to save you money. Even if it&rsquo;s a single purchase, it&rsquo;s worth negotiating discounts and comparing quotes and support services between publishers to get the best value for money. </p>
+
+      <p>For example, if you&rsquo;re investing in an ongoing contract, consider securing an agreed discount for top-ups in the future.</p>
+
+
+
+
+
+      <h2 class='govuk-heading-l' id="choose">
+        Choosing the right supplier
+      </h2>
+
+      <p>Once you&rsquo;ve found the right way to buy, use a <a href="https://www.gov.uk/government/publications/school-procurement-bid-evaluation-scoring-summary">supplier scorecard</a> to compare suppliers' bids during a procurement process.</p>
+
+      <p>You should consider if suppliers:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>offer the level of curriculum coverage and support you need</li>
+        <li>match the needs of your school and students</li>
+        <li>offer the same cost compared to similar products</li>
+        <li>offer an after-sales service and the cost involved</li>
+      </ul>
+
+
+
+      <h2 class='govuk-heading-l' id="next">
+        Next steps
+      </h2>
+
+      <h3 class='govuk-heading-s'>
+        Use a business case template
+      </h3>
+      <p>You should use the <a href="0">business case template</a> if you need to get approval from your school leadership team before you buy.</p>
+
+      <h3 class='govuk-heading-s'>
+        Documentation for frameworks
+      </h3>
+      <p>You should always use the documentation provided with the framework so you&rsquo;re covered by the terms and conditions and get the best price available.</p>
+
+      <div class="cta-box">
+        <p><a href="https://www.gov.uk/government/collections/buying-for-schools"> Procurement templates and guidance</a> are also available.</p>
+      </div>
+
+      <!-- <p>To stay informed about applications for additional funding or programmes that can support your school, <a href="https://www.gov.uk/government/email-signup/new?email_signup%5Bfeed%5D=https://www.gov.uk/government/organisations/department-for-education.atom">sign up to email alerts from the Department of Education</a>.</p> -->
+
+
+
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <p class="govuk-body-s">
+        Published 26 March 2015<br>
+        Last updated 20 December 2018 <a href="#0">+ show all updates</a>
+      </p>
+
+      <a class="app-c-back-to-top dont-print" href="#contents">
+        <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17">
+        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>
+        Contents
+      </a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items app-related-items--small" role="complementary">
+        <h2 class="govuk-heading-s">
+          Related content
+        </h2>
+        <!-- <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://www.gov.uk/government/collections/buying-for-schools">
+              Buying for schools: templates and forms
+            </a>
+          </li>
+        </ul> -->
+        <h3 class="govuk-body-s">
+          Collection
+        </h3>
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="/collection/">
+              Buying for schools: category guidance
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
