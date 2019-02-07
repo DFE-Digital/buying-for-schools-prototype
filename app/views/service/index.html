@@ -59,10 +59,6 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="cta-box">
-        <p><a href="type">{{ serviceName }}</a>.</p>
-      </div>
-
       <p>This service replaces the deals for schools guidance.</p>
 
       <p>If you&rsquo;re a school buyer, use this service to:</p>
@@ -71,6 +67,13 @@
         <li>get value for money</li>
         <li>comply with EU procurement law (OJEU)</li>
       </ul>
+
+      {# Remove the class 'govuk-button--start' for a standard button #}
+      {{ govukButton({
+          text: 'Find a framework',
+          href: 'type',
+          classes: 'govuk-button--start'
+      }) }}
 
 
       <h2 class='govuk-heading-l'>
