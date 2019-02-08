@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: 'Back to your recommended framework',
+      href: '/service/outcome'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          How are frameworks selected?
+        </h1>
+
+        <p>The Schools Commercial Team (SCT) within DfE reviews a range of frameworks. These frameworks are assessed for compliance with procurement regulations, ease of use, suitability and value for money. Feedback from schools is also considered when selecting frameworks.</p>
+        <p>SCT continues to review and add to the list of recommended frameworks.</p>
+
+        <h2 class='govuk-heading-m'>
+          What happens after you’ve used the service?
+        </h2>
+        <p>After you&rsquo;ve answered the relevant questions, you&rsquo;ll be given the most suitable framework based on your answers.</p>
+
+        {# Remove the class 'govuk-button--start' for a standard button #}
+        {{ govukButton({
+            text: 'Continue',
+            href: 'type',
+            classes: 'govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
