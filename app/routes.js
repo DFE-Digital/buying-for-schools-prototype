@@ -8,7 +8,7 @@ const marked = require('marked')
 // On start again delete session data
 router.get('/start-again', function (req, res) {
   req.session.destroy()
-  res.redirect('/service/index')
+  res.redirect('/service/type')
 })
 
 // Check if lease
