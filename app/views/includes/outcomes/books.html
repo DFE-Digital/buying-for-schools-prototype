@@ -9,69 +9,154 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h2 class='govuk-heading-l related-main-content'>
-      What it offers
-    </h2>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>books</li>
-      <li>e-books</li>
-      <li>e-audiobooks</li>
-      <li>educational software</li>
-      <li>CDs</li>
-      <li>DVDs</li>
-      <li>discounts of over 40% on some titles</li>
-    </ul>
-    <p>Includes fiction, non-fiction and curriculum material.</p>
+    {% set detailsHtml %}
+      <h2 class="govuk-heading-l">Details</h2>
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Provider
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            ESPO
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Website
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            <a href="https://www.espo.org/Frameworks/Libraries/Books-and-Related-Materials">www.espo.org/Frameworks/Libraries/Books-and-Related-Materials</a>
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Start date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            1 September 2016
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            End date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            31 August 2019
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Extension
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            Up to 31 August 2020
+          </dd>
+        </div>
+      </dl>
+    {% endset -%}
 
-    <!-- HOW TO BUY -->
-    <h2 class='govuk-heading-l'>
-      How to use the framework
-    </h2>
+    {% set offersHtml %}
+      <h2 class="govuk-heading-l">What it offers</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>books</li>
+        <li>e-books</li>
+        <li>e-audiobooks</li>
+        <li>educational software</li>
+        <li>CDs</li>
+        <li>DVDs</li>
+      </ul>
+      <p>Includes fiction, non-fiction and curriculum material.</p>
+    {% endset -%}
 
-    {{ govukInsetText({
-      html: '<p>Before you can use the framework, you need to <a href="https://www.espo.org/Registration">create a MyESPO account</a> and fill in the customer access agreement form.</p><p>All the forms you need are in the downloads section of the <a href="https://www.espo.org/Frameworks/Libraries/Books-and-Related-Materials">framework page on the ESPO website</a>.</p>'
+    {% set benefitsHtml %}
+      <h2 class="govuk-heading-l">Benefits</h2>
+      <p>This frameworks offers:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>discounts of over 40% on some titles</li>
+      </ul>
+      <p>All frameworks also offer:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>comliance with The Official Journal of the European Union (OJEU) principles and regulations</li>
+        <li>a list of checeked suppliers</li>
+        <li>pre-agreed terms and conditions</li>
+      </ul>
+    {% endset -%}
+
+    {% set howHtml %}
+      <h2 class='govuk-heading-l'>How to use</h2>
+
+      {{ govukInsetText({
+        html: '<p>Before you can use the framework, you need to <a href="https://www.espo.org/Registration">create a MyESPO account</a> and fill in the customer access agreement form.</p><p>All the forms you need are in the downloads section of the <a href="https://www.espo.org/Frameworks/Libraries/Books-and-Related-Materials">framework page on the ESPO website</a>.</p>'
+      }) }}
+
+      <h3 class='govuk-heading-m'>
+        Find out suppliers’ discount rates
+      </h3>
+      <p>Rates are listed by publishers on page 8 of the user guide to help you identify suppliers who offer the best discounts.</p>
+      <p>If you do not know the publisher of the books you need, visit any of the suppliers’ websites (page 12 of the user guide) and search by book title or ISBN.</p>
+
+      <h3 class='govuk-heading-m'>
+        Run a further competition between the suppliers
+      </h3>
+      <p>If you think you can get a better price, you can <a href="https://www.gov.uk/guidance/buying-for-schools/run-a-mini-competition">run a mini-competition</a>. This usually only applies to items ordered in large quantities.</p>
+
+      <h3 class='govuk-heading-m'>
+        Contact your chosen supplier
+      </h3>
+      <p>You should contact your chosen supplier to confirm availability, delivery times and pricing &ndash; the quote should reflect the discount from the recommended retail price (RRP) stated within the user guide.</p>
+      <p>You can find contact details of all suppliers on page 6 of the user guide.</p>
+
+      <h3 class='govuk-heading-m'>
+        Place your order with the chosen supplier
+      </h3>
+      <p>There are two ways you can place your order:</p>
+      <ul class="govuk-list govuk-list--number">
+        <li>using the template order form</li>
+        <li>by telephone or email</li>
+      </ul>
+
+      <p>You must quote &lsquo;ESPO Framework 376E&rsquo; to get the agreed discounts.</p>
+
+      {{ govukWarningText({
+          html: 'Do not use the suppliers&rsquo; order forms as these contain their order terms so you may not get the best rates.',
+          iconFallbackText: 'Warning'
+      }) }}
+    {% endset -%}
+
+    {{ govukTabs({
+      items: [
+        {
+          label: "Details",
+          id: "details",
+          panel: {
+            html: detailsHtml
+          }
+        },
+        {
+          label: "What it offers",
+          id: "what-it-offers",
+          panel: {
+            html: offersHtml
+          }
+        },
+        {
+          label: "Benefits",
+          id: "benefits",
+          panel: {
+            html: benefitsHtml
+          }
+        },
+        {
+          label: "How to use",
+          id: "how-to-use",
+          panel: {
+            html: howHtml
+          }
+        }
+      ]
     }) }}
 
-    <h3 class='govuk-heading-m'>
-      Find out suppliers’ discount rates
-    </h3>
-    <p>Rates are listed by publishers on page 8 of the user guide to help you identify suppliers who offer the best discounts.</p>
-    <p>If you do not know the publisher of the books you need, visit any of the suppliers’ websites (page 12 of the user guide) and search by book title or ISBN.</p>
 
-    <h3 class='govuk-heading-m'>
-      Run a further competition between the suppliers
-    </h3>
-    <p>If you think you can get a better price, you can <a href="https://www.gov.uk/guidance/buying-for-schools/run-a-mini-competition">run a mini-competition</a>. This usually only applies to items ordered in large quantities.</p>
-
-    <h3 class='govuk-heading-m'>
-      Contact your chosen supplier
-    </h3>
-    <p>You should contact your chosen supplier to confirm availability, delivery times and pricing &ndash; the quote should reflect the discount from the recommended retail price (RRP) stated within the user guide.</p>
-    <p>You can find contact details of all suppliers on page 6 of the user guide.</p>
-
-    <h3 class='govuk-heading-m'>
-      Place your order with the chosen supplier
-    </h3>
-    <p>There are two ways you can place your order:</p>
-    <ul class="govuk-list govuk-list--number">
-      <li>using the template order form</li>
-      <li>by telephone or email</li>
-    </ul>
-
-    <p>You must quote &lsquo;ESPO Framework 376E&rsquo; to get the agreed discounts.</p>
-
-    {{ govukWarningText({
-        html: 'Do not use the suppliers&rsquo; order forms as these contain their order terms so you may not get the best rates.',
-        iconFallbackText: 'Warning'
-    }) }}
-
-    <!-- /HOW TO BUY -->
-
-    <!-- {{ govukButton({
-      text: 'Continue to the CPC website',
-      href: 'https://www.espo.org/Pages/Books-for-schools-framework-376E-guide',
-      classes: ''
-    }) }} -->
 
   </div>
 
