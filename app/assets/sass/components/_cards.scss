@@ -1,71 +1,17 @@
-// https://govuk-card-test--region.herokuapp.com/
-
-$govuk-card-border : govuk-colour("blue");
-$govuk-card-selected-background-colour : govuk-colour("blue");
-$govuk-card-selected-foreground-colour : govuk-colour("white");
-
-.govuk-card__flex-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.govuk-card__flex-item {
-  display: flex;
-  overflow: hidden;
-}
-
-.govuk-card {
-  margin-bottom: govuk-spacing(6);
-  padding-bottom: govuk-spacing(6);
-  border-bottom: 3px solid $govuk-card-border;
-  box-sizing: border-box;
-}
-
-.govuk-card--contained {
+.card {
+  position: relative;
   width: 100%;
   background-color: govuk-colour("grey-4");
+  border: 1px solid $govuk-border-colour;
+  margin-bottom: govuk-spacing(3);
 }
 
-.govuk-card--contained--on-background {
-  background-color: govuk-colour("white");
+.card:hover {
+  border-color: $govuk-link-colour;
+  box-shadow: inset 0 0 0 1px $govuk-link-colour;
 }
 
-.govuk-card--borderless {
-  border: 0;
-  padding-bottom: 0;
-}
-
-.govuk-card--selectable {
-  position: relative;
-}
-
-.govuk-card--selectable h3 {
-  color: govuk-colour("blue");
-}
-
-.govuk-card--selectable a {
-  position: relative;
-  z-index: 1;
-}
-
-.govuk-card--selectable:hover {
-  background-color: $govuk-card-selected-background-colour;
-}
-
-.govuk-card--selectable:hover > .govuk-card__content > h3,
-.govuk-card--selectable:hover > .govuk-card__content > p,
-.govuk-card--selectable:hover > .govuk-card__content > h3 > a,
-.govuk-card--selectable:hover > .govuk-card__content > ul > li,
-.govuk-card--selectable:hover > .govuk-card__actions > ul > li > a {
-  color: $govuk-card-selected-foreground-colour !important;
-}
-
-.govuk-card--selectable:hover > .govuk-card__content > h3 > a:hover,
-.govuk-card--selectable:hover > .govuk-card__actions > ul > li > a:hover {
-  color: lighten(govuk-colour("light-blue"), 30%) !important;
-}
-
-.govuk-card--selectable > a {
+.card > a {
   position: absolute;
   top: 0;
   left: 0;
@@ -74,58 +20,67 @@ $govuk-card-selected-foreground-colour : govuk-colour("white");
   z-index: 0;
 }
 
-.govuk-card--selectable > a:focus {
+.card > a:focus {
   background-color: initial !important;
 }
 
-
-.govuk-card__hero {
-  line-height: 0;
+.card__header {
+  padding: govuk-spacing(4) govuk-spacing(4) govuk-spacing(2);
 }
 
-.govuk-card__hero img {
-  max-width: 100%;
+.card__content {
+  padding: 0 govuk-spacing(4) govuk-spacing(4);
 }
 
-.govuk-card__content {
-  padding-top: govuk-spacing(4);
-  padding-bottom: 0;
+.card__header,
+.card__content {
+  &::after {
+    clear: both;
+    content: ' ';
+    display: block;
+  }
 }
 
-.govuk-card__content p {
+.card .card__title {
+  @include govuk-font($size: 24, $weight: bold);
+  color: $govuk-link-colour;
+}
+
+.card dt,
+.card dd {
+  float: left;
+  @include govuk-text-colour;
+  @include govuk-font($size: 19);
+  margin: 0 govuk-spacing(1) 0 0;
+  padding: 0;
+
+  @media(max-width: 670px) {
+    float: none;
+    margin: 0;
+  }
+}
+
+.card dt {
+  font-weight: bold;
+}
+
+.card dd {
+  margin-right: govuk-spacing(5);
+
+  @media(max-width: 670px) {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.card p {
   margin-bottom: 0;
 }
 
-.govuk-card__content p + p {
+.card p + p {
   margin-top: govuk-spacing(4);
-}
-
-.govuk-card--contained .govuk-card__content {
-  padding-left: govuk-spacing(4);
-  padding-right: govuk-spacing(4);
-}
-
-.govuk-card__actions {
-  // padding-top: govuk-spacing(4);
-  padding-bottom: 0;
-}
-
-.govuk-card--contained  .govuk-card__actions {
-  padding-left: govuk-spacing(4);
-  padding-right: govuk-spacing(4);
-}
-
-.govuk-card__actions > .govuk-c-button {
-  margin-bottom: 0;
-}
-
-.hidden {
-  display: none;
-}
-
-
-.app--container {
-  background-color:#f8f8f8;
-  border-bottom:3px solid #005ea5;
-  padding:20px 20px 0px 20px;
 }

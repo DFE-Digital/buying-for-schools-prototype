@@ -33,6 +33,19 @@ router.get('/service/check-category', function (req, res) {
 })
 
 
+// Check if electricity to test multiple outcomes
+router.get('/service/multi-check', function (req, res) {
+  const subcategory = req.session.data['category-energy']
+
+  if (subcategory == "Electricity") {
+    res.redirect('/service/multiple-outcomes')
+  } else {
+    res.redirect('/service/outcome')
+  }
+
+})
+
+
 
 
 
