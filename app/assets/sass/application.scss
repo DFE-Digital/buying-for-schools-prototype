@@ -40,6 +40,11 @@ $govuk-global-styles: true;
   font-weight: normal;
 }
 
+.govuk-tabs__panel .app-check-your-answers__question {
+  font-weight: bold;
+}
+
+
 
 // Updated related content to match new gov styles
 .app-related-items--small {

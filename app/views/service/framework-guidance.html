@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{# Adds a class to increase vertical spacing for pages without a back button #}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="flash-card">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
+          How to buy from a framework
+        </h1>
+
+        <p>The DfE <a href="https://www.gov.uk/guidance/buying-for-schools">buying for schools guidance</a> will help you prepare and research before buying to help you get the best deal and save money.</p>
+
+        {{ govukButton({
+            text: 'Continue',
+            href: 'service-output',
+            classes: 'govuk-!-margin-bottom-0'
+        }) }}
+
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

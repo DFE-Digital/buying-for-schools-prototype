@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{# Adds a class to increase vertical spacing for pages without a back button #}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
+        3 matching frameworks
+      </h1>
+      <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, there are multiple approved frameworks for you to choose from.</p>
+
+      <dl class="card">
+        <a href="outcome-choice?choice=electricity2"></a>
+        <div class="card__header">
+          <dt class="govuk-visually-hidden">Framework name:</dt>
+          <dd class="card__title">Electricity supply and ancillary services (half-hourly)</dd>
+        </div>
+
+        <div class="card__content">
+          <dt>Provider:</dt>
+          <dd>Crown Commercial Service</dd>
+
+          <dt>Start date:</dt>
+          <dd>27 March 2015</dd>
+
+          <dt>End date:</dt>
+          <dd>26 March 2019</dd>
+        </div>
+      </dl>
+
+      <dl class="card">
+        <a href="outcome-choice?choice=electricity1"></a>
+        <div class="card__header">
+          <dt class="govuk-visually-hidden">Framework name:</dt>
+          <dd class="card__title">Electricity supply and ancillary services (non-half hourly)</dd>
+        </div>
+
+        <div class="card__content">
+          <dt>Provider:</dt>
+          <dd>Crown Commercial Service</dd>
+
+          <dt>Start date:</dt>
+          <dd>31 July 2017</dd>
+
+          <dt>End date:</dt>
+          <dd>31 July 2020</dd>
+        </div>
+      </dl>
+
+      <dl class="card">
+        <a href="outcome-choice?choice=electricity3"></a>
+        <div class="card__header">
+          <dt class="govuk-visually-hidden">Framework name:</dt>
+          <dd class="card__title">Electricity (half hourly, non-half hourly and unmetered)</dd>
+        </div>
+
+        <div class="card__content">
+          <dt>Provider:</dt>
+          <dd>Yorkshire Purchasing Organisation</dd>
+
+          <dt>Start date:</dt>
+          <dd>1 April 2019</dd>
+
+          <dt>End date:</dt>
+          <dd>31 March 2023</dd>
+        </div>
+      </dl>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      {% include "includes/answers.html" %}
+    </div>
+  </div>
+{% endblock %}
