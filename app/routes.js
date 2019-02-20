@@ -11,6 +11,17 @@ router.get('/start-again', function (req, res) {
   res.redirect('/service/type')
 })
 
+
+
+// Check eligability
+router.get('/service/eligability', function (req, res, next) {
+  if (req.session.data['spend'] == "No") {
+    res.redirect('/service/ineligable')
+  } else {
+    res.redirect('/service/framework-benefits')
+  }
+})
+
 // Check if lease
 router.get('/service/category', function (req, res, next) {
   if (req.session.data['type'] == "Leasing goods") {
