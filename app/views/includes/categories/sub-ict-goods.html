@@ -1,0 +1,27 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'sub-category',
+  name: 'sub-category',
+  items: [
+    {
+      value: 'Hardware',
+      text: 'Hardware',
+      checked: checked('sub-category', 'Hardware')
+    },
+    {
+      value: 'Networking equipment',
+      text: 'Networking equipment',
+      checked: checked('sub-category', 'Networking equipment')
+    },
+    {
+      value: 'Printers, copiers and multifunctional devices',
+      text: 'Printers, copiers and multifunctional devices',
+      checked: checked('sub-category', 'Printers, copiers and multifunctional devices')
+    },
+    {
+      value: 'Software',
+      text: 'Software',
+      checked: checked('sub-category', 'Software')
+    }
+  ]
+}) }}

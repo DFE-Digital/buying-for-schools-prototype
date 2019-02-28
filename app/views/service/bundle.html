@@ -7,31 +7,31 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="category" method="post" autocomplete="off">
+      <form class="form" action="check-category" method="post" autocomplete="off">
 
         {{ govukRadios({
-          idPrefix: 'type',
-          name: 'type',
+          idPrefix: 'bundle',
+          name: 'bundle',
           fieldset: {
             legend: {
-              text: 'What are you buying?',
+              text: 'Are you looking for a multi-service bundle?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
           },
           hint: {
-            text: ''
+            text: 'Hint text'
           },
           items: [
             {
-                value: 'Goods',
-                text: 'Goods',
-                checked: checked('type', 'Goods')
+              value: 'Yes',
+              text: 'Yes',
+              checked: checked('bundle', 'Yes')
             },
             {
-              value: 'Services',
-              text: 'Services',
-              checked: checked('type', 'Services')
+              value: 'No',
+              text: 'No',
+              checked: checked('bundle', 'No')
             }
           ]
         }) }}
@@ -42,6 +42,10 @@
         }) }}
 
       </form>
+
+
+
+      {% include "includes/answers.html" %}
 
     </div>
   </div>

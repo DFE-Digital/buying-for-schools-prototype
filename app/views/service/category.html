@@ -9,10 +9,10 @@
 
       <form class="form" action="check-category" method="post" autocomplete="off">
 
-        {% if data['type'] == 'Buying goods' %}
-          {% include "includes/categories-goods.html" %}
-        {% elif data['type'] == 'One-off service' or data['type'] == 'Ongoing service contract' %}
-          {% include "includes/categories-services.html" %}
+        {% if data['type'] == 'Goods' %}
+          {% include "includes/categories/goods.html" %}
+        {% elif data['type'] == 'Services' %}
+          {% include "includes/categories/services.html" %}
         {% endif %}
 
         {{ govukButton({
