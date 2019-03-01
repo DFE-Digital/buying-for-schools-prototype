@@ -23,8 +23,14 @@
           {% include "includes/categories/sub-fm.html" %}
         {% elif data['category'] == 'ICT' and data['type'] == 'Goods' %}
           {% include "includes/categories/sub-ict-goods.html" %}
+        {% elif data['category'] == 'ICT' and data['type'] == 'Services' %}
+          {% include "includes/categories/sub-ict-services.html" %}
         {% elif data['category'] == 'Energy and utilities' %}
           {% include "includes/categories/sub-energy.html" %}
+        {% elif data['category'] == 'Financial' %}
+          {% include "includes/categories/sub-financial.html" %}
+        {% elif data['category'] == 'Recruitment' %}
+          {% include "includes/categories/sub-recruitment.html" %}
         {% endif %}
 
         {{ govukButton({

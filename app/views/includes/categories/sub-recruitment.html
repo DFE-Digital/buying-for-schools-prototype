@@ -1,0 +1,17 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'sub-category',
+  name: 'sub-category',
+  items: [
+    {
+      value: 'Pre-employment checks',
+      text: 'Pre-employment checks',
+      checked: checked('sub-category', 'Pre-employment checks')
+    },
+    {
+      value: 'Supply teachers',
+      text: 'Supply teachers',
+      checked: checked('sub-category', 'Supply teachers')
+    }
+  ]
+}) }}

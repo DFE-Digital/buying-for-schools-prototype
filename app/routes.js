@@ -48,7 +48,6 @@ router.get('/service/check-category', function (req, res) {
   } else {
     res.redirect('/service/sub-category')
   }
-
 })
 
 // Check if it should go direct to outcome or USP
@@ -59,10 +58,15 @@ router.get('/service/check-sub-category', function (req, res) {
     res.redirect('/service/catalogue')
   } else if (sub == "Printers, copiers and multifunctional devices") {
     res.redirect('/service/directaward')
+  } else if (sub == "Electricity") {
+    res.redirect('/service/meter')
+  } else if (sub == "Managed ICT") {
+    res.redirect('/service/support')
+  } else if (sub == "Gas" || sub == "Cloud") {
+    res.redirect('/service/multiple-outcomes')
   } else {
     res.redirect('/service/outcome')
   }
-
 })
 
 
@@ -75,7 +79,6 @@ router.get('/service/check-catalogue', function (req, res) {
   } else {
     res.redirect('/service/multiple-outcomes')
   }
-
 })
 
 
@@ -89,7 +92,18 @@ router.get('/service/check-directaward', function (req, res) {
   } else {
     res.redirect('/service/multiple-outcomes')
   }
+})
 
+
+
+router.get('/service/check-support', function (req, res) {
+  const support = req.session.data['support']
+
+  if (support == "Yes") {
+    res.redirect('/service/multiple-outcomes')
+  } else {
+    res.redirect('/service/outcome')
+  }
 })
 
 
@@ -102,7 +116,6 @@ router.get('/service/multi-check', function (req, res) {
   } else {
     res.redirect('/service/outcome')
   }
-
 })
 
 

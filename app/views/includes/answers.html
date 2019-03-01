@@ -83,7 +83,7 @@
       {{ data['catalogue'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="/service/bundle">
+      <a href="/service/catalogue">
         Change
       </a>
     </dd>
@@ -100,7 +100,23 @@
       {{ data['directaward'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="/service/bundle">
+      <a href="/service/directaward">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['meter'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      What type of meter do you have?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['meter'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/meter">
         Change
       </a>
     </dd>

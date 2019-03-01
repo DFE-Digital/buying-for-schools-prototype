@@ -9,16 +9,13 @@
 
       {% if data['category'] == 'Furniture' %}
         {% include "includes/outcomes/furniture.html" %}
-      {% elif data['category'] == 'Legal services' %}
+      {% elif data['category'] == 'Legal' %}
         {% include "includes/outcomes/legal.html" %}
       {% elif data['category'] == 'Office supplies' %}
         {% include "includes/outcomes/office-supplies-catalogue.html" %}
-      {% elif data['category'] == 'Professional services' %}
+      {% elif data['category'] == 'Professional' %}
         {% include "includes/outcomes/professional.html" %}
-
-
-
-
+      <!-- END TOP LEVELS -->
 
       {% elif data['category'] == 'Books and related materials' %}
         {% if data['sub-category'] == 'Classroom supplies' %}
@@ -28,15 +25,17 @@
         {% endif %}
       <!-- END BOOKS -->
 
-      {% elif data['category'] == 'ICT' and data['type'] == 'Goods' %}
+      {% elif data['category'] == 'ICT' %}
         {% if data['sub-category'] == 'Networking equipment' %}
           {% include "includes/outcomes/ict-solutions.html" %}
         {% elif (data['sub-category'] == 'Hardware' or data['sub-category'] == 'Software') and data['catalogue'] == 'Yes' %}
           {% include "includes/outcomes/ict-purchasingplatform.html" %}
         {% elif data['sub-category'] == 'Printers, copiers and multifunctional devices' and data['directaward'] == 'Yes' %}
           {% include "includes/outcomes/ict-mfd-ccs.html" %}
+        {% elif data['sub-category'] == 'Managed ICT' and data['support'] == 'No' %}
+          {% include "includes/outcomes/ict-servicesforeducation.html" %}
         {% endif %}
-      <!-- END ICT GOODS -->
+      <!-- END ICT -->
 
       {% elif data['category'] == 'Facilities management and estates' %}
         {% if data['sub-category'] == 'Application testing' %}
@@ -52,55 +51,35 @@
         {% endif %}
       <!-- END FM -->
 
-
-
-
-      {% elif data['category'] == 'Audit services' %}
-        {% include "includes/outcomes/audit.html" %}
-
       {% elif data['category'] == 'Energy and utilities' %}
-        {% if data['category-energy'] == 'Electricity' %}
-          {% include "includes/outcomes/energy-electricity.html" %}
-        {% elif data['category-energy'] == 'Energy efficiency improvements' %}
-          {% include "includes/outcomes/energy-efficiency.html" %}
-        {% elif data['category-energy'] == 'Loans for energy saving' %}
-          {% include "includes/outcomes/energy-loans.html" %}
-        {% elif data['category-energy'] == 'Gas' %}
-          {% include "includes/outcomes/energy-gas.html" %}
-        {% elif data['category-energy'] == 'Drains and sewerage' %}
-          {% include "includes/outcomes/energy-water.html" %}
-        {% elif data['category-energy'] == 'Water' %}
+        {% if data['sub-category'] == 'Water, drains and sewerage' %}
           {% include "includes/outcomes/energy-water.html" %}
         {% endif %}
+      <!-- END ENERGY -->
 
-
-
-
-
-
-
-
-      {% elif data['category'] == 'ICT' %}
-        {% if data['type'] == 'Buying goods' %}
-          {% include "includes/outcomes/ict-catalogue.html" %}
-        {% elif data['type'] == 'One-off service' or data['type'] == 'Ongoing service contract' %}
-          {% include "includes/outcomes/ict.html" %}
+      {% elif data['category'] == 'Financial' %}
+        {% if data['sub-category'] == 'Audit' %}
+          {% include "includes/outcomes/financial-audit.html" %}
+        {% elif data['sub-category'] == 'Cost recovery' %}
+          {% include "includes/outcomes/financial-costrecovery.html" %}
+        {% elif data['sub-category'] == 'Insurance' %}
+          {% include "includes/outcomes/financial-insurance.html" %}
+        {% elif data['sub-category'] == 'Leasing' %}
+          {% include "includes/outcomes/financial-leasing.html" %}
         {% endif %}
-
-      {% elif data['category'] == 'Insurance' %}
-        {% include "includes/outcomes/insurance.html" %}
-
-
-
-
-
-      {% elif data['category'] == 'Printers, copiers and multi-functional devices (MFDs)' %}
-        {% include "includes/outcomes/mfds.html" %}
-
+      <!-- END FINANCIAL -->
 
 
       {% elif data['category'] == 'Recruitment' %}
-        {% include "includes/outcomes/recruitment.html" %}
+        {% if data['sub-category'] == 'Pre-employment checks' %}
+          {% include "includes/outcomes/recruitment-preemployment.html" %}
+        {% elif data['sub-category'] == 'Supply teachers' %}
+          {% include "includes/outcomes/recruitment-supplyteachers.html" %}
+        {% endif %}
+      <!-- END RECRUITMENT -->
+
+
+
       {% endif %}
 
 

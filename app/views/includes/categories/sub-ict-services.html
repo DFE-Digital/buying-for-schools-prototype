@@ -1,0 +1,22 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'sub-category',
+  name: 'sub-category',
+  items: [
+    {
+      value: 'Cloud',
+      text: 'Cloud',
+      checked: checked('sub-category', 'Cloud')
+    },
+    {
+      value: 'Managed ICT',
+      text: 'Managed ICT',
+      checked: checked('sub-category', 'Managed ICT')
+    },
+    {
+      value: 'Printers, copiers and multifunctional devices',
+      text: 'Printers, copiers and multifunctional devices',
+      checked: checked('sub-category', 'Printers, copiers and multifunctional devices')
+    }
+  ]
+}) }}
