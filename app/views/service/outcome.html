@@ -33,6 +33,8 @@
           {% include "includes/outcomes/ict-solutions.html" %}
         {% elif (data['sub-category'] == 'Hardware' or data['sub-category'] == 'Software') and data['catalogue'] == 'Yes' %}
           {% include "includes/outcomes/ict-purchasingplatform.html" %}
+        {% elif data['sub-category'] == 'Printers, copiers and multifunctional devices' and data['directaward'] == 'Yes' %}
+          {% include "includes/outcomes/ict-mfd-ccs.html" %}
         {% endif %}
       <!-- END ICT GOODS -->
 

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-directaward" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          idPrefix: 'directaward',
+          name: 'directaward',
+          fieldset: {
+            legend: {
+              text: 'Do you want the option for direct award?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: 'This means you will be able to select the supplier directly and not have to run a mini-competition.'
+          },
+          items: [
+            {
+              value: 'Yes',
+              text: 'Yes',
+              checked: checked('directaward', 'Yes')
+            },
+            {
+              value: 'No',
+              text: 'No',
+              checked: checked('directaward', 'No')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+  </div>
+{% endblock %}

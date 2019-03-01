@@ -57,6 +57,8 @@ router.get('/service/check-sub-category', function (req, res) {
 
   if (sub == "Software" || sub == "Hardware") {
     res.redirect('/service/catalogue')
+  } else if (sub == "Printers, copiers and multifunctional devices") {
+    res.redirect('/service/directaward')
   } else {
     res.redirect('/service/outcome')
   }
@@ -69,6 +71,20 @@ router.get('/service/check-catalogue', function (req, res) {
   const catalogue = req.session.data['catalogue']
 
   if (catalogue == "Yes") {
+    res.redirect('/service/outcome')
+  } else {
+    res.redirect('/service/multiple-outcomes')
+  }
+
+})
+
+
+
+
+router.get('/service/check-directaward', function (req, res) {
+  const directaward = req.session.data['directaward']
+
+  if (directaward == "Yes") {
     res.redirect('/service/outcome')
   } else {
     res.redirect('/service/multiple-outcomes')
