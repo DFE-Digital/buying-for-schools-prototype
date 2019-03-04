@@ -138,4 +138,20 @@
     </dd>
   </div>
   {% endif %}
+
+  {% if data['size'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      Are you doing a large energy efficiency project across you school or trust?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['size'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/size">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
 </dl>

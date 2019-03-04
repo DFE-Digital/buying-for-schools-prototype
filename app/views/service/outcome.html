@@ -58,6 +58,10 @@
       {% elif data['category'] == 'Energy and utilities' %}
         {% if data['sub-category'] == 'Water, drains and sewerage' %}
           {% include "includes/outcomes/energy-water.html" %}
+        {% elif data['sub-category'] == 'Energy efficiency improvements' and data['size'] == 'Yes' %}
+          {% include "includes/outcomes/energy-efficiency-ccs.html" %}
+        {% elif data['sub-category'] == 'Energy efficiency improvements' and data['size'] == 'No' %}
+          {% include "includes/outcomes/energy-efficiency-fusion21.html" %}
         {% endif %}
       <!-- END ENERGY -->
 

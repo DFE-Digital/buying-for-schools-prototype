@@ -60,6 +60,8 @@ router.get('/service/check-sub-category', function (req, res) {
     res.redirect('/service/directaward')
   } else if (sub == "Electricity") {
     res.redirect('/service/meter')
+  } else if (sub == "Energy efficiency improvements") {
+    res.redirect('/service/size')
   } else if (sub == "Managed ICT" || sub == "Cleaning") {
     res.redirect('/service/support')
   } else if (sub == "Gas" || sub == "Cloud") {

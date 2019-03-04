@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="outcome" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          idPrefix: 'size',
+          name: 'size',
+          fieldset: {
+            legend: {
+              text: 'Are you doing a large energy efficiency project across you school or trust?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--xl'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'Yes',
+              text: 'Yes',
+              checked: checked('size', 'Yes')
+            },
+            {
+              value: 'No',
+              text: 'No, I just want a supplier to supply and fit products',
+              checked: checked('size', 'No')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+  </div>
+{% endblock %}
