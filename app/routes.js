@@ -58,13 +58,13 @@ router.get('/service/check-sub-category', function (req, res) {
     res.redirect('/service/catalogue')
   } else if (sub == "Printers, copiers and multifunctional devices") {
     res.redirect('/service/directaward')
-  } else if (sub == "Electricity") {
-    res.redirect('/service/meter')
+  } else if (sub == "Electricity" || sub == "Gas") {
+    res.redirect('/service/switch')
   } else if (sub == "Energy efficiency improvements") {
     res.redirect('/service/size')
   } else if (sub == "Managed ICT" || sub == "Cleaning") {
     res.redirect('/service/support')
-  } else if (sub == "Gas" || sub == "Cloud") {
+  } else if (sub == "Cloud") {
     res.redirect('/service/multiple-outcomes')
   } else {
     res.redirect('/service/outcome')
@@ -104,6 +104,20 @@ router.get('/service/check-support', function (req, res) {
 
   if (support == "Schools focused" && sub == "Managed ICT") {
     res.redirect('/service/multiple-outcomes')
+  } else {
+    res.redirect('/service/outcome')
+  }
+})
+
+
+router.get('/service/check-schoolswitch', function (req, res) {
+  const schoolswitch = req.session.data['schoolswitch']
+  const sub = req.session.data['sub-category']
+
+  if (schoolswitch == "No" && sub == "Gas") {
+    res.redirect('/service/support')
+  } else if (schoolswitch == "No" && sub == "Electricity") {
+    res.redirect('/service/meter')
   } else {
     res.redirect('/service/outcome')
   }

@@ -62,6 +62,21 @@
           {% include "includes/outcomes/energy-efficiency-ccs.html" %}
         {% elif data['sub-category'] == 'Energy efficiency improvements' and data['size'] == 'No' %}
           {% include "includes/outcomes/energy-efficiency-fusion21.html" %}
+        {% elif data['schoolswitch'] == 'Yes' %}
+          {% include "includes/outcomes/energy-schoolswitch.html" %}
+        {% elif data['sub-category'] == 'Electricity' and data['meter'] == 'Half hourly metered' and data['support'] == 'General helpdesk' %}
+          {% include "includes/outcomes/energy-electricity-ccs-half.html" %}
+        {% elif data['sub-category'] == 'Electricity' and data['meter'] == 'Half hourly metered' and data['support'] == 'Schools focused' %}
+          {% include "includes/outcomes/energy-electricity-ypo.html" %}
+        {% elif data['sub-category'] == 'Electricity' and data['meter'] == 'Non-half hourly metered' and data['support'] == 'General helpdesk' %}
+          {% include "includes/outcomes/energy-electricity-ccs-non.html" %}
+        {% elif data['sub-category'] == 'Electricity' and data['meter'] == 'Non-half hourly metered' and data['support'] == 'Schools focused' %}
+          {% include "includes/outcomes/energy-electricity-ypo.html" %}
+
+          {% elif data['sub-category'] == 'Gas' and data['support'] == 'General helpdesk' %}
+            {% include "includes/outcomes/energy-gas-ccs.html" %}
+          {% elif data['sub-category'] == 'Gas' and data['support'] == 'Schools focused' %}
+            {% include "includes/outcomes/energy-gas-ypo.html" %}
         {% endif %}
       <!-- END ENERGY -->
 
