@@ -5,7 +5,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
       <form class="form" action="check-directaward" method="post" autocomplete="off">
 
@@ -14,13 +14,13 @@
           name: 'directaward',
           fieldset: {
             legend: {
-              text: 'Do you want the option for direct award?',
+              text: 'Do you want to select a supplier directly without having to run a mini-competition?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
           },
           hint: {
-            text: 'This means you will be able to select the supplier directly and not have to run a mini-competition.'
+            text: ''
           },
           items: [
             {
@@ -30,7 +30,7 @@
             },
             {
               value: 'No',
-              text: 'No',
+              text: 'No, I want multiple suppliers to give me quotes',
               checked: checked('directaward', 'No')
             }
           ]
@@ -42,11 +42,10 @@
         }) }}
 
       </form>
+    </div>
 
-
-
+    <div class="govuk-grid-column-two-thirds">
       {% include "includes/answers.html" %}
-
     </div>
   </div>
 {% endblock %}

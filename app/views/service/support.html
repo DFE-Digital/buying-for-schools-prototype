@@ -14,7 +14,7 @@
           name: 'support',
           fieldset: {
             legend: {
-              text: 'Do you want the option for support from the framework provider?',
+              text: 'What level of support are you looking for?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
@@ -24,14 +24,14 @@
           },
           items: [
             {
-              value: 'Yes',
-              text: 'Yes',
-              checked: checked('support', 'Yes')
+              value: 'General helpdesk',
+              text: 'General helpdesk',
+              checked: checked('support', 'General helpdesk')
             },
             {
-              value: 'No',
-              text: 'No',
-              checked: checked('support', 'No')
+              value: 'Schools focused',
+              text: 'Schools focused',
+              checked: checked('support', 'Schools focused')
             }
           ]
         }) }}

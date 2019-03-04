@@ -60,7 +60,7 @@ router.get('/service/check-sub-category', function (req, res) {
     res.redirect('/service/directaward')
   } else if (sub == "Electricity") {
     res.redirect('/service/meter')
-  } else if (sub == "Managed ICT") {
+  } else if (sub == "Managed ICT" || sub == "Cleaning") {
     res.redirect('/service/support')
   } else if (sub == "Gas" || sub == "Cloud") {
     res.redirect('/service/multiple-outcomes')
@@ -98,8 +98,9 @@ router.get('/service/check-directaward', function (req, res) {
 
 router.get('/service/check-support', function (req, res) {
   const support = req.session.data['support']
+  const sub = req.session.data['sub-category']
 
-  if (support == "Yes") {
+  if (support == "Schools focused" && sub == "Managed ICT") {
     res.redirect('/service/multiple-outcomes')
   } else {
     res.redirect('/service/outcome')

@@ -41,7 +41,7 @@
   {% if data['bundle'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Are you looking for a multi-service bundle?
+      Would you like the option to buy multiple services?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['bundle'] }}
@@ -117,6 +117,22 @@
     </dd>
     <dd class="app-check-your-answers__change">
       <a href="/service/meter">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['support'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      What level of support are you looking for?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['support'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/support">
         Change
       </a>
     </dd>

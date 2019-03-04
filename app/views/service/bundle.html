@@ -14,23 +14,23 @@
           name: 'bundle',
           fieldset: {
             legend: {
-              text: 'Are you looking for a multi-service bundle?',
+              text: 'Do you want to buy multiple services?',
               isPageHeading: true,
               classes: 'govuk-fieldset__legend--xl'
             }
           },
           hint: {
-            text: 'Hint text'
+            text: ''
           },
           items: [
             {
               value: 'Yes',
-              text: 'Yes',
+              html: 'Yes',
               checked: checked('bundle', 'Yes')
             },
             {
               value: 'No',
-              text: 'No',
+              html: 'No, I&rsquo;d like to buy a  specific service',
               checked: checked('bundle', 'No')
             }
           ]

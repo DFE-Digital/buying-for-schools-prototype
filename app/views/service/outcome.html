@@ -41,7 +41,11 @@
         {% if data['sub-category'] == 'Application testing' %}
           {% include "includes/outcomes/fm-pat.html" %}
         {% elif data['sub-category'] == 'Cleaning' %}
-          {% include "includes/outcomes/fm-cleaning.html" %}
+          {% if data['support'] == 'Schools focused' %}
+            {% include "includes/outcomes/fm-cleaning.html" %}
+          {% else %}
+            {% include "includes/outcomes/fm.html" %}
+          {% endif %}
         {% elif data['sub-category'] == 'Construction consultancy' %}
           {% include "includes/outcomes/fm-construction.html" %}
         {% elif data['sub-category'] == 'Removal and relocation' %}
