@@ -9,6 +9,12 @@
 
       <form class="form" action="check-support" method="post" autocomplete="off">
 
+        {% set generalSupportHint %}
+          For schools and MATs with knowledge or experience of  {{ data['category'] | lower }} procurement (only need minimal guidance)
+        {% endset -%}
+
+
+
         {{ govukRadios({
           idPrefix: 'support',
           name: 'support',
@@ -30,7 +36,7 @@
                 classes: "govuk-label--s"
               },
               hint: {
-                text: 'For schools and MATs with knowledge or experience of procurement (only need minimal guidance).'
+                text: generalSupportHint
               },
               checked: checked('support', 'General helpdesk')
             },
