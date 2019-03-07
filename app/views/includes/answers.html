@@ -10,7 +10,7 @@
 <dl class="app-check-your-answers" style="width: 100%">
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      What is the type of purchase?
+      What are you buying?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['type'] }}
@@ -25,7 +25,7 @@
   {% if data['category'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      What are you buying?
+      What {{ data['type'] | lower }} do you need?
     </dt>
     <dd class="app-check-your-answers__answer">
       {{ data['category'] }}
@@ -38,13 +38,33 @@
   </div>
   {% endif %}
 
-  {% if data['category'] == "Energy and utilities" and data['category-energy'] %}
+  {% if data['bundle'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      What are you looking for in energy and utilities?
+      Would you like the option to buy multiple services?
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['category-energy'] }}
+      {{ data['bundle'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/bundle">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['sub-category'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      {% if data['category'] == 'ICT' %}
+        What are you looking for in {{ data['category'] }}?
+      {% else %}
+        What are you looking for in {{ data['category'] | lower }}?
+      {% endif %}
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['sub-category'] }}
     </dd>
     <dd class="app-check-your-answers__change">
       <a href="/service/sub-category">
@@ -54,32 +74,97 @@
   </div>
   {% endif %}
 
-  {% if data['method'] %}
+  {% if data['catalogue'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      How do you want to buy?
+      Do you want to buy from an online catalogue?
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['method'] }}
+      {{ data['catalogue'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="/service/method">
+      <a href="/service/catalogue">
         Change
       </a>
     </dd>
   </div>
   {% endif %}
 
-  {% if data['budget'] %}
+
+  {% if data['directaward'] %}
   <div class="app-check-your-answers__contents govuk-body-s">
     <dt class="app-check-your-answers__question">
-      Do you think you&rsquo;re going to spend around £180,000 or more?
+      Do you want the option for direct award?
     </dt>
     <dd class="app-check-your-answers__answer">
-      {{ data['budget'] }}
+      {{ data['directaward'] }}
     </dd>
     <dd class="app-check-your-answers__change">
-      <a href="/service/budget">
+      <a href="/service/directaward">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['schoolswitch'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      Do you want to use a price comparison and switching service?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['schoolswitch'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/switch">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['meter'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      What type of meter do you have?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['meter'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/meter">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['support'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      What level of support are you looking for?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['support'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/support">
+        Change
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+
+  {% if data['size'] %}
+  <div class="app-check-your-answers__contents govuk-body-s">
+    <dt class="app-check-your-answers__question">
+      Are you doing a large energy efficiency project across you school or trust?
+    </dt>
+    <dd class="app-check-your-answers__answer">
+      {{ data['size'] }}
+    </dd>
+    <dd class="app-check-your-answers__change">
+      <a href="/service/size">
         Change
       </a>
     </dd>

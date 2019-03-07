@@ -1,0 +1,17 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'sub-category',
+  name: 'sub-category',
+  items: [
+    {
+      value: 'Classroom supplies',
+      text: 'Classroom supplies',
+      checked: checked('sub-category', 'Classroom supplies')
+    },
+    {
+      value: 'Library supplies',
+      text: 'Library supplies',
+      checked: checked('sub-category', 'Library supplies')
+    }
+  ]
+}) }}

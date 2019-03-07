@@ -1,0 +1,27 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'sub-category',
+  name: 'sub-category',
+  items: [
+    {
+      value: 'Electricity',
+      text: 'Electricity',
+      checked: checked('sub-category', 'Electricity')
+    },
+    {
+      value: 'Energy efficiency improvements',
+      text: 'Energy efficiency improvements',
+      checked: checked('sub-category', 'Energy efficiency improvements')
+    },
+    {
+      value: 'Gas',
+      text: 'Gas',
+      checked: checked('sub-category', 'Gas')
+    },
+    {
+      value: 'Water, drains and sewerage',
+      text: 'Water, drains and sewerage',
+      checked: checked('sub-category', 'Water, drains and sewerage')
+    }
+  ]
+}) }}

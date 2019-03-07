@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-support" method="post" autocomplete="off">
+
+        {% set generalSupportHint %}
+          For schools and MATs with knowledge or experience of  {{ data['category'] | lower }} procurement (only need minimal guidance)
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          idPrefix: 'support',
+          name: 'support',
+          fieldset: {
+            legend: {
+              text: 'What level of support are you looking for?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--l'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'General helpdesk',
+              text: 'General helpdesk',
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: generalSupportHint
+              },
+              checked: checked('support', 'General helpdesk')
+            },
+            {
+              value: 'Schools focused',
+              text: 'Schools focused',
+              label: {
+                classes: "govuk-label--s"
+              },
+              hint: {
+                text: 'Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).'
+              },
+              checked: checked('support', 'Schools focused')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+  </div>
+{% endblock %}

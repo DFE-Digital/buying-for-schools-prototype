@@ -1,0 +1,39 @@
+<span class="govuk-caption-l">Your recommendation</span>
+<h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+  Furniture
+</h1>
+<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, we think you should use the North East Procurement Organisation (NEPO).</p>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class='govuk-heading-m related-main-content'>
+      What it offers
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>office furniture</li>
+      <li>educational furniture</li>
+      <li>residential and domestic furniture</li>
+    </ul>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>select a supplier for projects less than £25,000 (this is called a direct award)</li>
+      <li>no obligation design and consultancy service for large projects</li>
+    </ul>
+    {% include "includes/all-framework-benefits.html" %}
+
+
+    {{ govukButton({
+      text: 'Continue to the NEPO website',
+      href: 'https://www.nepo.org/solutions/furniture',
+      classes: 'govuk-!-margin-top-5'
+    }) }}
+
+  </div>
+
+  {% include "includes/outcome-aside.html" %}
+</div>

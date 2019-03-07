@@ -1,0 +1,40 @@
+<span class="govuk-caption-l">Your recommendation</span>
+<h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+  Digital Marketplace (G-Cloud 10)
+</h1>
+<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.</p>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class='govuk-heading-m related-main-content'>
+      What it offers
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>cloud computing services covering infrastructure, platform, software and specialist cloud services</li>
+    </ul>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>access to nearly 25,000 services and 3,500 suppliers</li>
+      <li>scalable services which can be expanded or shrunk as demand requires</li>
+      <li>rapid deployment</li>
+      <li>much reduced costs and total cost of ownership compared to running your own data centre</li>
+    </ul>
+    {% include "includes/all-framework-benefits.html" %}
+
+
+    {{ govukButton({
+      text: 'Continue to the CCS website',
+      href: 'https://www.digitalmarketplace.service.gov.uk/buyers/direct-award/g-cloud/start',
+      classes: 'govuk-!-margin-top-5'
+    }) }}
+
+  </div>
+
+  {% include "includes/outcome-aside.html" %}
+</div>

@@ -1,0 +1,31 @@
+{{ govukRadios({
+  idPrefix: 'sub-category',
+  name: 'sub-category',
+  items: [
+    {
+      value: 'Application testing',
+      text: 'Application testing',
+      checked: checked('sub-category', 'Application testing')
+    },
+    {
+      value: 'Cleaning',
+      text: 'Cleaning',
+      checked: checked('sub-category', 'Cleaning')
+    },
+    {
+      value: 'Construction consultancy',
+      text: 'Construction consultancy',
+      checked: checked('sub-category', 'Construction consultancy')
+    },
+    {
+      value: 'Removal and relocation',
+      text: 'Removal and relocation',
+      checked: checked('sub-category', 'Removal and relocation')
+    },
+    {
+      value: 'Workplace facilities management',
+      text: 'Other',
+      checked: checked('sub-category', 'Workplace facilities management')
+    }
+  ]
+}) }}

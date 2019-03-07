@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="support" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          idPrefix: 'meter',
+          name: 'meter',
+          fieldset: {
+            legend: {
+              text: 'What type of meter do you have?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--l'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'Half hourly metered',
+              text: 'Half hourly metered',
+              checked: checked('meter', 'Half hourly metered')
+            },
+            {
+              value: 'Non-half hourly metered',
+              text: 'Non-half hourly metered',
+              checked: checked('meter', 'Non-half hourly metered')
+            }
+          ]
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Help with meter types",
+          html: "<p>Find out which meter you have by checking the MPAN number. This is on your energy bill.</p><img src='/public/images/mpan-example.png' alt='Example of energy bill with MPAN highlighted' class='govuk-!-margin-bottom-3'><p>The first two numbers after the S show which meter you have. If it&rsquo;s 00, it&rsquo;s a half hourly meter, any other number means it&rsquo;s a non-half hourly meter.</p>"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+  </div>
+{% endblock %}

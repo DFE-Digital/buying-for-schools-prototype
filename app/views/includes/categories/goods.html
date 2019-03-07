@@ -1,0 +1,32 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'category',
+  name: 'category',
+  fieldset: {
+    legend: {
+      text: 'What goods do you need?',
+      isPageHeading: true,
+      classes: 'govuk-fieldset__legend--l'
+    }
+  },
+  hint: {
+    text: ''
+  },
+  items: [
+    {
+      value: 'Books and related materials',
+      text: 'Books and related materials',
+      checked: checked('category', 'Books and related materials')
+    },
+    {
+      value: 'Furniture',
+      text: 'Furniture',
+      checked: checked('category', 'Furniture')
+    },
+    {
+      value: 'ICT',
+      text: 'ICT',
+      checked: checked('category', 'ICT')
+    }
+  ]
+}) }}

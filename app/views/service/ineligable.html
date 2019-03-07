@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="spend">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        This service isn&rsquo;t suitable for you
+      </h1>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l">Frameworks are only recommended if you&rsquo;re spending over £5,000.</p>
+
+      <p>If you&rsquo;re not spending that much we recommended you look at other methods of buying. The Department for Education have guidance on <a href="https://www.gov.uk/guidance/buying-for-schools">buying for schools</a>.</p>
+
+    </div>
+  </div>
+{% endblock %}

@@ -8,13 +8,36 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {% if data['choice'] == 'electricity1' %}
-        {% include "includes/outcomes/energy-electricity1.html" %}
-      {% elif data['choice'] == 'electricity2' %}
-        {% include "includes/outcomes/energy-electricity2.html" %}
-      {% elif data['choice'] == 'electricity3' %}
-        {% include "includes/outcomes/energy-electricity3.html" %}
+      {% if data['choice'] == 'ict-thinkit' %}
+        {% include "includes/outcomes/ict-thinkit.html" %}
+      {% elif data['choice'] == 'ict-softwarelicenses' %}
+        {% include "includes/outcomes/ict-softwarelicenses.html" %}
+      {% elif data['choice'] == 'ict-gcloud' %}
+        {% include "includes/outcomes/ict-gcloud.html" %}
+      {% elif data['choice'] == 'ict-desktophardware' %}
+        {% include "includes/outcomes/ict-desktophardware.html" %}
+      {% elif data['choice'] == 'ict-servicesforeducation' %}
+        {% include "includes/outcomes/ict-servicesforeducation.html" %}
+      {% elif data['choice'] == 'ict-mfd-ccs' %}
+        {% include "includes/outcomes/ict-mfd-ccs.html" %}
+      {% elif data['choice'] == 'ict-mfd-cpc' %}
+        {% include "includes/outcomes/ict-mfd-cpc.html" %}
+      {% elif data['choice'] == 'ict-mfd-kcs' %}
+        {% include "includes/outcomes/ict-mfd-kcs.html" %}
+      {% elif data['choice'] == 'energy-schoolswitch' %}
+        {% include "includes/outcomes/energy-schoolswitch.html" %}
+      {% elif data['choice'] == 'energy-gas-ccs' %}
+        {% include "includes/outcomes/energy-gas-ccs.html" %}
+      {% elif data['choice'] == 'energy-gas-ypo' %}
+        {% include "includes/outcomes/energy-gas-ypo.html" %}
+      {% elif data['choice'] == 'energy-electricity-ypo' %}
+        {% include "includes/outcomes/energy-electricity-ypo.html" %}
+      {% elif data['choice'] == 'energy-electricity-ccs-half' %}
+        {% include "includes/outcomes/energy-electricity-ccs-half.html" %}
+      {% elif data['choice'] == 'energy-electricity-ccs-non' %}
+        {% include "includes/outcomes/energy-electricity-ccs-non.html" %}
       {% endif %}
+
 
     </div>
 

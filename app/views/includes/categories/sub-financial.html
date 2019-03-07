@@ -1,0 +1,27 @@
+{{ govukRadios({
+  classes: '',
+  idPrefix: 'sub-category',
+  name: 'sub-category',
+  items: [
+    {
+      value: 'Audit',
+      text: 'Audit',
+      checked: checked('sub-category', 'Audit')
+    },
+    {
+      value: 'Cost recovery',
+      text: 'Cost recovery',
+      checked: checked('sub-category', 'Cost recovery')
+    },
+    {
+      value: 'Insurance',
+      text: 'Insurance',
+      checked: checked('sub-category', 'Insurance')
+    },
+    {
+      value: 'Leasing',
+      text: 'Leasing',
+      checked: checked('sub-category', 'Leasing')
+    }
+  ]
+}) }}

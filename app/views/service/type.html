@@ -10,14 +10,13 @@
       <form class="form" action="category" method="post" autocomplete="off">
 
         {{ govukRadios({
-          classes: '',
           idPrefix: 'type',
           name: 'type',
           fieldset: {
             legend: {
-              text: 'What is the type of purchase?',
+              text: 'What are you buying?',
               isPageHeading: true,
-              classes: 'govuk-fieldset__legend--xl'
+              classes: 'govuk-fieldset__legend--l'
             }
           },
           hint: {
@@ -25,14 +24,14 @@
           },
           items: [
             {
-                value: 'Buying goods',
-                text: 'Buying goods',
-                checked: checked('type', 'Buying goods')
+                value: 'Goods',
+                text: 'Goods',
+                checked: checked('type', 'Goods')
             },
             {
-              value: 'Ongoing service contract',
-              text: 'Ongoing service contract',
-              checked: checked('type', 'Ongoing service contract')
+              value: 'Services',
+              text: 'Services',
+              checked: checked('type', 'Services')
             }
           ]
         }) }}

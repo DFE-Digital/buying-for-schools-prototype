@@ -1,0 +1,56 @@
+<span class="govuk-caption-l">Your recommendation</span>
+<h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+  Library resources
+</h1>
+<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.</p>
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class='govuk-heading-m related-main-content'>
+      What it offers
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>academic books from a range of publishers (early years to KS4 and higher education)</li>
+      <li>professional books and publications</li>
+      <li>learning aids</li>
+      <li>e-books</li>
+      <li>newspapers, journals and periodicals</li>
+      <li>e-journals</li>
+      <li>audio books</li>
+      <li>audio summary</li>
+      <li>library discovery tools and services including:</li>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>search functionality</li>
+        <li>database provision</li>
+        <li>Online Public Access Catalogue (OPAC)</li>
+        <li>web resources</li>
+        <li>publisher packages</li>
+        <li>catalogue records</li>
+        <li>electronic and print resources</li>
+      </ul>
+    </ul>
+    <p>Includes fiction, non-fiction and curriculum material.</p>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>free quote tool</li>
+      <li>discounts against publishers’ list prices</li>
+      <li>comprehensive range of resources</li>
+    </ul>
+    {% include "includes/all-framework-benefits.html" %}
+
+    {{ govukButton({
+      text: 'Continue to the CPC website',
+      href: 'https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=6&frameworkID=177',
+      classes: 'govuk-!-margin-top-5'
+    }) }}
+
+  </div>
+
+  {% include "includes/outcome-aside.html" %}
+</div>

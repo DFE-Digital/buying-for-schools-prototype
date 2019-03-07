@@ -6,68 +6,249 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-        3 matching frameworks
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+        Matching frameworks
       </h1>
-      <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, there are multiple approved frameworks for you to choose from.</p>
+      <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, there are multiple approved frameworks to choose from.</p>
 
-      <dl class="card">
-        <a href="outcome-choice?choice=electricity2"></a>
-        <div class="card__header">
-          <dt class="govuk-visually-hidden">Framework name:</dt>
-          <dd class="card__title">Electricity supply and ancillary services (half-hourly)</dd>
-        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
 
-        <div class="card__content">
-          <dt>Provider:</dt>
-          <dd>Crown Commercial Service</dd>
+      {% if data['sub-category'] == 'Software' %}
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-thinkit"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">ICT, cloud, support and related services (Think IT)</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>E2BN</dd>
+          </div>
+        </dl>
 
-          <dt>Start date:</dt>
-          <dd>27 March 2015</dd>
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-softwarelicenses"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">Software licences and associated services for academies and schools</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Crown Commercial Service</dd>
+          </div>
+        </dl>
 
-          <dt>End date:</dt>
-          <dd>26 March 2019</dd>
-        </div>
-      </dl>
 
-      <dl class="card">
-        <a href="outcome-choice?choice=electricity1"></a>
-        <div class="card__header">
-          <dt class="govuk-visually-hidden">Framework name:</dt>
-          <dd class="card__title">Electricity supply and ancillary services (non-half hourly)</dd>
-        </div>
 
-        <div class="card__content">
-          <dt>Provider:</dt>
-          <dd>Crown Commercial Service</dd>
+      {% elif data['sub-category'] == 'Hardware' %}
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-servicesforeducation"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">ICT services for education</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Crown Commercial Service</dd>
+          </div>
+        </dl>
 
-          <dt>Start date:</dt>
-          <dd>31 July 2017</dd>
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-thinkit"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">ICT, cloud, support and related services (Think IT)</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>E2BN</dd>
+          </div>
+        </dl>
 
-          <dt>End date:</dt>
-          <dd>31 July 2020</dd>
-        </div>
-      </dl>
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-desktophardware"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">Desktop hardware</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Crescent Purchasing Consortium</dd>
+          </div>
+        </dl>
 
-      <dl class="card">
-        <a href="outcome-choice?choice=electricity3"></a>
-        <div class="card__header">
-          <dt class="govuk-visually-hidden">Framework name:</dt>
-          <dd class="card__title">Electricity (half hourly, non-half hourly and unmetered)</dd>
-        </div>
 
-        <div class="card__content">
-          <dt>Provider:</dt>
-          <dd>Yorkshire Purchasing Organisation</dd>
 
-          <dt>Start date:</dt>
-          <dd>1 April 2019</dd>
+      {% elif data['sub-category'] == 'Printers, copiers and multifunctional devices' %}
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-mfd-cpc"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">Multi-functional devices (MFD) and associated print services and supplies</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Crescent Purchasing Consortium</dd>
+          </div>
+        </dl>
 
-          <dt>End date:</dt>
-          <dd>31 March 2023</dd>
-        </div>
-      </dl>
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-mfd-kcs"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">Multi-functional devices, managed print and content services and records and information management</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Kent County Supplies</dd>
+          </div>
+        </dl>
+
+
+
+      {% elif data['sub-category'] == 'Electricity' or data['sub-category'] == 'Gas' %}
+        <dl class="card">
+          <a href="outcome-choice?choice=energy-schoolswitch"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">School Switch</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Crown Commercial Service</dd>
+          </div>
+        </dl>
+
+        {% if data['sub-category'] == 'Gas' %}
+          <dl class="card">
+            <a href="outcome-choice?choice=energy-gas-ccs"></a>
+            <div class="card__header">
+              <dt class="govuk-visually-hidden">Framework name:</dt>
+              <dd class="card__title">Supply of natural gas and and ancillary services</dd>
+            </div>
+            <div class="card__content">
+              <dt>Provider:</dt>
+              <dd>Crown Commercial Service</dd>
+            </div>
+          </dl>
+          <dl class="card">
+            <a href="outcome-choice?choice=energy-gas-ypo"></a>
+            <div class="card__header">
+              <dt class="govuk-visually-hidden">Framework name:</dt>
+              <dd class="card__title">Firm mains gas</dd>
+            </div>
+            <div class="card__content">
+              <dt>Provider:</dt>
+              <dd>Yorkshire Purchasing Organisation</dd>
+            </div>
+          </dl>
+
+
+        {% else %}
+
+
+          <dl class="card">
+            <a href="outcome-choice?choice=energy-electricity-ypo"></a>
+            <div class="card__header">
+              <dt class="govuk-visually-hidden">Framework name:</dt>
+              <dd class="card__title">Electricity (half hourly, non-half hourly and unmetered)</dd>
+            </div>
+            <div class="card__content">
+              <dt>Provider:</dt>
+              <dd>Yorkshire Purchasing Organisation</dd>
+            </div>
+          </dl>
+
+          {% if data['meter'] == 'Half hourly metered' %}
+            <dl class="card">
+              <a href="outcome-choice?choice=energy-electricity-ccs-half"></a>
+              <div class="card__header">
+                <dt class="govuk-visually-hidden">Framework name:</dt>
+                <dd class="card__title">Electricity supply and ancillary services</dd>
+              </div>
+
+              <div class="card__content">
+                <dt>Provider:</dt>
+                <dd>Crown Commercial Service</dd>
+              </div>
+            </dl>
+          {% elif data['meter'] == 'Non-half hourly metered' %}
+            <dl class="card">
+              <a href="outcome-choice?choice=energy-electricity-ccs-non"></a>
+              <div class="card__header">
+                <dt class="govuk-visually-hidden">Framework name:</dt>
+                <dd class="card__title">Electricity supply and ancillary services</dd>
+              </div>
+
+              <div class="card__content">
+                <dt>Provider:</dt>
+                <dd>Crown Commercial Service</dd>
+              </div>
+            </dl>
+          {% endif %}
+        {% endif %}
+
+
+
+      {% elif data['sub-category'] == 'Cloud' %}
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-gcloud"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">Digital Marketplace (G-Cloud 10)</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Crown Commercial Service</dd>
+          </div>
+        </dl>
+
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-thinkit"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">ICT, cloud, support and related services (Think IT)</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>E2BN</dd>
+          </div>
+        </dl>
+
+
+
+
+      {% elif data['sub-category'] == 'Managed ICT' %}
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-desktophardware"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">Desktop hardware</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>Crescent Purchasing Consortium</dd>
+          </div>
+        </dl>
+
+        <dl class="card">
+          <a href="outcome-choice?choice=ict-thinkit"></a>
+          <div class="card__header">
+            <dt class="govuk-visually-hidden">Framework name:</dt>
+            <dd class="card__title">ICT, cloud, support and related services (Think IT)</dd>
+          </div>
+          <div class="card__content">
+            <dt>Provider:</dt>
+            <dd>E2BN</dd>
+          </div>
+        </dl>
+
+
+
+
+
+      {% endif %}
 
     </div>
 

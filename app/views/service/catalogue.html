@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-catalogue" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          idPrefix: 'catalogue',
+          name: 'catalogue',
+          fieldset: {
+            legend: {
+              text: 'Do you want to buy from an online catalogue?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--l'
+            }
+          },
+          hint: {
+            text: 'A catalogue lets you search for and buy specific products online.'
+          },
+          items: [
+            {
+              value: 'Yes',
+              text: 'Yes',
+              checked: checked('catalogue', 'Yes')
+            },
+            {
+              value: 'No',
+              text: 'No, I want a supplier to give me a quote',
+              checked: checked('catalogue', 'No')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+  </div>
+{% endblock %}

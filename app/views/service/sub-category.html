@@ -7,10 +7,30 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="multi-check" method="post" autocomplete="off">
+      <form class="form" action="check-sub-category" method="post" autocomplete="off">
 
-        {% if data['category'] == 'Energy and utilities' %}
-          {% include "includes/categories-sub-energy.html" %}
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+        {% if data['category'] == 'ICT' %}
+          What {{ data['type'] | lower }} are you looking for in {{ data['category'] }}?
+        {% else %}
+          What {{ data['type'] | lower }} are you looking for in {{ data['category'] | lower }}?
+        {% endif %}
+        </h1>
+
+        {% if data['category'] == 'Books and related materials' %}
+          {% include "includes/categories/sub-books.html" %}
+        {% elif data['category'] == 'Facilities management and estates' %}
+          {% include "includes/categories/sub-fm.html" %}
+        {% elif data['category'] == 'ICT' and data['type'] == 'Goods' %}
+          {% include "includes/categories/sub-ict-goods.html" %}
+        {% elif data['category'] == 'ICT' and data['type'] == 'Services' %}
+          {% include "includes/categories/sub-ict-services.html" %}
+        {% elif data['category'] == 'Energy and utilities' %}
+          {% include "includes/categories/sub-energy.html" %}
+        {% elif data['category'] == 'Financial' %}
+          {% include "includes/categories/sub-financial.html" %}
+        {% elif data['category'] == 'Recruitment' %}
+          {% include "includes/categories/sub-recruitment.html" %}
         {% endif %}
 
         {{ govukButton({

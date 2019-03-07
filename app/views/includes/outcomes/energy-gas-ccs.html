@@ -1,0 +1,48 @@
+<span class="govuk-caption-l">Your recommendation</span>
+<h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+  Supply of natural gas  (daily/non-daily metered) and ancillary services
+</h1>
+<p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.</p>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class='govuk-heading-m related-main-content'>
+      What it offers
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>liquefied petroleum gas</li>
+      <li>
+        solid fuels including:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>biomass</li>
+          <li>lubricants and grease</li>
+          <li>metering</li>
+          <li>fuel services</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2 class='govuk-heading-m'>
+      Benefits
+    </h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a customer service team to help you</li>
+      <li>savings on administration costs</li>
+      <li>clear, not-for-profit charging structure</li>
+    </ul>
+    {% include "includes/all-framework-benefits.html" %}
+
+
+
+    {{ govukButton({
+      text: 'Continue to the CCS website',
+      href: 'https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1076',
+      classes: 'govuk-!-margin-top-5'
+    }) }}
+
+  </div>
+
+  {% include "includes/outcome-aside.html" %}
+</div>

@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="check-category" method="post" autocomplete="off">
+
+        {{ govukRadios({
+          idPrefix: 'bundle',
+          name: 'bundle',
+          fieldset: {
+            legend: {
+              text: 'Do you want to buy multiple services?',
+              isPageHeading: true,
+              classes: 'govuk-fieldset__legend--l'
+            }
+          },
+          hint: {
+            text: ''
+          },
+          items: [
+            {
+              value: 'Yes',
+              html: 'Yes',
+              checked: checked('bundle', 'Yes')
+            },
+            {
+              value: 'No',
+              html: 'No, I&rsquo;d like to buy a  specific service',
+              checked: checked('bundle', 'No')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+      </form>
+
+
+
+      {% include "includes/answers.html" %}
+
+    </div>
+  </div>
+{% endblock %}
